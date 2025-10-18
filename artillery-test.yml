@@ -1,0 +1,19 @@
+config:
+  target: "https://yearn-fi-sigma.vercel.app"
+  maxVusers: 2
+  phases:
+    - duration: 3600
+      arrivalRate: 8
+  engines:
+    playwright:
+      launchOptions:
+        headless: true
+  processor: "./artillery-flows.js"
+
+scenarios:
+  - engine: playwright
+    flowFunction: "loadRandomPage"
+    weight: 0
+  - engine: playwright
+    flowFunction: "headRequestOnly"
+    weight: 100
