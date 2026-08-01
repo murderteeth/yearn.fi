@@ -2,8 +2,8 @@ import {
   convertYvUsdLockedAssetRawAmountToUnderlying,
   convertYvUsdUnderlyingRawAmountToLockedAsset
 } from '@pages/vaults/utils/yvUsd'
-import { formatTAmount } from '@shared/utils/format'
 import { toAddress } from '@shared/utils/tools.address'
+import { formatTAmount } from '@yearn/util/utils/format'
 import type { Address } from 'viem'
 import type { TransactionStep } from '../shared/TransactionOverlay'
 

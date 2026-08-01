@@ -1,3 +1,4 @@
+import type { TDict, TNDict } from '@yearn/util/types/mixed'
 import type { Chain, PublicClient } from 'viem'
 import { createPublicClient, defineChain, http } from 'viem'
 import * as wagmiChains from 'viem/chains'
@@ -10,7 +11,6 @@ import {
 } from '@/config/tenderly'
 import { env } from '@/env'
 import type { TAddress } from '../../types/address'
-import type { TDict, TNDict } from '../../types/mixed'
 import { retrieveConfig } from './config'
 import { localhost } from './networks'
 

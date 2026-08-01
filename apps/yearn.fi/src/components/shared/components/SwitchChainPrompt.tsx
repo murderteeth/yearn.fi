@@ -1,6 +1,6 @@
 import { Button } from '@shared/components/Button'
-import { SUPPORTED_NETWORKS } from '@shared/utils/constants'
 import type { ReactElement } from 'react'
+import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 
 type TSwitchChainPromptProps = {
   chainId: number

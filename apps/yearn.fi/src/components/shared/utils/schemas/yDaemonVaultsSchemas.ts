@@ -1,5 +1,5 @@
 import { addressSchema } from '@shared/types/address'
-import { toBigInt } from '@shared/utils/format'
+import { toBigInt } from '@yearn/util/utils/format'
 import { zeroAddress } from 'viem'
 import * as z from 'zod'
 

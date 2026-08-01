@@ -1,5 +1,5 @@
+import type { TChainTokens, TToken } from '@yearn/util/types/mixed'
 import { describe, expect, it } from 'vitest'
-import type { TChainTokens, TToken } from '../types/mixed'
 import { shouldUseDiscoveryFallbackToken } from './balanceDiscoveryFallback'
 import type { TUseBalancesTokens } from './useBalances.multichains'
 import {

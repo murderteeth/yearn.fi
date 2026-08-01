@@ -1,6 +1,6 @@
 import { useClaimStakingRewards } from '@pages/vaults/hooks/rewards/useClaimStakingRewards'
 import { useChainId } from '@shared/hooks/useAppWagmi'
-import { toNormalizedValue } from '@shared/utils/format'
+import { toNormalizedValue } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 import { useCallback, useMemo } from 'react'
 import { useWriteContract } from 'wagmi'

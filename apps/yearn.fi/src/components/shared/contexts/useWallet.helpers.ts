@@ -1,5 +1,5 @@
-import type { TChainTokens, TDict, TNDict, TToken } from '@shared/types/mixed'
 import { toAddress } from '@shared/utils/tools.address'
+import type { TChainTokens, TDict, TNDict, TToken } from '@yearn/util/types/mixed'
 
 type TTokenMetadata = Pick<TToken, 'logoURI' | 'name' | 'symbol'>
 

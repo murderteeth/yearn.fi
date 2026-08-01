@@ -1,11 +1,11 @@
 import { getVaultView, type TKongVaultInput, type TKongVaultView } from '@pages/vaults/domain/kongVaultSelectors'
 import { patchYBoldVaults } from '@pages/vaults/domain/normalizeVault'
 import { isCatalogYearnVault } from '@pages/vaults/utils/catalogYearnVault'
-import type { TDict } from '@shared/types/mixed'
-import { SUPPORTED_NETWORKS } from '@shared/utils/constants'
 import type { TKongVaultList, TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
 import { toAddress } from '@shared/utils/tools.address'
+import type { TDict } from '@yearn/util/types/mixed'
 import { zeroAddress } from 'viem'
+import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 
 type TVaultPayloadValue = string | number | boolean | null
 export type TSerializableKongVaultView = TVaultPayloadValue[]

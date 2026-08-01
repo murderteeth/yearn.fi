@@ -1,5 +1,5 @@
-import type { TNormalizedBN } from '../types/mixed'
-import { DefaultTNormalizedBN, parseUnits } from './format'
+import type { TNormalizedBN } from '@yearn/util/types/mixed'
+import { DefaultTNormalizedBN, parseUnits } from '@yearn/util/utils/format'
 
 export function handleInputChangeEventValue(e: React.ChangeEvent<HTMLInputElement>, decimals?: number): TNormalizedBN {
   const resolvedDecimals = decimals ?? 18

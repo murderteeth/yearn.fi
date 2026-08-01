@@ -4,14 +4,14 @@ import { useDeepCompareMemo } from '@react-hookz/web'
 import { PUBLIC_VAULT_DATA_CACHE_TIME } from '@shared/data/publicQueryCache'
 import { YEARN_VAULT_LIST_ENDPOINT } from '@shared/data/publicQueryEndpoints'
 import { fetchWithSchema, getFetchQueryKey, useFetch } from '@shared/hooks/useFetch'
-import type { TDict } from '@shared/types/mixed'
-import { SUPPORTED_NETWORKS } from '@shared/utils/constants'
 import type { TKongVaultList, TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
 import { kongVaultListSchema } from '@shared/utils/schemas/kongVaultListSchema'
 import { toAddress } from '@shared/utils/tools.address'
 import type { QueryObserverResult } from '@tanstack/react-query'
 import { useQueryClient } from '@tanstack/react-query'
+import type { TDict } from '@yearn/util/types/mixed'
 import { useEffect, useMemo } from 'react'
+import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 
 const DEFAULT_CHAIN_IDS = SUPPORTED_NETWORKS.map((network) => network.id)
 

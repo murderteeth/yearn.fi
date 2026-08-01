@@ -1,4 +1,4 @@
-import { exactToSimple } from '@shared/utils/format'
+import { exactToSimple } from '@yearn/util/utils/format'
 import { type ChangeEvent, type Dispatch, type SetStateAction, useCallback, useEffect, useMemo, useState } from 'react'
 import { parseUnits } from 'viem'
 

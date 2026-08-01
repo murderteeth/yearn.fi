@@ -1,4 +1,4 @@
-import type { TAddress } from './address'
+import type { TAddress } from '@yearn/util/types/address'
 
 /*******************************************************************************
  ** Maybe types are used to represent optional values

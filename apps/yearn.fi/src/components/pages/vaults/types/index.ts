@@ -1,6 +1,6 @@
 import type { AppUseSimulateContractReturnType } from '@shared/hooks/useAppWagmi'
 import type { TAddress } from '@shared/types/address'
-import type { TNormalizedBN } from '@shared/types/mixed'
+import type { TNormalizedBN } from '@yearn/util/types/mixed'
 import type { Hex } from 'viem'
 
 export type T<Actions, Periphery> = {

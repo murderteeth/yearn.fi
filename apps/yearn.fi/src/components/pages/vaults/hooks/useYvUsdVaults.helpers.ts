@@ -1,8 +1,8 @@
 import { getVaultView, type TKongVaultInput, type TKongVaultView } from '@pages/vaults/domain/kongVaultSelectors'
-import { toBigInt, toNormalizedBN } from '@shared/utils/format'
 import type { TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
 import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
 import { toAddress } from '@shared/utils/tools.address'
+import { toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
 import { YVUSD_CHAIN_ID, YVUSD_DESCRIPTION, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '../utils/yvUsd'
 
 export type TYvUsdMetrics = {

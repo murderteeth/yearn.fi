@@ -1,4 +1,4 @@
-import { formatCounterValue } from '@shared/utils/format'
+import { formatCounterValue } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 import { formatUnits } from 'viem'
 import { formatWidgetAllowance, formatWidgetValue } from '../shared/valueDisplay'

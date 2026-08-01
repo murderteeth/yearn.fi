@@ -7,8 +7,8 @@ import { IconGitCompare } from '@shared/icons/IconGitCompare'
 import { IconSearch } from '@shared/icons/IconSearch'
 import { LogoYearn } from '@shared/icons/LogoYearn'
 import { cl } from '@shared/utils/cl'
-import { SUPPORTED_NETWORKS } from '@shared/utils/constants'
 import type { ReactElement } from 'react'
+import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 import { env } from '@/env'
 
 const SKELETON_ROWS = Array.from({ length: 16 }, (_, index) => index)

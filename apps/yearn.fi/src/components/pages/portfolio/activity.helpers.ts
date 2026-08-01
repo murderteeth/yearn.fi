@@ -2,8 +2,8 @@ import { getVaultName, type TKongVault } from '@pages/vaults/domain/kongVaultSel
 import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
 import { BOLD_ADDRESS } from '@pages/vaults/utils/yBold'
 import type { TNotification } from '@shared/types/notifications'
-import { SUPPORTED_NETWORKS } from '@shared/utils/constants'
 import { toAddress, truncateHex } from '@shared/utils/tools.address'
+import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 import type { TPortfolioActivityEntry } from './types/api'
 
 const ACTIVITY_ACTION_LABELS: Record<TPortfolioActivityEntry['action'], string> = {

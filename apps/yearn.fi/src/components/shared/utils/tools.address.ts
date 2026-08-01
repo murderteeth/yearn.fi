@@ -1,5 +1,5 @@
-import type { TDict } from '@shared/types/mixed'
 import { toAddress, truncateHex } from '@yearn/util'
+import type { TDict } from '@yearn/util/types/mixed'
 import { env } from '@/env'
 
 /**

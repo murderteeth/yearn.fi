@@ -1,7 +1,7 @@
+import type { TNormalizedBN, TNumberish } from '@yearn/util/types/mixed'
+import { MAX_UINT_256 } from '@yearn/util/utils/constants'
+import { isZero } from '@yearn/util/utils/tools.is'
 import { formatUnits, parseUnits as vParseUnits } from 'viem'
-import type { TNormalizedBN, TNumberish } from '../types/mixed'
-import { MAX_UINT_256 } from './constants'
-import { isZero } from './tools.is'
 
 /***************************************************************************
  ** Formats very small numbers using subscript notation for leading zeros.

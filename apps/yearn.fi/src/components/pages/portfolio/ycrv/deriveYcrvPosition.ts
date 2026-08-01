@@ -1,6 +1,6 @@
 import { YCRV_APP_URL, YCRV_TOKEN_ADDRESS, YVCRVUSD_REWARD_ADDRESS } from '@pages/portfolio/ycrv/constants'
 import type { TYcrvPosition, TYcrvRawAccount, TYcrvReward } from '@pages/portfolio/ycrv/types'
-import { toNormalizedValue } from '@shared/utils/format'
+import { toNormalizedValue } from '@yearn/util/utils/format'
 import { formatUnits } from 'viem'
 
 const YCRV_DECIMALS = 18

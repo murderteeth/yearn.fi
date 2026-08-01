@@ -1,6 +1,6 @@
+import type { TChainTokens } from '@yearn/util/types/mixed'
 import { getAddress } from 'viem'
 import { describe, expect, it } from 'vitest'
-import type { TChainTokens } from '../types/mixed'
 import type { TUseBalancesTokens } from './useBalances.multichains'
 import { mergeStagedQueryData, partitionTokensByQueryStage } from './useBalancesQueries.helpers'
 

@@ -1,4 +1,4 @@
-import { formatWithSubscriptZeros } from '@shared/utils/format'
+import { formatWithSubscriptZeros } from '@yearn/util/utils/format'
 import { formatUnits, maxUint256 } from 'viem'
 
 const UNLIMITED_ALLOWANCE_THRESHOLD = maxUint256 / 2n

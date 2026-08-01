@@ -4,7 +4,7 @@ import { IconInfinifiPoints } from '@shared/icons/IconInfinifiPoints'
 import { IconLock } from '@shared/icons/IconLock'
 import { IconLockOpen } from '@shared/icons/IconLockOpen'
 import { cl } from '@shared/utils/cl'
-import { formatApyDisplay, formatUSD } from '@shared/utils/format'
+import { formatApyDisplay, formatUSD } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 
 type TYvUsdTooltipProps = {

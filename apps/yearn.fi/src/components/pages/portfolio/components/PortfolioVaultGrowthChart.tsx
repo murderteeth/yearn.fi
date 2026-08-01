@@ -17,7 +17,6 @@ import {
 } from '@pages/vaults/utils/charts'
 import { IconChevron } from '@shared/icons/IconChevron'
 import { cl } from '@shared/utils/cl'
-import { formatUSD } from '@shared/utils/format'
 import {
   rankPortfolioVaultGrowthChartSeries,
   type TPortfolioVaultGrowthChartMode,
@@ -25,6 +24,7 @@ import {
   type TPortfolioVaultGrowthRankableSeries
 } from '@shared/utils/portfolioVaultGrowth'
 import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { formatUSD } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 import { useMemo, useState } from 'react'
 import { CartesianGrid, ComposedChart, Line, XAxis, YAxis } from 'recharts'

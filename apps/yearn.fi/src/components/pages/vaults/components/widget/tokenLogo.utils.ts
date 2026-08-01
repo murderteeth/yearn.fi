@@ -5,8 +5,8 @@ import {
   getVaultToken,
   type TKongVaultInput
 } from '@pages/vaults/domain/kongVaultSelectors'
-import type { TDict } from '@shared/types/mixed'
 import { toAddress } from '@shared/utils/tools.address'
+import type { TDict } from '@yearn/util/types/mixed'
 import { zeroAddress } from 'viem'
 import { env } from '@/env'
 

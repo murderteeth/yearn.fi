@@ -1,10 +1,10 @@
 import { getVaultName as getKongVaultName, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import { yToast } from '@shared/components/yToast'
 import type { TAddress } from '@shared/types/address'
+import type { TSortDirection } from '@yearn/util/types/mixed'
+import { toNormalizedBN } from '@yearn/util/utils/format'
 import type { EncodeFunctionDataParameters, Hex } from 'viem'
 import { encodeFunctionData, toHex } from 'viem'
-import type { TSortDirection } from '../types/mixed'
-import { toNormalizedBN } from './format'
 
 export function getVaultName(vault: TKongVaultInput): string {
   let baseName = getKongVaultName(vault)

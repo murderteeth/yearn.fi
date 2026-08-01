@@ -1,7 +1,7 @@
-import type { TDict } from '@shared/types/mixed'
 import type { TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
 import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
 import { toAddress } from '@shared/utils/tools.address'
+import type { TDict } from '@yearn/util/types/mixed'
 import { type Address, zeroAddress } from 'viem'
 
 export const YBOLD_VAULT_ADDRESS: Address = '0x9F4330700a36B29952869fac9b33f45EEdd8A3d8'

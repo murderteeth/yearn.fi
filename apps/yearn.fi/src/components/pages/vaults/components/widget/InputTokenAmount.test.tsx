@@ -28,8 +28,8 @@ vi.mock('@shared/utils/cl', () => ({
 // `formatCounterValue` was never mocked here: it used to come from this module
 // directly while the rest came via the `@shared/utils` barrel. Now that the
 // barrel is gone, keep the real implementation and override only the two.
-vi.mock('@shared/utils/format', async (importOriginal) => ({
-  ...(await importOriginal<typeof import('@shared/utils/format')>()),
+vi.mock('@yearn/util/utils/format', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@yearn/util/utils/format')>()),
   formatTAmount: ({ value, decimals }: { value: bigint; decimals: number }) => {
     const divisor = 10n ** BigInt(decimals)
     const whole = value / divisor

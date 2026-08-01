@@ -1,12 +1,12 @@
 import { useFetchYearnPrices } from '@shared/hooks/useFetchYearnPrices'
 import type { TAddress } from '@shared/types/address'
-import type { TNormalizedBN } from '@shared/types/mixed'
-import { toNormalizedBN, zeroNormalizedBN } from '@shared/utils/format'
 import {
   resolveYearnPricesSpotAddress,
   type TYearnPricesByChain,
   type TYearnPriceToken
 } from '@shared/utils/yearnPrices'
+import type { TNormalizedBN } from '@yearn/util/types/mixed'
+import { toNormalizedBN, zeroNormalizedBN } from '@yearn/util/utils/format'
 import { useCallback } from 'react'
 
 type TTokenAndChain = { address: TAddress; chainID: number }

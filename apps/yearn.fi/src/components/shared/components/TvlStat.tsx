@@ -1,4 +1,4 @@
-import { formatAmount } from '@shared/utils/format'
+import { formatAmount } from '@yearn/util/utils/format'
 
 import type { ReactElement } from 'react'
 

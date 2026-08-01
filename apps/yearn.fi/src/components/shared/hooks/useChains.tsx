@@ -1,9 +1,9 @@
 import { useCustomCompareMemo, useDeepCompareMemo } from '@react-hookz/web'
 import type { TMultiSelectOptionProps } from '@shared/components/MultiSelectDropdown'
-import { SUPPORTED_NETWORKS } from '@shared/utils/constants'
 import type { Chain } from 'viem'
 import type { Connector } from 'wagmi'
 import { useConnect } from 'wagmi'
+import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 import { env } from '@/env'
 import Image from '/src/components/Image'
 

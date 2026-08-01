@@ -8,12 +8,12 @@ import { IconCross } from '@shared/icons/IconCross'
 import { IconLoader } from '@shared/icons/IconLoader'
 import type { TNotification, TNotificationStatus } from '@shared/types/notifications'
 import { cl } from '@shared/utils/cl'
-import { SUPPORTED_NETWORKS } from '@shared/utils/constants'
 import { truncateHex } from '@shared/utils/tools.address'
 import { getNetwork } from '@shared/utils/wagmi/utils'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
 import { memo, useCallback, useMemo, useState } from 'react'
+import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 import { env } from '@/env'
 
 const NETWORK_BY_CHAIN_ID = new Map(SUPPORTED_NETWORKS.map((network) => [network.id, network] as const)) as ReadonlyMap<

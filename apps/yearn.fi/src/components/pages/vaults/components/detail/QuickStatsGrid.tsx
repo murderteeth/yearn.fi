@@ -8,7 +8,7 @@ import { IconInfinifiPoints } from '@shared/icons/IconInfinifiPoints'
 import { IconLock } from '@shared/icons/IconLock'
 import { IconLockOpen } from '@shared/icons/IconLockOpen'
 import { cl } from '@shared/utils/cl'
-import { formatApyDisplay, toNormalizedBN } from '@shared/utils/format'
+import { formatApyDisplay, toNormalizedBN } from '@yearn/util/utils/format'
 import type { KeyboardEvent, ReactElement, ReactNode } from 'react'
 import { useRef, useState } from 'react'
 

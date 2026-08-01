@@ -8,7 +8,7 @@ import {
   getVaultToken,
   type TKongVaultInput
 } from '@pages/vaults/domain/kongVaultSelectors'
-import type { TDict, TNDict, TToken } from '@shared/types/mixed'
+import type { TDict, TNDict, TToken } from '@yearn/util/types/mixed'
 import { canonicalChains } from '@/config/chainDefinitions'
 import type {
   TTenderlyConfiguredChainStatus,

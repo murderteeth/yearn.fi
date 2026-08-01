@@ -33,10 +33,10 @@ import {
   useDarkMode
 } from '@shared/components/AllocationChart'
 import { useYearn } from '@shared/contexts/useYearn'
-import { formatCounterValue, toBigInt, toNormalizedBN } from '@shared/utils/format'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
 import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
 import { toAddress } from '@shared/utils/tools.address'
+import { formatCounterValue, toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
 import type { MouseEvent, ReactElement, ReactNode } from 'react'
 import { cloneElement, isValidElement, useMemo } from 'react'
 import { type TVaultsExpandedView, VaultsExpandedSelector } from './VaultsExpandedSelector'

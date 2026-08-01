@@ -1,4 +1,4 @@
-import type { TToken } from '@shared/types/mixed'
+import type { TToken } from '@yearn/util/types/mixed'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it, vi } from 'vitest'
 import { TokenSelector } from './TokenSelector'

@@ -13,6 +13,7 @@
 
 export type { TAddress, TAddressLike, TAddressSmol, TAddressWagmi } from '@yearn/util/types/address'
 export { ADDRESS_REGEX } from '@yearn/util/types/address'
+export type * from '@yearn/util/types/mixed'
 export {
   getColorFromAdddress,
   isAddress,
@@ -24,5 +25,8 @@ export {
 } from '@yearn/util/utils/address'
 export { cl } from '@yearn/util/utils/cl'
 export { fetchClusterName, getClusterImageUrl } from '@yearn/util/utils/clusters'
+export * from '@yearn/util/utils/constants'
+export * from '@yearn/util/utils/format'
 export { isIframe } from '@yearn/util/utils/isIframe'
+export * from '@yearn/util/utils/tools.is'
 export { isSafeConnectorId } from '@yearn/util/utils/walletConnectors'

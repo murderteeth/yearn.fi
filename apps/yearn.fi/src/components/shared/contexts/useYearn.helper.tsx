@@ -14,12 +14,12 @@ import { useDeepCompareMemo } from '@react-hookz/web'
 import { useTokenList } from '@shared/contexts/WithTokenList'
 import type { TUseBalancesTokens } from '@shared/hooks/useBalances.multichains'
 import { useChainID } from '@shared/hooks/useChainID'
-import type { TDict, TNDict, TToken } from '@shared/types/mixed'
 import { ETH_TOKEN_ADDRESS } from '@shared/utils/constants'
 import { toAddress } from '@shared/utils/tools.address'
 import { isZeroAddress } from '@shared/utils/tools.is'
 import { isDisabledVeyfiGaugePair } from '@shared/utils/veyfiGauges'
 import { getNetwork } from '@shared/utils/wagmi/utils'
+import type { TDict, TNDict, TToken } from '@yearn/util/types/mixed'
 import { useMemo } from 'react'
 
 function mergeTokenMetadata(existing: TUseBalancesTokens, incoming: TUseBalancesTokens): TUseBalancesTokens {

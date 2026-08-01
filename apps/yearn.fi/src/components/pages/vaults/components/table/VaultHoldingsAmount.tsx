@@ -1,6 +1,6 @@
 import { useWeb3 } from '@shared/contexts/useWeb3'
 import { cl } from '@shared/utils/cl'
-import { formatTvlDisplay } from '@shared/utils/format'
+import { formatTvlDisplay } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 
 export function VaultHoldingsAmount({

@@ -1,5 +1,5 @@
-import type { TChainTokens } from '@shared/types/mixed'
-import { zeroNormalizedBN } from '@shared/utils/format'
+import type { TChainTokens } from '@yearn/util/types/mixed'
+import { zeroNormalizedBN } from '@yearn/util/utils/format'
 import { describe, expect, it } from 'vitest'
 import {
   applyTokenListMetadataToBalances,

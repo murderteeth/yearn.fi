@@ -3,7 +3,7 @@ import { DEFAULT_MIN_TVL, readBooleanParam } from '@pages/vaults/utils/constants
 import { normalizeUnderlyingAssetSymbol } from '@pages/vaults/utils/vaultListFacets'
 import type { TVaultType } from '@pages/vaults/utils/vaultTypeCopy'
 import { getSupportedChainsForVaultType, normalizeVaultTypeParam } from '@pages/vaults/utils/vaultTypeUtils'
-import type { TSortDirection } from '@shared/types/mixed'
+import type { TSortDirection } from '@yearn/util/types/mixed'
 
 export type TVaultsRouteSearchParams = Record<string, string | string[] | undefined>
 
