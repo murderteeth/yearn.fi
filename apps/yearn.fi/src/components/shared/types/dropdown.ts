@@ -1,4 +1,4 @@
-import type { TAddress } from '@shared/types'
+import type { TAddress } from '@shared/types/address'
 import type { ReactElement } from 'react'
 import type { TSolver } from '../utils/schemas/yDaemonTokenListBalances'
 

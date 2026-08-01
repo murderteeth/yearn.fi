@@ -1,9 +1,9 @@
 // Temp file, remove logic at a later date
 
 import { mergeYBoldVault, YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
-import { toAddress } from '@shared/utils'
 import type { TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
 import { kongVaultListItemSchema } from '@shared/utils/schemas/kongVaultListSchema'
+import { toAddress } from '@shared/utils/tools.address'
 import { isAddressEqual } from 'viem'
 
 export const fetchYBoldVault = async (

@@ -55,7 +55,7 @@ import { useWeb3 } from '@shared/contexts/useWeb3'
 import { useYearn } from '@shared/contexts/useYearn'
 import { useOptimisticValue } from '@shared/hooks/useOptimisticValue'
 import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
-import type { TSortDirection } from '@shared/types'
+import type { TSortDirection } from '@shared/types/mixed'
 import type { RefObject } from 'react'
 import {
   type ChangeEvent,

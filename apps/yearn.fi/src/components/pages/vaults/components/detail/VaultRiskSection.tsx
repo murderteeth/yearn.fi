@@ -2,7 +2,7 @@ import { VaultRiskScoreTag } from '@pages/vaults/components/table/VaultRiskScore
 import { getVaultInfo, getVaultKind, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import { deriveListKind } from '@pages/vaults/utils/vaultListFacets'
 import { isYvBtcVault, YVBTC_RISK_SCORE_ITEMS } from '@pages/vaults/utils/yvBtc'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import { type ReactElement, useState } from 'react'
 
 type TRiskScoreItem = {

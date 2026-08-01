@@ -2,7 +2,7 @@ import { CompareVaultCard } from '@pages/vaults/components/compare/CompareVaultC
 import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
 import { IconChevron } from '@shared/icons/IconChevron'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import { motion, type PanInfo, useAnimation } from 'framer-motion'
 import { type ReactElement, useCallback, useState } from 'react'
 

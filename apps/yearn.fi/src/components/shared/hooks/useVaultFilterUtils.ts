@@ -13,11 +13,12 @@ import {
   type TKongVaultInput
 } from '@pages/vaults/domain/kongVaultSelectors'
 import { getNativeTokenWrapperContract } from '@pages/vaults/utils/nativeTokens'
-import type { TDict } from '@shared/types'
 import type { TAddress } from '@shared/types/address'
-import type { TNormalizedBN } from '@shared/types/mixed'
-import { isZeroAddress, toAddress, toNormalizedBN } from '@shared/utils'
+import type { TDict, TNormalizedBN } from '@shared/types/mixed'
 import { ETH_TOKEN_ADDRESS } from '@shared/utils/constants'
+import { toNormalizedBN } from '@shared/utils/format'
+import { toAddress } from '@shared/utils/tools.address'
+import { isZeroAddress } from '@shared/utils/tools.is'
 import { isDisabledVeyfiGaugePair } from '@shared/utils/veyfiGauges'
 
 type TVaultLike = TKongVaultInput

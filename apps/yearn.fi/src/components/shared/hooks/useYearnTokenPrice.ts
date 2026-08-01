@@ -1,5 +1,5 @@
 import { useYearnSpotPrices } from '@shared/hooks/useYearnSpotPrices'
-import type { TAddress } from '@shared/types'
+import type { TAddress } from '@shared/types/address'
 
 /******************************************************************************
  ** The useYearnTokenPrice hook is used to retrieve the price of a token from

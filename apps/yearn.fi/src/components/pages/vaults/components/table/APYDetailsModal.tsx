@@ -1,6 +1,6 @@
 import { Dialog, Transition, TransitionChild } from '@headlessui/react'
 import { IconClose } from '@shared/icons/IconClose'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 import { Fragment } from 'react'
 

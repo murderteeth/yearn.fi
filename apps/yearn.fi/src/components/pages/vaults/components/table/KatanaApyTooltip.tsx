@@ -1,7 +1,8 @@
 import { getVaultChainID, getVaultToken, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import { ImageWithFallback } from '@shared/components/ImageWithFallback'
 import { Tooltip } from '@shared/components/Tooltip'
-import { cl, formatApyDisplay } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { formatApyDisplay } from '@shared/utils/format'
 import type { ReactElement } from 'react'
 import { env } from '@/env'
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { IconChevron } from '@shared/icons/IconChevron'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { ReactElement } from 'react'
 import { useCallback, useEffect, useState } from 'react'
 

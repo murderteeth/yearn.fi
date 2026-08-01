@@ -1,9 +1,10 @@
 import { getVaultView, type TKongVaultInput, type TKongVaultView } from '@pages/vaults/domain/kongVaultSelectors'
 import { patchYBoldVaults } from '@pages/vaults/domain/normalizeVault'
 import { isCatalogYearnVault } from '@pages/vaults/utils/catalogYearnVault'
-import type { TDict } from '@shared/types'
-import { SUPPORTED_NETWORKS, toAddress } from '@shared/utils'
+import type { TDict } from '@shared/types/mixed'
+import { SUPPORTED_NETWORKS } from '@shared/utils/constants'
 import type { TKongVaultList, TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
+import { toAddress } from '@shared/utils/tools.address'
 import { zeroAddress } from 'viem'
 
 type TVaultPayloadValue = string | number | boolean | null

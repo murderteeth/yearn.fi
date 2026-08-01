@@ -1,6 +1,6 @@
 import { VAULT_ADDRESSES } from '@pages/vaults/constants/addresses'
 import { getVaultAddress, getVaultAPR, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 
 export function isPendleArbVault(vault: TKongVaultInput): boolean {
   return toAddress(getVaultAddress(vault)) === toAddress(VAULT_ADDRESSES.PENDLE_ARB_REWARDS)

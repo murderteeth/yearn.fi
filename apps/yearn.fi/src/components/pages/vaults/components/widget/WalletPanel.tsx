@@ -25,15 +25,10 @@ import { IconCross } from '@shared/icons/IconCross'
 import { IconLoader } from '@shared/icons/IconLoader'
 import { IconWallet } from '@shared/icons/IconWallet'
 import type { TNotification, TNotificationStatus } from '@shared/types/notifications'
-import {
-  cl,
-  formatTAmount,
-  formatUSD,
-  SELECTOR_BAR_STYLES,
-  toAddress,
-  toNormalizedBN,
-  truncateHex
-} from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { formatTAmount, formatUSD, toNormalizedBN } from '@shared/utils/format'
+import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { toAddress, truncateHex } from '@shared/utils/tools.address'
 import { getNetwork } from '@shared/utils/wagmi/utils'
 import { useRouter } from 'next/navigation'
 import { type FC, type ReactElement, useCallback, useMemo, useState } from 'react'

@@ -1,6 +1,7 @@
 import { useFetchYearnPrices } from '@shared/hooks/useFetchYearnPrices'
-import type { TAddress, TNormalizedBN } from '@shared/types'
-import { toNormalizedBN, zeroNormalizedBN } from '@shared/utils'
+import type { TAddress } from '@shared/types/address'
+import type { TNormalizedBN } from '@shared/types/mixed'
+import { toNormalizedBN, zeroNormalizedBN } from '@shared/utils/format'
 import {
   resolveYearnPricesSpotAddress,
   type TYearnPricesByChain,

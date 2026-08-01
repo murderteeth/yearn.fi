@@ -1,5 +1,5 @@
 import { Tooltip } from '@shared/components/Tooltip'
-import { formatAmount, formatApyDisplay } from '@shared/utils'
+import { formatAmount, formatApyDisplay } from '@shared/utils/format'
 
 import type { FC, ReactElement } from 'react'
 

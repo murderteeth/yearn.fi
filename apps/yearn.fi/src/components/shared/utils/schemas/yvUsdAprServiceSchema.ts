@@ -1,4 +1,4 @@
-import { addressSchema } from '@shared/types'
+import { addressSchema } from '@shared/types/address'
 import * as z from 'zod'
 
 const yvUsdAprServiceStrategySchema = z

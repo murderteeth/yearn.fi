@@ -2,7 +2,7 @@ import { useDebouncedCallback } from '@react-hookz/web'
 import { IconCross } from '@shared/icons/IconCross'
 import { IconEnter } from '@shared/icons/IconEnter'
 import { IconSearch } from '@shared/icons/IconSearch'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import { type ChangeEvent, type ReactElement, type ReactNode, useEffect, useState } from 'react'
 
 type TSearchBar = {

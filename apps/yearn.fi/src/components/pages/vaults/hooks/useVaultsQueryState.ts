@@ -20,7 +20,7 @@ import {
 } from '@pages/vaults/utils/vaultsQueryState'
 import type { TVaultType } from '@pages/vaults/utils/vaultTypeCopy'
 import { getSupportedChainsForVaultType, normalizeVaultTypeParam } from '@pages/vaults/utils/vaultTypeUtils'
-import type { TSortDirection } from '@shared/types'
+import type { TSortDirection } from '@shared/types/mixed'
 import { copyToClipboard } from '@shared/utils/helpers'
 import { usePathname, useRouter } from 'next/navigation'
 import { startTransition, useCallback, useEffect, useMemo, useRef, useState } from 'react'

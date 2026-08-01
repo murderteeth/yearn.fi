@@ -1,4 +1,5 @@
-import { cl, SELECTOR_BAR_STYLES } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
 import type { ReactElement } from 'react'
 
 export type TVaultsExpandedView = 'apy' | 'performance' | 'tvl' | 'strategies'

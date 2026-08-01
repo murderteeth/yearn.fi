@@ -6,7 +6,7 @@ import {
   type TKongVaultStaking
 } from '@pages/vaults/domain/kongVaultSelectors'
 import { useVaultSnapshot } from '@pages/vaults/hooks/useVaultSnapshot'
-import { isZeroAddress } from '@shared/utils'
+import { isZeroAddress } from '@shared/utils/tools.is'
 
 type UseVaultWithStakingRewardsReturn = {
   vault: TKongVault

@@ -1,4 +1,4 @@
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { FC } from 'react'
 import { Fragment } from 'react'
 

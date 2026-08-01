@@ -1,7 +1,8 @@
 import { getVaultToken, getVaultTVL, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import { RenderAmount } from '@shared/components/RenderAmount'
 import { Tooltip } from '@shared/components/Tooltip'
-import { cl, formatTvlDisplay, toNormalizedBN } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { formatTvlDisplay, toNormalizedBN } from '@shared/utils/format'
 import type { ReactElement } from 'react'
 
 type TVaultTVLProps = {

@@ -1,5 +1,5 @@
 import type { TKongVaultStrategy } from '@pages/vaults/domain/kongVaultSelectors'
-import { toBigInt } from '@shared/utils'
+import { toBigInt } from '@shared/utils/format'
 
 export function isActiveStrategy(strategy: TKongVaultStrategy): boolean {
   return (

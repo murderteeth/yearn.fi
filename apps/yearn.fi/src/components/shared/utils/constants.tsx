@@ -1,4 +1,5 @@
-import type { TAddress, TNDict, TToken } from '@shared/types'
+import type { TAddress } from '@shared/types/address'
+import type { TNDict, TToken } from '@shared/types/mixed'
 import { arbitrum, base, fantom, mainnet, optimism, polygon, sonic } from 'viem/chains'
 import { supportedAppChains } from '@/config/supportedChains'
 import { toAddress } from './tools.address'

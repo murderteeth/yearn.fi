@@ -3,7 +3,7 @@ import { TOOLTIP_DELAY_MS } from '@pages/vaults/utils/vaultTagCopy'
 import type { TVaultType } from '@pages/vaults/utils/vaultTypeCopy'
 import { getVaultTypeDescription, getVaultTypeLabel } from '@pages/vaults/utils/vaultTypeCopy'
 import { Tooltip } from '@shared/components/Tooltip'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
 import type { ReactElement } from 'react'
 

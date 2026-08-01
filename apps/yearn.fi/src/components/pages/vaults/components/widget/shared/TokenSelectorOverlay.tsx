@@ -1,6 +1,6 @@
 import { TokenSelector } from '@pages/vaults/components/widget/TokenSelector'
 import type { TTokenSelectorMode } from '@pages/vaults/components/widget/tokenSelectorList.utils'
-import type { TToken } from '@shared/types'
+import type { TToken } from '@shared/types/mixed'
 import type { FC } from 'react'
 import type { Address } from 'viem'
 

@@ -59,18 +59,12 @@ import { IconInfinifiPoints } from '@shared/icons/IconInfinifiPoints'
 import { IconLinkOut } from '@shared/icons/IconLinkOut'
 import { IconLock } from '@shared/icons/IconLock'
 import { IconLockOpen } from '@shared/icons/IconLockOpen'
-import {
-  cl,
-  formatApyDisplay,
-  formatTAmount,
-  formatUSD,
-  isZero,
-  isZeroAddress,
-  SELECTOR_BAR_STYLES,
-  toAddress,
-  toNormalizedBN
-} from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { formatApyDisplay, formatTAmount, formatUSD, toNormalizedBN } from '@shared/utils/format'
 import { getVaultName } from '@shared/utils/helpers'
+import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { toAddress } from '@shared/utils/tools.address'
+import { isZero, isZeroAddress } from '@shared/utils/tools.is'
 import { getNetwork } from '@shared/utils/wagmi/utils'
 import Link from 'next/link'
 import type { ReactElement, Ref } from 'react'

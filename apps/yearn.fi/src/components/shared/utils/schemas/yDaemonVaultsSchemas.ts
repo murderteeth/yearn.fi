@@ -1,8 +1,7 @@
+import { addressSchema } from '@shared/types/address'
+import { toBigInt } from '@shared/utils/format'
 import { zeroAddress } from 'viem'
 import * as z from 'zod'
-
-import { addressSchema } from '../../types'
-import { toBigInt } from '../../utils'
 
 const createAprFeesDefault = () => ({
   performance: 0,

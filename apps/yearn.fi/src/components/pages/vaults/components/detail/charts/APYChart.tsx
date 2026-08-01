@@ -8,7 +8,7 @@ import {
   getTimeframeLimit
 } from '@pages/vaults/utils/charts'
 import { useChartStyle } from '@shared/contexts/useChartStyle'
-import { formatPercent } from '@shared/utils'
+import { formatPercent } from '@shared/utils/format'
 import { useId, useMemo } from 'react'
 import { Area, CartesianGrid, ComposedChart, Line, LineChart, XAxis, YAxis } from 'recharts'
 import type { ChartConfig } from './ChartPrimitives'

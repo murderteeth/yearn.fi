@@ -3,7 +3,7 @@ import { TOOLTIP_DELAY_MS } from '@pages/vaults/utils/vaultTagCopy'
 import { Tooltip } from '@shared/components/Tooltip'
 import { IconChevron } from '@shared/icons/IconChevron'
 import { LogoYearn } from '@shared/icons/LogoYearn'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
 import type { ReactElement, RefObject } from 'react'
 

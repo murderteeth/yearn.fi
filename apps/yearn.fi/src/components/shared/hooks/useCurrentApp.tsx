@@ -1,6 +1,6 @@
 import landingManifest from '@shared/data/landing-manifest.json'
 import vaultsManifest from '@shared/data/vaults-manifest.json'
-import type { TDict } from '@shared/types'
+import type { TDict } from '@shared/types/mixed'
 import { usePathname } from 'next/navigation'
 import { useMemo } from 'react'
 

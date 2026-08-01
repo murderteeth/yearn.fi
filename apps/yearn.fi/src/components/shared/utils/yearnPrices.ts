@@ -1,4 +1,4 @@
-import type { TAddress } from '@shared/types'
+import type { TAddress } from '@shared/types/address'
 import {
   ARB_WETH_TOKEN_ADDRESS,
   BASE_WETH_TOKEN_ADDRESS,

@@ -1,5 +1,5 @@
-import type { TAddress } from '@shared/types'
-import { toAddress } from '@shared/utils'
+import type { TAddress } from '@shared/types/address'
+import { toAddress } from '@shared/utils/tools.address'
 import { erc20Abi, parseAbi } from 'viem'
 
 export const GOVERNANCE_CHAIN_ID = 1

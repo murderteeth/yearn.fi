@@ -10,7 +10,8 @@ import {
 } from '@pages/vaults/domain/kongVaultSelectors'
 import type { TAddress } from '@shared/types/address'
 import type { TNormalizedBN } from '@shared/types/mixed'
-import { isZeroAddress, toNormalizedBN } from '@shared/utils'
+import { toNormalizedBN } from '@shared/utils/format'
+import { isZeroAddress } from '@shared/utils/tools.is'
 
 type TTokenAndChain = { address: TAddress; chainID: number }
 type TBalanceGetter = (params: TTokenAndChain) => TNormalizedBN

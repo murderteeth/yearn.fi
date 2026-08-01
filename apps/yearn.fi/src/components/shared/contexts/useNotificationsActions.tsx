@@ -3,7 +3,7 @@ import type {
   TNotificationsActionsContext,
   TUpdateNotificationParams
 } from '@shared/types/notifications'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 import type React from 'react'
 import { createContext, useCallback, useContext, useMemo } from 'react'
 

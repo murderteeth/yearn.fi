@@ -1,6 +1,5 @@
+import { addressSchema } from '@shared/types/address'
 import * as z from 'zod'
-
-import { addressSchema } from '../../types'
 
 const coerceNullableNumber = z.preprocess(
   (val) => (val === null || val === undefined ? null : Number(val)),

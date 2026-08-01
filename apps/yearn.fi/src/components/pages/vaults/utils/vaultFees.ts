@@ -1,5 +1,5 @@
 import { getVaultAPR, type TKongVaultApr, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { formatAmount } from '@shared/utils'
+import { formatAmount } from '@shared/utils/format'
 
 type TVaultFeeStructure = Pick<TKongVaultApr['fees'], 'management' | 'performance'>
 

@@ -13,8 +13,9 @@ import type {
   TGovernancePosition,
   TGovernanceRawAccount
 } from '@pages/portfolio/governance/types'
-import type { TAddress } from '@shared/types'
-import { toAddress, toNormalizedValue } from '@shared/utils'
+import type { TAddress } from '@shared/types/address'
+import { toNormalizedValue } from '@shared/utils/format'
+import { toAddress } from '@shared/utils/tools.address'
 
 type TDeriveGovernancePositionsParams = {
   raw: TGovernanceRawAccount | null | undefined

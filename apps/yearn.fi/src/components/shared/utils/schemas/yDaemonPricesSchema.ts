@@ -1,6 +1,5 @@
+import { addressSchema } from '@shared/types/address'
 import * as z from 'zod'
-
-import { addressSchema } from '../../types'
 
 export const yDaemonPriceSchema = z.string()
 export const yDaemonPricesSchema = z.record(addressSchema, yDaemonPriceSchema)

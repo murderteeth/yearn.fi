@@ -1,4 +1,8 @@
 import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
+import type { TAddress } from '@shared/types/address'
+import type { TChainTokens, TDict, TNDict, TNormalizedBN, TToken, TYChainTokens } from '@shared/types/mixed'
+import { DEFAULT_ERC20 } from '@shared/utils/constants'
+import { zeroNormalizedBN } from '@shared/utils/format'
 import type { QueryKey } from '@tanstack/react-query'
 import { useQueryClient } from '@tanstack/react-query'
 import type { ReactElement } from 'react'
@@ -11,8 +15,6 @@ import { useBalancesWithQuery } from '../hooks/useBalancesWithQuery'
 import type { TFetchQueryKey } from '../hooks/useFetch'
 import { useStakingAssetConversions } from '../hooks/useStakingAssetConversions'
 import { getVaultHoldingsUsdValue } from '../hooks/useVaultFilterUtils'
-import type { TAddress, TChainTokens, TDict, TNDict, TNormalizedBN, TToken, TYChainTokens } from '../types'
-import { DEFAULT_ERC20, zeroNormalizedBN } from '../utils'
 import {
   applyTokenListMetadataToBalances,
   hasWalletBalanceSnapshot,

@@ -1,5 +1,7 @@
-import type { TAmount } from '@shared/utils'
-import { cl, formatTAmount, isZero } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import type { TAmount } from '@shared/utils/format'
+import { formatTAmount } from '@shared/utils/format'
+import { isZero } from '@shared/utils/tools.is'
 import { type ReactElement, useMemo } from 'react'
 
 export function RenderAmount(

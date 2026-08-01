@@ -1,6 +1,6 @@
 import { getVaultAddress, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 
 function getChainAddressKey(chainID: number | undefined, address: string): string {
   return `${chainID}_${toAddress(address)}`

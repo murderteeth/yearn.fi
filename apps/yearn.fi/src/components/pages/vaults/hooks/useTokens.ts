@@ -1,5 +1,6 @@
-import type { TNormalizedBN } from '@shared/types'
-import { isZeroAddress, toNormalizedBN } from '@shared/utils'
+import type { TNormalizedBN } from '@shared/types/mixed'
+import { toNormalizedBN } from '@shared/utils/format'
+import { isZeroAddress } from '@shared/utils/tools.is'
 import { useQuery } from '@tanstack/react-query'
 import { type Address, erc20Abi, getContract } from 'viem'
 import { useConfig } from 'wagmi'

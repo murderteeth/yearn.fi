@@ -1,7 +1,7 @@
 import { useClaimMerkleRewards } from '@pages/vaults/hooks/rewards/useClaimMerkleRewards'
 import { buildMerkleRewardKey } from '@pages/vaults/hooks/rewards/useMerkleRewards'
 import { useChainId } from '@shared/hooks/useAppWagmi'
-import { toNormalizedValue } from '@shared/utils'
+import { toNormalizedValue } from '@shared/utils/format'
 import type { ReactElement } from 'react'
 import { useCallback, useMemo } from 'react'
 import { useWriteContract } from 'wagmi'

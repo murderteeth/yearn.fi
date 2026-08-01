@@ -1,6 +1,6 @@
+import type { TChainTokens } from '@shared/types/mixed'
+import { zeroNormalizedBN } from '@shared/utils/format'
 import { describe, expect, it } from 'vitest'
-import type { TChainTokens } from '../types'
-import { zeroNormalizedBN } from '../utils'
 import {
   applyTokenListMetadataToBalances,
   hasWalletBalanceSnapshot,

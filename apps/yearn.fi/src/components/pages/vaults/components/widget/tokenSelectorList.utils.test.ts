@@ -1,4 +1,4 @@
-import type { TToken } from '@shared/types'
+import type { TToken } from '@shared/types/mixed'
 import { describe, expect, it } from 'vitest'
 import {
   filterAndSortTokenSelectorTokens,

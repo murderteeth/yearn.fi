@@ -1,4 +1,4 @@
-import type { TAddress } from '@shared/types'
+import type { TAddress } from '@shared/types/address'
 
 export type TPortfolioProtocolPosition = {
   id: string

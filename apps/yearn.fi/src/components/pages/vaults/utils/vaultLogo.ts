@@ -1,5 +1,5 @@
 import { getVaultChainID, getVaultToken, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 import { env } from '@/env'
 import { isYvBtcVault } from './yvBtc'
 import { isYvUsdVault } from './yvUsd'

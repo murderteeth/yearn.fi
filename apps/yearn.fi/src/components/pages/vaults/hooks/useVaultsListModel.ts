@@ -27,7 +27,7 @@ import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@shared/con
 import { useV2VaultFilter } from '@shared/hooks/useV2VaultFilter'
 import { useV3VaultFilter } from '@shared/hooks/useV3VaultFilter'
 import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
-import type { TDict, TSortDirection } from '@shared/types'
+import type { TDict, TSortDirection } from '@shared/types/mixed'
 import { useMemo } from 'react'
 import { getProductPinnedSections, type TVaultsPinnedSection } from './useVaultsListModel.helpers'
 

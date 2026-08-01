@@ -1,11 +1,11 @@
 import { PUBLIC_VAULT_DATA_CACHE_TIME } from '@shared/data/publicQueryCache'
 import { useFetch } from '@shared/hooks/useFetch'
-import { toAddress } from '@shared/utils'
 import {
   type TYvUsdAprServicePointsResponse,
   type TYvUsdAprServicePointsVault,
   yvUsdAprServicePointsSchema
 } from '@shared/utils/schemas/yvUsdAprServiceSchema'
+import { toAddress } from '@shared/utils/tools.address'
 import { YVUSD_APR_SERVICE_ENDPOINT, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '../utils/yvUsd'
 
 type TYvUsdPointsData = {

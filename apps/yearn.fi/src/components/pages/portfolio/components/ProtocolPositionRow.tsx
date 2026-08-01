@@ -4,7 +4,8 @@ import type { TPortfolioProtocolPosition } from '@pages/portfolio/types/position
 import { VaultsListChip } from '@pages/vaults/components/list/VaultsListChip'
 import { TokenLogo } from '@shared/components/TokenLogo'
 import { IconLinkOut } from '@shared/icons/IconLinkOut'
-import { cl, formatAmount, formatApyDisplay, formatTvlDisplay, toNormalizedValue } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { formatAmount, formatApyDisplay, formatTvlDisplay, toNormalizedValue } from '@shared/utils/format'
 import type { ReactElement } from 'react'
 import { env } from '@/env'
 

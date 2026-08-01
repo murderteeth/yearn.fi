@@ -1,7 +1,7 @@
 import type { TKongVaultView } from '@pages/vaults/domain/kongVaultSelectors'
 import { WidgetActionType as ActionType } from '@pages/vaults/types'
 import type { TYvUsdVariant } from '@pages/vaults/utils/yvUsd'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 import { useState } from 'react'
 import { YvUsdDeposit } from './YvUsdDeposit'

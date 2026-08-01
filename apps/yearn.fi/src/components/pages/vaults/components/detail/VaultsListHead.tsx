@@ -1,8 +1,8 @@
 import { IconChevron } from '@shared/icons/IconChevron'
 import { IconMinus } from '@shared/icons/IconMinus'
 import { IconPlus } from '@shared/icons/IconPlus'
-import type { TSortDirection } from '@shared/types'
-import { cl } from '@shared/utils'
+import type { TSortDirection } from '@shared/types/mixed'
+import { cl } from '@shared/utils/cl'
 
 import type { ReactElement } from 'react'
 import { useCallback, useMemo } from 'react'

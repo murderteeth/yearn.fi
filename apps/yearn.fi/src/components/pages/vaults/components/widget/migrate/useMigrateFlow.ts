@@ -3,10 +3,10 @@ import type { MigrateRouteType, UseMigrateFlowReturn } from '@pages/vaults/types
 import { ERC_4626_ROUTER_ABI } from '@shared/contracts/abi/erc4626Router.abi'
 import { type AppUseSimulateContractReturnType, usePublicClient, useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { detectPermitType, type PermitType, type TPermitSignature } from '@shared/hooks/usePermit'
+import { YEARN_4626_ROUTER } from '@shared/utils/constants'
 import { getMigratorConfig, type MigratorConfig } from '@shared/utils/migratorRegistry'
 import { useEffect, useMemo, useState } from 'react'
 import { type Address, encodeFunctionData, erc20Abi } from 'viem'
-import { YEARN_4626_ROUTER } from '@/components/shared/utils'
 
 // Default permit deadline: 20 minutes from now
 const DEFAULT_PERMIT_DEADLINE_MINUTES = 20

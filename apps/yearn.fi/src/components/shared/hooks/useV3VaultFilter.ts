@@ -26,8 +26,8 @@ import {
 import { useDeepCompareMemo } from '@react-hookz/web'
 import { useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
 import { useYearn } from '@shared/contexts/useYearn'
-import type { TDict } from '@shared/types'
-import { isZeroAddress } from '@shared/utils'
+import type { TDict } from '@shared/types/mixed'
+import { isZeroAddress } from '@shared/utils/tools.is'
 import { useMemo } from 'react'
 import {
   createCheckHasAvailableBalance,

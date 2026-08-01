@@ -1,6 +1,7 @@
 import { IconLock } from '@shared/icons/IconLock'
 import { IconLockOpen } from '@shared/icons/IconLockOpen'
-import { cl, SELECTOR_BAR_STYLES } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
 import type { ReactElement } from 'react'
 
 type TYvUsdVariant = 'locked' | 'unlocked'

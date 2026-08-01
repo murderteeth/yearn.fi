@@ -1,4 +1,4 @@
-import { toNormalizedBN } from '@shared/utils'
+import { toNormalizedBN } from '@shared/utils/format'
 
 export function formatTimelockEta(etaSeconds: number, nowMs = Date.now()): string {
   const etaMs = etaSeconds * 1000

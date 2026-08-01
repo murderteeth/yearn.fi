@@ -16,13 +16,15 @@ import {
   getTimeframeLimit
 } from '@pages/vaults/utils/charts'
 import { IconChevron } from '@shared/icons/IconChevron'
-import { cl, formatUSD, SELECTOR_BAR_STYLES } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { formatUSD } from '@shared/utils/format'
 import {
   rankPortfolioVaultGrowthChartSeries,
   type TPortfolioVaultGrowthChartMode,
   type TPortfolioVaultGrowthChartSortDirection,
   type TPortfolioVaultGrowthRankableSeries
 } from '@shared/utils/portfolioVaultGrowth'
+import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
 import type { ReactElement } from 'react'
 import { useMemo, useState } from 'react'
 import { CartesianGrid, ComposedChart, Line, XAxis, YAxis } from 'recharts'

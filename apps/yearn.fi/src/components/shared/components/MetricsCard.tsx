@@ -1,5 +1,5 @@
 import { Tooltip } from '@shared/components/Tooltip'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 
 export const METRIC_VALUE_CLASS = 'font-semibold text-[20px] leading-tight md:text-[22px]'

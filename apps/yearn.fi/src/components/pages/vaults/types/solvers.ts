@@ -1,7 +1,9 @@
-import type { TAddress, TDropdownOption, TNormalizedBN } from '@shared/types'
+import type { TAddress } from '@shared/types/address'
+import type { TDropdownOption } from '@shared/types/dropdown'
+import type { TNormalizedBN } from '@shared/types/mixed'
 import type { TSolver } from '@shared/utils/schemas/yDaemonTokenListBalances'
 import { Solver } from '@shared/utils/schemas/yDaemonTokenListBalances'
-import type { TTxStatus } from '@shared/utils/wagmi'
+import type { TTxStatus } from '@shared/utils/wagmi/transaction'
 import type { Dispatch, SetStateAction } from 'react'
 import type { Hash, TransactionReceipt } from 'viem'
 

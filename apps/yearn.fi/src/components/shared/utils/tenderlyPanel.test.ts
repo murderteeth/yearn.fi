@@ -1,5 +1,5 @@
 import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import type { TDict, TToken } from '@shared/types'
+import type { TDict, TToken } from '@shared/types/mixed'
 import type { TTenderlyConfiguredChainStatus, TTenderlySnapshotRecord } from '@shared/types/tenderly'
 import { describe, expect, it } from 'vitest'
 import {

@@ -1,6 +1,6 @@
 import { DEFAULT_MIN_TVL } from '@pages/vaults/utils/constants'
 import type { TMultiSelectOptionProps } from '@shared/components/MultiSelectDropdown'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 import { VaultsAssetFilter } from './VaultsAssetFilter'
 

@@ -1,6 +1,6 @@
+import type { TDict } from '@shared/types/mixed'
 import { toAddress, truncateHex } from '@yearn/components'
 import { env } from '@/env'
-import type { TDict } from '../types'
 
 /**
  * The address primitives now live in `@yearn/components` so the shared widget

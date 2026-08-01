@@ -6,8 +6,9 @@ import {
   YVUSD_LOCKED_ADDRESS,
   YVUSD_UNLOCKED_ADDRESS
 } from '@pages/vaults/utils/yvUsd'
-import type { TToken } from '@shared/types'
-import { toAddress, zeroNormalizedBN } from '@shared/utils'
+import type { TToken } from '@shared/types/mixed'
+import { zeroNormalizedBN } from '@shared/utils/format'
+import { toAddress } from '@shared/utils/tools.address'
 import type { ReactElement } from 'react'
 import { useState } from 'react'
 import { useAccount } from 'wagmi'

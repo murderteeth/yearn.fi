@@ -11,7 +11,7 @@ import {
   isAutomatedVault,
   type TKongVaultInput
 } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 
 export type TVaultAssetCategory = 'Stablecoin' | 'Volatile'
 export type TVaultListKind = 'allocator' | 'strategy' | 'factory' | 'legacy'

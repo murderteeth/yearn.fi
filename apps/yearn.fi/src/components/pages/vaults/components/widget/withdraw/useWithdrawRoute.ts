@@ -1,6 +1,6 @@
 import { useEnsoEnabled } from '@pages/vaults/hooks/useEnsoEnabled'
 import { isYBoldZapperWithdrawRoute } from '@pages/vaults/utils/yBold'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 import { useMemo } from 'react'
 import type { Address } from 'viem'
 import type { WithdrawalSource, WithdrawRouteType } from './types'

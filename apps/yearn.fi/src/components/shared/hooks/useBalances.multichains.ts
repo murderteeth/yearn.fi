@@ -1,4 +1,5 @@
 import { AGGREGATE3_ABI } from '@shared/contracts/abi/aggregate.abi'
+import { retrieveConfig } from '@shared/utils/wagmi/config'
 import type { DependencyList } from 'react'
 import { erc20Abi, type MulticallParameters } from 'viem'
 import type { Connector } from 'wagmi'
@@ -11,7 +12,6 @@ import { decodeAsBigInt, decodeAsNumber, decodeAsString } from '../utils/decoder
 import { toNormalizedBN } from '../utils/format'
 import { toAddress } from '../utils/tools.address'
 import { isEthAddress, isZeroAddress } from '../utils/tools.is'
-import { retrieveConfig } from '../utils/wagmi'
 import { getNetwork } from '../utils/wagmi/utils'
 
 /*******************************************************************************

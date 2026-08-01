@@ -4,7 +4,8 @@ import type { TVaultForwardAPYVariant } from '@pages/vaults/components/table/Vau
 import { getVaultAddress, getVaultChainID, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import type { TYvUsdListVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import { isYvUsdAddress } from '@pages/vaults/utils/yvUsd'
-import { cl, toAddress } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
+import { toAddress } from '@shared/utils/tools.address'
 
 import type { ReactElement } from 'react'
 

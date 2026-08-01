@@ -12,7 +12,7 @@ import {
   isPendleArbVault,
   projectVeYfiRange
 } from '@pages/vaults/utils/apy'
-import { isZero } from '@shared/utils'
+import { isZero } from '@shared/utils/tools.is'
 import {
   calculateKatanaTotalApr,
   getKatanaAprData,

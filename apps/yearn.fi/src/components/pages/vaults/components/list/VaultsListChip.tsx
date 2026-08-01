@@ -1,6 +1,6 @@
 import { TOOLTIP_DELAY_MS } from '@pages/vaults/utils/vaultTagCopy'
 import { Tooltip } from '@shared/components/Tooltip'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 
 type TVaultsListChipProps = {

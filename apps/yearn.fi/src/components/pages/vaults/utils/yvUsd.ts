@@ -1,5 +1,5 @@
 import { getVaultView, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 import { type Address, formatUnits, parseUnits } from 'viem'
 import { env } from '@/env'
 

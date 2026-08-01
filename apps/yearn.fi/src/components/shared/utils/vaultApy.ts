@@ -5,7 +5,7 @@ import {
   type TKongVaultInput
 } from '@pages/vaults/domain/kongVaultSelectors'
 import { isYBoldProductAddress } from '@pages/vaults/domain/normalizeVault'
-import { isZero } from '@shared/utils'
+import { isZero } from '@shared/utils/tools.is'
 
 const KATANA_CHAIN_ID = 747474
 

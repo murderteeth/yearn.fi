@@ -1,7 +1,7 @@
 import { Popover, PopoverContent } from '@shared/components/Popover'
 import { useYearn } from '@shared/contexts/useYearn'
 import { IconSettings } from '@shared/icons/IconSettings'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import {
   clampZapSlippage,
   getZapSlippageSaveState,

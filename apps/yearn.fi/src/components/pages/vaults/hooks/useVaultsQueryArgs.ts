@@ -1,6 +1,6 @@
 import type { TPossibleSortBy } from '@pages/vaults/hooks/useSortVaults'
 import { useSupportedChains } from '@shared/hooks/useSupportedChains'
-import type { TDict, TSortDirection } from '@shared/types'
+import type { TDict, TSortDirection } from '@shared/types/mixed'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useCallback, useMemo } from 'react'
 

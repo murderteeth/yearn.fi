@@ -1,5 +1,5 @@
 import { env } from '@/env'
-import { registerConfig } from '@shared/utils/wagmi'
+import { registerConfig } from '@shared/utils/wagmi/config'
 import { connectorsForWallets, type WalletList } from '@rainbow-me/rainbowkit'
 import {
   frameWallet,

@@ -1,5 +1,5 @@
 import { getVaultAddress, getVaultChainID, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 import { isAddressEqual } from 'viem'
 
 type TRouteChainAddressMatchProps = {

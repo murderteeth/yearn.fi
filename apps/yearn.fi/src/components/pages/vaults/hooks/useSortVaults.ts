@@ -12,10 +12,11 @@ import {
 import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import { getYvUsdPositionValues, isYvUsdVault } from '@pages/vaults/utils/yvUsd'
 import { useWalletHoldings, useWalletTokens } from '@shared/contexts/useWallet'
-import type { TSortDirection } from '@shared/types'
-import { normalizeApyDisplayValue, toAddress, toNormalizedBN } from '@shared/utils'
+import type { TSortDirection } from '@shared/types/mixed'
 import { ETH_TOKEN_ADDRESS, WETH_TOKEN_ADDRESS, WFTM_TOKEN_ADDRESS } from '@shared/utils/constants'
+import { normalizeApyDisplayValue, toNormalizedBN } from '@shared/utils/format'
 import { numberSort, stringSort } from '@shared/utils/helpers'
+import { toAddress } from '@shared/utils/tools.address'
 import { calculateVaultEstimatedAPY } from '@shared/utils/vaultApy'
 import { useMemo } from 'react'
 

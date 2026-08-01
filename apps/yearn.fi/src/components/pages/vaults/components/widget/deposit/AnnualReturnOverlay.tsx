@@ -1,4 +1,4 @@
-import { formatPercent } from '@shared/utils'
+import { formatPercent } from '@shared/utils/format'
 import type { FC } from 'react'
 import { InfoOverlay } from '../shared/InfoOverlay'
 

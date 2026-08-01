@@ -1,4 +1,4 @@
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { FC, MouseEvent, ReactElement } from 'react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'

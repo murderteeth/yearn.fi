@@ -1,6 +1,6 @@
 import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import { useVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { ReactElement } from 'react'
 import { Fragment, forwardRef, useCallback, useImperativeHandle, useState } from 'react'
 import { APYDetailsModal } from './APYDetailsModal'

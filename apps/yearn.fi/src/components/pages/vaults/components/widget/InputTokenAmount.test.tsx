@@ -21,8 +21,15 @@ vi.mock('@shared/contexts/useWeb3', () => ({
   })
 }))
 
-vi.mock('@shared/utils', () => ({
-  cl: (...classes: Array<string | false | null | undefined>) => classes.filter(Boolean).join(' '),
+vi.mock('@shared/utils/cl', () => ({
+  cl: (...classes: Array<string | false | null | undefined>) => classes.filter(Boolean).join(' ')
+}))
+
+// `formatCounterValue` was never mocked here: it used to come from this module
+// directly while the rest came via the `@shared/utils` barrel. Now that the
+// barrel is gone, keep the real implementation and override only the two.
+vi.mock('@shared/utils/format', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('@shared/utils/format')>()),
   formatTAmount: ({ value, decimals }: { value: bigint; decimals: number }) => {
     const divisor = 10n ** BigInt(decimals)
     const whole = value / divisor

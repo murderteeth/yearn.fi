@@ -9,8 +9,9 @@ import {
 import { getCanonicalHoldingsVaultAddress } from '@pages/vaults/domain/normalizeVault'
 import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import { getYvUsdSharePrice, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
+import { toAddress } from '@shared/utils/tools.address'
+import { isZeroAddress } from '@shared/utils/tools.is'
 import { useMemo } from 'react'
-import { isZeroAddress, toAddress } from '../utils'
 import { useWalletHoldings, useWalletTokens } from './useWallet'
 import { useYearn } from './useYearn'
 

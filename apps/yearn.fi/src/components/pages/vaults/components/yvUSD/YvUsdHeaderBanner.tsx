@@ -1,5 +1,5 @@
 import { YVUSD_LEARN_MORE_URL } from '@pages/vaults/utils/yvUsd'
-import { cl } from '@shared/utils'
+import { cl } from '@shared/utils/cl'
 import type { CSSProperties, ReactElement } from 'react'
 import { env } from '@/env'
 

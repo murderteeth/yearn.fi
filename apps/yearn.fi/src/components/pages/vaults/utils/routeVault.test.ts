@@ -1,5 +1,5 @@
 import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils'
+import { toAddress } from '@shared/utils/tools.address'
 import { describe, expect, it } from 'vitest'
 import { isRouteChainAddressMatch, resolveRouteVaultFromMap } from './routeVault'
 import { YVBTC_CHAIN_ID, YVBTC_UNLOCKED_ADDRESS } from './yvBtc'
