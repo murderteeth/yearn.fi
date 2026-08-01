@@ -1,21 +1,20 @@
-import { isYvBtcAddress, YVBTC_LOCKED_ADDRESS, YVBTC_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvBtc'
+import { useWalletActions } from '@shared/contexts/useWallet'
+import type { TUseBalancesTokens } from '@shared/hooks/useBalances.multichains'
+import { fetchTokenBalances } from '@shared/hooks/useBalancesQueries'
+import type { TAddress } from '@yearn/util/types/address'
+import type { TChainTokens } from '@yearn/util/types/mixed'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
+import type { TKongVaultView } from '@yearn/vaults/domain/kongVaultSelectors'
+import { isYvBtcAddress, YVBTC_LOCKED_ADDRESS, YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
 import {
   isYvUsdAddress,
   YVUSD_CHAIN_ID,
   YVUSD_DECIMALS,
   YVUSD_LOCKED_ADDRESS,
   YVUSD_UNLOCKED_ADDRESS
-} from '@pages/vaults/utils/yvUsd'
-import { useWalletActions } from '@shared/contexts/useWallet'
-import type { TUseBalancesTokens } from '@shared/hooks/useBalances.multichains'
-import { fetchTokenBalances } from '@shared/hooks/useBalancesQueries'
-import type { TAddress } from '@shared/types/address'
-import { toAddress } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
-import type { TChainTokens } from '@yearn/util/types/mixed'
+} from '@yearn/vaults/utils/yvUsd'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { isTenderlyModeEnabled } from '@/config/tenderly'
-import type { TKongVaultView } from '../domain/kongVaultSelectors'
 
 type TTenderlyVaultBalanceOverrideVault = Pick<
   TKongVaultView,

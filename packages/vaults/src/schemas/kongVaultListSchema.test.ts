@@ -1,5 +1,5 @@
+import { kongVaultListSchema } from '@yearn/vaults/schemas/kongVaultListSchema'
 import { describe, expect, it } from 'vitest'
-import { kongVaultListSchema } from './kongVaultListSchema'
 
 describe('kongVaultListSchema', () => {
   it('retains oracle net APR and net APY fields', () => {

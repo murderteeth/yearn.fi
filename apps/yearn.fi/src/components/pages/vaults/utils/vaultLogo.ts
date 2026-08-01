@@ -1,8 +1,8 @@
-import { getVaultChainID, getVaultToken, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
+import { getVaultChainID, getVaultToken, type TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
+import { isYvBtcVault } from '@yearn/vaults/utils/yvBtc'
+import { isYvUsdVault } from '@yearn/vaults/utils/yvUsd'
 import { env } from '@/env'
-import { isYvBtcVault } from './yvBtc'
-import { isYvUsdVault } from './yvUsd'
 
 function getBaseUrl(): string {
   return env.BASE_URL || '/'

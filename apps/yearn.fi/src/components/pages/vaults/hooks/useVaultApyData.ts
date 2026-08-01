@@ -1,10 +1,3 @@
-import { KATANA_CHAIN_ID } from '@pages/vaults/constants/addresses'
-import {
-  getVaultAPR,
-  getVaultChainID,
-  getVaultStaking,
-  type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
 import {
   calcBoostedApr,
   isKelpEigenVault,
@@ -12,13 +5,20 @@ import {
   isPendleArbVault,
   projectVeYfiRange
 } from '@pages/vaults/utils/apy'
-import { isZero } from '@shared/utils/tools.is'
+import { isZero } from '@yearn/util/utils/tools.is'
+import { KATANA_CHAIN_ID } from '@yearn/vaults/constants/addresses'
+import {
+  getVaultAPR,
+  getVaultChainID,
+  getVaultStaking,
+  type TKongVaultInput
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import {
   calculateKatanaTotalApr,
   getKatanaAprData,
   getVaultForwardAPY,
   type TKatanaAprData
-} from '@shared/utils/vaultApy'
+} from '@yearn/vaults/domain/vaultApy'
 import { useMemo } from 'react'
 
 export type TVaultApyMode = 'katana' | 'noForward' | 'boosted' | 'rewards' | 'spot' | 'historical'

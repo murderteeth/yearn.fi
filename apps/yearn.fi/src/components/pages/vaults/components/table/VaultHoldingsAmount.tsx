@@ -1,5 +1,5 @@
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import { formatTvlDisplay } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 

@@ -1,5 +1,5 @@
+import type { TAddress } from '@yearn/util/types/address'
 import type { Hash, TransactionReceipt } from 'viem'
-import type { TAddress } from './address'
 
 export type TNotificationStatus = 'pending' | 'submitted' | 'success' | 'error'
 

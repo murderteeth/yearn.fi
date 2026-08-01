@@ -1,5 +1,5 @@
 import { useEnsoEnabled } from '@pages/vaults/hooks/useEnsoEnabled'
-import { isYBoldZapperDepositRoute } from '@pages/vaults/utils/yBold'
+import { isYBoldZapperDepositRoute } from '@yearn/vaults/utils/yBold'
 import { useMemo } from 'react'
 import { type Address, isAddressEqual } from 'viem'
 import type { DepositRouteType } from './types'

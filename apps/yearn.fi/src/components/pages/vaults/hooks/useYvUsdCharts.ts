@@ -6,7 +6,7 @@ import {
   type TYvUsdSeriesPoint
 } from '@pages/vaults/hooks/useYvUsdCharts.helpers'
 import { transformVaultChartData } from '@pages/vaults/utils/charts'
-import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
+import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { useMemo } from 'react'
 
 export type { TYvUsdSeriesPoint } from '@pages/vaults/hooks/useYvUsdCharts.helpers'

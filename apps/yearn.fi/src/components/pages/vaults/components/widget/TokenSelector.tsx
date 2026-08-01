@@ -1,18 +1,18 @@
-import {
-  getVaultAddress,
-  getVaultChainID,
-  getVaultInfo,
-  getVaultStakingAddress
-} from '@pages/vaults/domain/kongVaultSelectors'
 import { ImageWithFallback } from '@shared/components/ImageWithFallback'
 import { TokenLogoV2 } from '@shared/components/TokenLogoV2'
 import { useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
 import { useYearn } from '@shared/contexts/useYearn'
 import { useTokenList } from '@shared/contexts/WithTokenList'
-import { cl } from '@shared/utils/cl'
-import { toAddress } from '@shared/utils/tools.address'
 import type { TToken } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import { formatTAmount } from '@yearn/util/utils/format'
+import {
+  getVaultAddress,
+  getVaultChainID,
+  getVaultInfo,
+  getVaultStakingAddress
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import { type FC, useCallback, useMemo, useState } from 'react'
 import { isAddress, zeroAddress } from 'viem'
 import { env } from '@/env'

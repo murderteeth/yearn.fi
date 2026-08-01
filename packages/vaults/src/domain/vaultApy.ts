@@ -1,11 +1,11 @@
+import { isZero } from '@yearn/util/utils/tools.is'
 import {
   getVaultAddress,
   getVaultAPR,
   getVaultChainID,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { isYBoldProductAddress } from '@pages/vaults/domain/normalizeVault'
-import { isZero } from '@shared/utils/tools.is'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { isYBoldProductAddress } from '@yearn/vaults/domain/normalizeVault'
 
 const KATANA_CHAIN_ID = 747474
 

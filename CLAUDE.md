@@ -9,7 +9,7 @@ Bun-workspace monorepo. Yearn Finance vaults interface — Next.js 16 App Router
 | `apps/yearn.fi` | `yearnfi` | The deployed app | — |
 | `packages/util` | `@yearn/util` | Framework-free helpers: addresses, class names, server plumbing | headless |
 | `packages/components` | `@yearn/components` | Design tokens, UI primitives, wallet connection layer | `:3001` |
-| `packages/vaults` | `@yearn/vaults` | Vault domain model: selectors, types, ABIs, Kong client | headless |
+| `packages/vaults` | `@yearn/vaults` | Vault domain: selectors, APY math, Kong client, schemas | headless |
 | `packages/deposit` | `@yearn/deposit` | Deposit/withdraw widget, transaction flows, its server routes | `:3002` |
 
 Workspace globs are `apps/*` and `packages/*`. Dependencies hoist to the repo root — there is no

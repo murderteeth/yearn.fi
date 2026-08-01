@@ -1,4 +1,4 @@
-import { YVUSD_LOCKED_COOLDOWN_DAYS, YVUSD_WITHDRAW_WINDOW_DAYS } from '@pages/vaults/utils/yvUsd'
+import { YVUSD_LOCKED_COOLDOWN_DAYS, YVUSD_WITHDRAW_WINDOW_DAYS } from '@yearn/vaults/utils/yvUsd'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   getYvUsdDepositTypeItems,

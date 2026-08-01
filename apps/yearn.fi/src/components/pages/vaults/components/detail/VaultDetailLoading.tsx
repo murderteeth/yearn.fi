@@ -1,5 +1,5 @@
 import { Breadcrumbs } from '@shared/components/Breadcrumbs'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 
 const chartGridRows = ['chart-grid-1', 'chart-grid-2', 'chart-grid-3', 'chart-grid-4']

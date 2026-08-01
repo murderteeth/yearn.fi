@@ -1,12 +1,12 @@
+import type { TDict } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
 import {
   getVaultAddress,
   getVaultStakingAddress,
   getVaultToken,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { YVUSD_LOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
-import { toAddress } from '@shared/utils/tools.address'
-import type { TDict } from '@yearn/util/types/mixed'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { YVUSD_LOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { type Address, zeroAddress } from 'viem'
 
 export function getStructurallyExcludedDepositTokenAddresses({

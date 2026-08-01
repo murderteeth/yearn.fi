@@ -1,5 +1,5 @@
-import { YVBTC_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvBtc'
-import { YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
+import { YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import { YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { VaultRiskSection } from './VaultRiskSection'

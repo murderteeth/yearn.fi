@@ -1,5 +1,14 @@
 import { useVaultUserData } from '@pages/vaults/hooks/useVaultUserData'
 import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
+import { Button } from '@shared/components/Button'
+import { useWalletActions } from '@shared/contexts/useWallet'
+import { erc4626Abi } from '@shared/contracts/abi/4626.abi'
+import { yvUsdLockedVaultAbi } from '@shared/contracts/abi/yvUsdLockedVault.abi'
+import { type AppUseSimulateContractReturnType, useReadContract, useSimulateContract } from '@shared/hooks/useAppWagmi'
+import { useChainTimestamp } from '@shared/hooks/useChainTimestamp'
+import { IconCheck } from '@shared/icons/IconCheck'
+import { toAddress } from '@yearn/util/utils/address'
+import { formatTAmount } from '@yearn/util/utils/format'
 import {
   convertYvUsdLockedAssetRawAmountToUnderlying,
   convertYvUsdLockedPricePerShareToUnderlying,
@@ -9,16 +18,7 @@ import {
   YVUSD_LOCKED_COOLDOWN_DAYS,
   YVUSD_UNLOCKED_ADDRESS,
   YVUSD_WITHDRAW_WINDOW_DAYS
-} from '@pages/vaults/utils/yvUsd'
-import { Button } from '@shared/components/Button'
-import { useWalletActions } from '@shared/contexts/useWallet'
-import { erc4626Abi } from '@shared/contracts/abi/4626.abi'
-import { yvUsdLockedVaultAbi } from '@shared/contracts/abi/yvUsdLockedVault.abi'
-import { type AppUseSimulateContractReturnType, useReadContract, useSimulateContract } from '@shared/hooks/useAppWagmi'
-import { useChainTimestamp } from '@shared/hooks/useChainTimestamp'
-import { IconCheck } from '@shared/icons/IconCheck'
-import { toAddress } from '@shared/utils/tools.address'
-import { formatTAmount } from '@yearn/util/utils/format'
+} from '@yearn/vaults/utils/yvUsd'
 import type { ReactElement } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { formatUnits } from 'viem'

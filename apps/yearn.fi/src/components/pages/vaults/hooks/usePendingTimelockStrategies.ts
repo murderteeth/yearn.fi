@@ -1,6 +1,6 @@
 import type { TPendingTimelockStrategiesResponse } from '@pages/vaults/types/timelockStrategies'
-import { toAddress } from '@shared/utils/tools.address'
 import { useQuery } from '@tanstack/react-query'
+import { toAddress } from '@yearn/util/utils/address'
 
 export function buildPendingTimelockStrategiesUrl({
   chainId,

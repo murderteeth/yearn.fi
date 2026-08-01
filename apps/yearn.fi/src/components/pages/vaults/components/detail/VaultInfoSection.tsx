@@ -1,3 +1,14 @@
+import { useYvBtcVaults } from '@pages/vaults/hooks/useYvBtcVaults'
+import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
+import { IconCopy } from '@shared/icons/IconCopy'
+import { IconLinkOut } from '@shared/icons/IconLinkOut'
+import { isCurveHostUrl, normalizeCurveUrl } from '@shared/utils/curveUrlUtils'
+import { baseFetcher } from '@shared/utils/fetchers'
+import { copyToClipboard } from '@shared/utils/helpers'
+import { getNetwork } from '@shared/utils/wagmi/utils'
+import { useQuery } from '@tanstack/react-query'
+import { isZeroAddress, toAddress, truncateHex } from '@yearn/util/utils/address'
+import { KONG_REST_BASE } from '@yearn/vaults/data/kongRest'
 import {
   getVaultAddress,
   getVaultAPR,
@@ -9,22 +20,10 @@ import {
   getVaultVersion,
   isAutomatedVault,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
-import { useYvBtcVaults } from '@pages/vaults/hooks/useYvBtcVaults'
-import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
-import { KONG_REST_BASE } from '@pages/vaults/utils/kongRest'
-import { isYvBtcAddress, YVBTC_LOCKED_ADDRESS, YVBTC_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvBtc'
-import { isYvUsdAddress, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
-import { IconCopy } from '@shared/icons/IconCopy'
-import { IconLinkOut } from '@shared/icons/IconLinkOut'
-import { isCurveHostUrl, normalizeCurveUrl } from '@shared/utils/curveUrlUtils'
-import { baseFetcher } from '@shared/utils/fetchers'
-import { copyToClipboard } from '@shared/utils/helpers'
-import { toAddress, truncateHex } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
-import { getNetwork } from '@shared/utils/wagmi/utils'
-import { useQuery } from '@tanstack/react-query'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
+import { isYvBtcAddress, YVBTC_LOCKED_ADDRESS, YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import { isYvUsdAddress, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import type { ReactElement } from 'react'
 
 type TCurvePoolEntry = {

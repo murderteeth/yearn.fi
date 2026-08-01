@@ -1,9 +1,9 @@
+import { toAddress } from '@yearn/util/utils/address'
+import { formatTAmount } from '@yearn/util/utils/format'
 import {
   convertYvUsdLockedAssetRawAmountToUnderlying,
   convertYvUsdUnderlyingRawAmountToLockedAsset
-} from '@pages/vaults/utils/yvUsd'
-import { toAddress } from '@shared/utils/tools.address'
-import { formatTAmount } from '@yearn/util/utils/format'
+} from '@yearn/vaults/utils/yvUsd'
 import type { Address } from 'viem'
 import type { TransactionStep } from '../shared/TransactionOverlay'
 

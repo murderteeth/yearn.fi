@@ -1,5 +1,5 @@
-import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
+import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
 import { type Address, isAddressEqual } from 'viem'
 
 export const BOLD_ADDRESS = toAddress('0x6440f144b7e50D6a8439336510312d2F54beB01D') as Address

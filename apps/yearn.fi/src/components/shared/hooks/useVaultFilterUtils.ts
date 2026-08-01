@@ -1,3 +1,9 @@
+import { isDisabledVeyfiGaugePair } from '@shared/utils/veyfiGauges'
+import type { TAddress } from '@yearn/util/types/address'
+import type { TDict, TNormalizedBN } from '@yearn/util/types/mixed'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
+import { ETH_TOKEN_ADDRESS } from '@yearn/util/utils/constants'
+import { toNormalizedBN } from '@yearn/util/utils/format'
 import {
   getVaultAddress,
   getVaultAPR,
@@ -11,15 +17,8 @@ import {
   getVaultVersion,
   type TKongVault,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { getNativeTokenWrapperContract } from '@pages/vaults/utils/nativeTokens'
-import type { TAddress } from '@shared/types/address'
-import { ETH_TOKEN_ADDRESS } from '@shared/utils/constants'
-import { toAddress } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
-import { isDisabledVeyfiGaugePair } from '@shared/utils/veyfiGauges'
-import type { TDict, TNormalizedBN } from '@yearn/util/types/mixed'
-import { toNormalizedBN } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { getNativeTokenWrapperContract } from '@yearn/vaults/utils/nativeTokens'
 
 type TVaultLike = TKongVaultInput
 

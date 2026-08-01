@@ -1,6 +1,6 @@
 import { ProtocolPositionRow } from '@pages/portfolio/components/ProtocolPositionRow'
 import type { TPortfolioProtocolPosition } from '@pages/portfolio/types/position'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 

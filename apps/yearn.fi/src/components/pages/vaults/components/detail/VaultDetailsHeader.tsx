@@ -11,8 +11,6 @@ import {
 } from '@pages/vaults/components/widget/yvUSD/cooldownUtils'
 import { YvUsdApyTooltipContent, YvUsdTvlTooltipContent } from '@pages/vaults/components/yvUSD/YvUsdBreakdown'
 import { YvUsdHeaderBanner } from '@pages/vaults/components/yvUSD/YvUsdHeaderBanner'
-import { getVaultView, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { isYBoldProductAddress } from '@pages/vaults/domain/normalizeVault'
 import { useHeaderCompression } from '@pages/vaults/hooks/useHeaderCompression'
 import { useVaultUserData, type VaultUserData } from '@pages/vaults/hooks/useVaultUserData'
 import { useYvBtcVaults } from '@pages/vaults/hooks/useYvBtcVaults'
@@ -29,16 +27,6 @@ import {
   MIGRATABLE_TAG_DESCRIPTION,
   RETIRED_TAG_DESCRIPTION
 } from '@pages/vaults/utils/vaultTagCopy'
-import { isYvBtcVault } from '@pages/vaults/utils/yvBtc'
-import {
-  getYvUsdInfinifiPointsNote,
-  getYvUsdSharePrice,
-  isYvUsdVault,
-  type TYvUsdVariant,
-  YVUSD_CHAIN_ID,
-  YVUSD_LOCKED_ADDRESS,
-  YVUSD_UNLOCKED_ADDRESS
-} from '@pages/vaults/utils/yvUsd'
 import {
   METRIC_FOOTNOTE_CLASS,
   METRIC_VALUE_CLASS,
@@ -59,13 +47,25 @@ import { IconInfinifiPoints } from '@shared/icons/IconInfinifiPoints'
 import { IconLinkOut } from '@shared/icons/IconLinkOut'
 import { IconLock } from '@shared/icons/IconLock'
 import { IconLockOpen } from '@shared/icons/IconLockOpen'
-import { cl } from '@shared/utils/cl'
 import { getVaultName } from '@shared/utils/helpers'
 import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
-import { toAddress } from '@shared/utils/tools.address'
-import { isZero, isZeroAddress } from '@shared/utils/tools.is'
 import { getNetwork } from '@shared/utils/wagmi/utils'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import { formatApyDisplay, formatTAmount, formatUSD, toNormalizedBN } from '@yearn/util/utils/format'
+import { isZero } from '@yearn/util/utils/tools.is'
+import { getVaultView, type TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
+import { isYBoldProductAddress } from '@yearn/vaults/domain/normalizeVault'
+import { isYvBtcVault } from '@yearn/vaults/utils/yvBtc'
+import {
+  getYvUsdInfinifiPointsNote,
+  getYvUsdSharePrice,
+  isYvUsdVault,
+  type TYvUsdVariant,
+  YVUSD_CHAIN_ID,
+  YVUSD_LOCKED_ADDRESS,
+  YVUSD_UNLOCKED_ADDRESS
+} from '@yearn/vaults/utils/yvUsd'
 import Link from 'next/link'
 import type { ReactElement, Ref } from 'react'
 import { useEffect, useRef, useState } from 'react'

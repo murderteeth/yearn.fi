@@ -1,6 +1,6 @@
 import type { Token } from '@pages/vaults/hooks/useTokens'
 import type { TCreateNotificationParams } from '@shared/types/notifications'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { formatTAmount } from '@yearn/util/utils/format'
 import { useMemo } from 'react'
 import type { Address } from 'viem'

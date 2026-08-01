@@ -7,7 +7,6 @@ import {
   CHART_Y_AXIS_TICK_STYLE,
   CHART_Y_AXIS_WIDTH
 } from '@pages/vaults/components/detail/charts/chartLayout'
-import { getVaultAddress } from '@pages/vaults/domain/kongVaultSelectors'
 import {
   formatChartMonthYearLabel,
   formatChartTooltipDate,
@@ -20,11 +19,12 @@ import { YearnLogoSpinner } from '@shared/components/YearnLogoSpinner'
 import { useWeb3 } from '@shared/contexts/useWeb3'
 import { useYearn } from '@shared/contexts/useYearn'
 import { IconChevron } from '@shared/icons/IconChevron'
-import { cl } from '@shared/utils/cl'
 import { getVaultName as getDisplayVaultName } from '@shared/utils/helpers'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
 import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { cl } from '@yearn/util/utils/cl'
 import { formatPercent, formatUSD } from '@yearn/util/utils/format'
+import { getVaultAddress } from '@yearn/vaults/domain/kongVaultSelectors'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
 import { useEffect, useId, useMemo, useState } from 'react'

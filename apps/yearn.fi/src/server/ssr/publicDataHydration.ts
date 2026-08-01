@@ -1,15 +1,12 @@
 import { type DehydratedState, dehydrate, QueryClient } from '@tanstack/react-query'
+import { kongVaultListSchema } from '@yearn/vaults/schemas/kongVaultListSchema'
+import { kongVaultSnapshotSchema } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
+import { isYvUsdAddress, YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import * as z from 'zod'
 import {
   buildVaultsInitialPayload,
   type TVaultsInitialPayload
 } from '@/components/pages/vaults/utils/vaultsInitialPayload'
-import {
-  isYvUsdAddress,
-  YVUSD_CHAIN_ID,
-  YVUSD_LOCKED_ADDRESS,
-  YVUSD_UNLOCKED_ADDRESS
-} from '@/components/pages/vaults/utils/yvUsd'
 import { PUBLIC_VAULT_DATA_CACHE_TIME } from '@/components/shared/data/publicQueryCache'
 import {
   buildVaultSnapshotEndpoint,
@@ -17,8 +14,6 @@ import {
   YEARN_VAULT_LIST_ENDPOINT
 } from '@/components/shared/data/publicQueryEndpoints'
 import { fetchWithSchema, getFetchQueryKey } from '@/components/shared/utils/fetchQuery'
-import { kongVaultListSchema } from '@/components/shared/utils/schemas/kongVaultListSchema'
-import { kongVaultSnapshotSchema } from '@/components/shared/utils/schemas/kongVaultSnapshotSchema'
 
 const LANDING_TVL_STALE_TIME = 2 * 60 * 1000
 const VAULT_LIST_STALE_TIME = PUBLIC_VAULT_DATA_CACHE_TIME

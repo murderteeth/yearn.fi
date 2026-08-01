@@ -2,7 +2,6 @@ import { BottomDrawer } from '@pages/vaults/components/detail/BottomDrawer'
 import { useMediaQuery } from '@react-hookz/web'
 import { useTenderlyPanel } from '@shared/contexts/useTenderlyPanel'
 import type { TTenderlyFundableAsset, TTenderlySnapshotRecord } from '@shared/types/tenderly'
-import { cl } from '@shared/utils/cl'
 import type { TTenderlyFastForwardUnit } from '@shared/utils/tenderlyPanel'
 import {
   addTenderlyTimeIncrement,
@@ -10,7 +9,8 @@ import {
   getDefaultTenderlyFundableAssets,
   getLastRestorableTenderlySnapshot
 } from '@shared/utils/tenderlyPanel'
-import { truncateHex } from '@shared/utils/tools.address'
+import { truncateHex } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 import { useEffect, useMemo, useRef, useState } from 'react'
 

@@ -1,5 +1,5 @@
 import { ScrollToTopButton } from '@pages/vaults/components/detail/ScrollToTopButton'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 
 type TAppFrameProps = {

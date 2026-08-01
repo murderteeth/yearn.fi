@@ -1,4 +1,4 @@
-import { SPECTRA_MARKET_VAULT_ADDRESSES, VAULT_ADDRESSES } from '@pages/vaults/constants/addresses'
+import { SPECTRA_MARKET_VAULT_ADDRESSES, VAULT_ADDRESSES } from '@yearn/vaults/constants/addresses'
 
 export type TFixedTermProvider = 'pendle' | 'spectra'
 

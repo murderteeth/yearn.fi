@@ -1,4 +1,4 @@
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { type Address, isAddressEqual } from 'viem'
 
 export const KNOWN_ENSO_ROUTER_ADDRESSES_BY_CHAIN: Record<number, Address> = {

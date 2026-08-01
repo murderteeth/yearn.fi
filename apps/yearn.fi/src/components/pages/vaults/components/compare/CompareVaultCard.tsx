@@ -2,6 +2,16 @@ import { usePlausible } from '@hooks/usePlausible'
 import { VaultForwardAPY } from '@pages/vaults/components/table/VaultForwardAPY'
 import { VaultHistoricalAPY } from '@pages/vaults/components/table/VaultHistoricalAPY'
 import { VaultRiskScoreTag } from '@pages/vaults/components/table/VaultRiskScoreTag'
+import { deriveListKind } from '@pages/vaults/utils/vaultListFacets'
+import { TokenLogo } from '@shared/components/TokenLogo'
+import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import { IconClose } from '@shared/icons/IconClose'
+import { IconLinkOut } from '@shared/icons/IconLinkOut'
+import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
+import { getNetwork } from '@shared/utils/wagmi/utils'
+import { toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
+import { formatPercent, formatTvlDisplay } from '@yearn/util/utils/format'
 import {
   getVaultAddress,
   getVaultAPR,
@@ -15,17 +25,7 @@ import {
   getVaultTVL,
   type TKongVaultInput,
   type TKongVaultStrategy
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { deriveListKind } from '@pages/vaults/utils/vaultListFacets'
-import { TokenLogo } from '@shared/components/TokenLogo'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
-import { IconClose } from '@shared/icons/IconClose'
-import { IconLinkOut } from '@shared/icons/IconLinkOut'
-import { cl } from '@shared/utils/cl'
-import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
-import { toAddress } from '@shared/utils/tools.address'
-import { getNetwork } from '@shared/utils/wagmi/utils'
-import { formatPercent, formatTvlDisplay } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import Link from 'next/link'
 import type { ReactElement, ReactNode } from 'react'
 import { env } from '@/env'

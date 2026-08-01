@@ -1,7 +1,7 @@
 import { VAULT_MIGRATOR_ABI } from '@shared/contracts/abi/vaultMigrator.abi'
 import { ZAP_VE_CRV_ABI } from '@shared/contracts/abi/zapVeCRV.abi'
+import { ZAP_YEARN_VE_CRV_ADDRESS } from '@shared/utils/constants'
 import type { Abi, Address } from 'viem'
-import { ZAP_YEARN_VE_CRV_ADDRESS } from './constants'
 
 export type MigratorConfig = {
   abi: Abi

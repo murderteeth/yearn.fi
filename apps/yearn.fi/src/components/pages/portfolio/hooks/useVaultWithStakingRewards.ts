@@ -1,12 +1,12 @@
+import { useVaultSnapshot } from '@pages/vaults/hooks/useVaultSnapshot'
+import { isZeroAddress } from '@yearn/util/utils/address'
 import {
   getVaultAddress,
   getVaultChainID,
   getVaultStaking,
   type TKongVault,
   type TKongVaultStaking
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { useVaultSnapshot } from '@pages/vaults/hooks/useVaultSnapshot'
-import { isZeroAddress } from '@shared/utils/tools.is'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 
 type UseVaultWithStakingRewardsReturn = {
   vault: TKongVault

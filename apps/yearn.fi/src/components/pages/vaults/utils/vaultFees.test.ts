@@ -1,9 +1,9 @@
-import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import {
   formatFeeStructureLabel,
   getFeeStructureKeyFromFees,
   getVaultFeeStructureKey
 } from '@pages/vaults/utils/vaultFees'
+import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 import { describe, expect, it } from 'vitest'
 
 describe('vaultFees', () => {

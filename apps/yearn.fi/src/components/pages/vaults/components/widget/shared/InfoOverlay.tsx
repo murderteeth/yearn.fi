@@ -1,5 +1,5 @@
 import { Button } from '@shared/components/Button'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { FC, ReactNode } from 'react'
 import { CloseIcon } from './Icons'
 

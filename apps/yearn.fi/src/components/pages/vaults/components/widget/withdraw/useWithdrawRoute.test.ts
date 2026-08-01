@@ -1,5 +1,5 @@
-import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
-import { BOLD_ADDRESS } from '@pages/vaults/utils/yBold'
+import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
+import { BOLD_ADDRESS } from '@yearn/vaults/utils/yBold'
 import type { Address } from 'viem'
 import { describe, expect, it } from 'vitest'
 import { resolveWithdrawRouteType } from './useWithdrawRoute'

@@ -1,6 +1,6 @@
-import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
-import { BOLD_ADDRESS } from '@pages/vaults/utils/yBold'
 import type { TNotification } from '@shared/types/notifications'
+import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
+import { BOLD_ADDRESS } from '@yearn/vaults/utils/yBold'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   doesActivityEntryMatchSearch,

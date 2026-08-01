@@ -1,5 +1,5 @@
 import { shouldEnableVaultListFetch } from '@pages/vaults/hooks/useEnsureVaultListFetch'
-import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
+import type { TKongVaultSnapshot } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
 import { describe, expect, it } from 'vitest'
 
 describe('shouldEnableVaultListFetch', () => {

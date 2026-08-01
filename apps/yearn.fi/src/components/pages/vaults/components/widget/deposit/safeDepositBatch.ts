@@ -1,9 +1,9 @@
 import type { DepositRouteType } from '@pages/vaults/components/widget/deposit/types'
 import { getDirectStakeCall } from '@pages/vaults/hooks/actions/stakingAdapter'
-import { YVUSD_LOCKED_ZAP_ADDRESS } from '@pages/vaults/utils/yvUsd'
 import { vaultAbi } from '@shared/contracts/abi/vaultV2.abi'
 import { yvUsdLockedZapAbi } from '@shared/contracts/abi/yvUsdLockedZap.abi'
 import { getApproveAbi } from '@shared/utils/approve'
+import { YVUSD_LOCKED_ZAP_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import type { Address, Hex } from 'viem'
 import { encodeFunctionData, isAddressEqual } from 'viem'
 

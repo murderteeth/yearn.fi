@@ -1,4 +1,4 @@
-import type { TKongVaultStrategy } from '@pages/vaults/domain/kongVaultSelectors'
+import type { TKongVaultStrategy } from '@yearn/vaults/domain/kongVaultSelectors'
 import { describe, expect, it } from 'vitest'
 import { isActiveStrategy } from './strategyActivity'
 

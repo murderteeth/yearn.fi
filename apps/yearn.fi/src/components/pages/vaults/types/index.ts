@@ -1,5 +1,5 @@
 import type { AppUseSimulateContractReturnType } from '@shared/hooks/useAppWagmi'
-import type { TAddress } from '@shared/types/address'
+import type { TAddress } from '@yearn/util/types/address'
 import type { TNormalizedBN } from '@yearn/util/types/mixed'
 import type { Hex } from 'viem'
 

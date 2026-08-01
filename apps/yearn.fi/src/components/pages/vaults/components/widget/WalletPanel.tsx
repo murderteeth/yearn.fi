@@ -1,18 +1,5 @@
-import {
-  getVaultDecimals,
-  getVaultSymbol,
-  getVaultTVL,
-  type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
 import { useVaultUserData, type VaultUserData } from '@pages/vaults/hooks/useVaultUserData'
 import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
-import {
-  getYvUsdSharePrice,
-  isYvUsdVault,
-  YVUSD_CHAIN_ID,
-  YVUSD_LOCKED_ADDRESS,
-  YVUSD_UNLOCKED_ADDRESS
-} from '@pages/vaults/utils/yvUsd'
 import { useNotifications } from '@shared/contexts/useNotifications'
 import { useWeb3 } from '@shared/contexts/useWeb3'
 import { yvUsdLockedVaultAbi } from '@shared/contracts/abi/yvUsdLockedVault.abi'
@@ -25,11 +12,24 @@ import { IconCross } from '@shared/icons/IconCross'
 import { IconLoader } from '@shared/icons/IconLoader'
 import { IconWallet } from '@shared/icons/IconWallet'
 import type { TNotification, TNotificationStatus } from '@shared/types/notifications'
-import { cl } from '@shared/utils/cl'
 import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
-import { toAddress, truncateHex } from '@shared/utils/tools.address'
 import { getNetwork } from '@shared/utils/wagmi/utils'
+import { toAddress, truncateHex } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import { formatTAmount, formatUSD, toNormalizedBN } from '@yearn/util/utils/format'
+import {
+  getVaultDecimals,
+  getVaultSymbol,
+  getVaultTVL,
+  type TKongVaultInput
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import {
+  getYvUsdSharePrice,
+  isYvUsdVault,
+  YVUSD_CHAIN_ID,
+  YVUSD_LOCKED_ADDRESS,
+  YVUSD_UNLOCKED_ADDRESS
+} from '@yearn/vaults/utils/yvUsd'
 import { useRouter } from 'next/navigation'
 import { type FC, type ReactElement, useCallback, useMemo, useState } from 'react'
 import { getAwaitingExecutionEntries } from './WalletPanel.helpers'

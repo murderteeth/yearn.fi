@@ -6,12 +6,6 @@ import type {
   TVaultsFiltersPanelSection
 } from '@pages/vaults/components/filters/VaultsFiltersPanel'
 import type { TListHead } from '@pages/vaults/components/list/VaultsListHead'
-import {
-  getVaultChainID,
-  getVaultToken,
-  getVaultTVL,
-  type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
 import type { TPossibleSortBy } from '@pages/vaults/hooks/useSortVaults'
 import {
   getBlockingFilterActionGroups,
@@ -56,6 +50,12 @@ import { useYearn } from '@shared/contexts/useYearn'
 import { useOptimisticValue } from '@shared/hooks/useOptimisticValue'
 import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
 import type { TSortDirection } from '@yearn/util/types/mixed'
+import {
+  getVaultChainID,
+  getVaultToken,
+  getVaultTVL,
+  type TKongVaultInput
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import type { RefObject } from 'react'
 import {
   type ChangeEvent,

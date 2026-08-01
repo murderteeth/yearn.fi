@@ -1,4 +1,4 @@
-import { YVUSD_LOCKED_COOLDOWN_DAYS } from '@pages/vaults/utils/yvUsd'
+import { YVUSD_LOCKED_COOLDOWN_DAYS } from '@yearn/vaults/utils/yvUsd'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { YvUsdApyTooltipContent, YvUsdPositionApyTooltipContent } from './YvUsdBreakdown'

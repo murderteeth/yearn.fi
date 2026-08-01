@@ -1,13 +1,13 @@
-import { normalizeVaultCategory } from '@pages/vaults/utils/normalizeVaultCategory'
-import type { TKongVaultListItem, TKongVaultListItemStakingReward } from '@shared/utils/schemas/kongVaultListSchema'
+import { toAddress } from '@yearn/util/utils/address'
+import { toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
+import type { TKongVaultListItem, TKongVaultListItemStakingReward } from '@yearn/vaults/schemas/kongVaultListSchema'
 import type {
   TKongVaultSnapshot,
   TKongVaultSnapshotComposition,
   TKongVaultSnapshotDebt,
   TKongVaultSnapshotStakingReward
-} from '@shared/utils/schemas/kongVaultSnapshotSchema'
-import { toAddress } from '@shared/utils/tools.address'
-import { toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
+} from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
+import { normalizeVaultCategory } from '@yearn/vaults/utils/normalizeVaultCategory'
 import { zeroAddress } from 'viem'
 
 const KNOWN_STABLECOIN_SYMBOLS = new Set([

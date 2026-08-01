@@ -1,4 +1,4 @@
-import { KATANA_CHAIN_ID } from '@pages/vaults/constants/addresses'
+import { KATANA_CHAIN_ID } from '@yearn/vaults/constants/addresses'
 import { describe, expect, it } from 'vitest'
 import {
   buildMerkleRewardKey,

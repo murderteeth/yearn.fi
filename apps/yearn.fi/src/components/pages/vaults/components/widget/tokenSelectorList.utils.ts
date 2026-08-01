@@ -1,13 +1,13 @@
+import type { TDict, TToken } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
 import {
   getVaultAddress,
   getVaultChainID,
   getVaultStakingAddress,
   getVaultToken,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
-import { toAddress } from '@shared/utils/tools.address'
-import type { TDict, TToken } from '@yearn/util/types/mixed'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { type Address, zeroAddress } from 'viem'
 
 export type TTokenSelectorMode = 'default' | 'deposit' | 'withdraw'

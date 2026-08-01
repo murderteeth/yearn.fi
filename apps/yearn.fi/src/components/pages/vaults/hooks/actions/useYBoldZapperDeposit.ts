@@ -1,9 +1,9 @@
 import type { UseWidgetDepositFlowReturn } from '@pages/vaults/types'
-import { BOLD_ADDRESS, YBOLD_ZAPPER_ADDRESS } from '@pages/vaults/utils/yBold'
 import { yBoldZapperAbi } from '@shared/contracts/abi/yBoldZapper.abi'
 import { type AppUseSimulateContractReturnType, useReadContract, useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { getApproveAbi } from '@shared/utils/approve'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
+import { BOLD_ADDRESS, YBOLD_ZAPPER_ADDRESS } from '@yearn/vaults/utils/yBold'
 import type { Address } from 'viem'
 import { useTokenAllowance } from '../useTokenAllowance'
 

@@ -1,7 +1,6 @@
-import { getVaultView, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
+import { getVaultView, type TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 import { type Address, formatUnits, parseUnits } from 'viem'
-import { env } from '@/env'
 
 export const YVUSD_CHAIN_ID = 1
 export const YVUSD_DECIMALS = 6
@@ -15,7 +14,7 @@ export const YVUSD_ANNOUNCEMENT_URL = '#'
 export const YVUSD_LEARN_MORE_URL = 'https://docs.yearn.fi/getting-started/products/yvaults/yvusd'
 
 function getYvUsdAprServiceEndpoint(): string {
-  const configuredEndpoint = env.NEXT_PUBLIC_YVUSD_APR_SERVICE_API?.trim().replace(/\/$/, '')
+  const configuredEndpoint = process.env.NEXT_PUBLIC_YVUSD_APR_SERVICE_API?.trim().replace(/\/$/, '')
   if (configuredEndpoint?.startsWith('/')) {
     return configuredEndpoint
   }

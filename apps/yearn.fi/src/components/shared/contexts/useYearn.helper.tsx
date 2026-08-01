@@ -1,3 +1,12 @@
+import { useDeepCompareMemo } from '@react-hookz/web'
+import { useTokenList } from '@shared/contexts/WithTokenList'
+import type { TUseBalancesTokens } from '@shared/hooks/useBalances.multichains'
+import { useChainID } from '@shared/hooks/useChainID'
+import { isDisabledVeyfiGaugePair } from '@shared/utils/veyfiGauges'
+import { getNetwork } from '@shared/utils/wagmi/utils'
+import type { TDict, TNDict, TToken } from '@yearn/util/types/mixed'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
+import { ETH_TOKEN_ADDRESS } from '@yearn/util/utils/constants'
 import {
   getVaultAddress,
   getVaultChainID,
@@ -7,19 +16,9 @@ import {
   getVaultSymbol,
   getVaultToken,
   type TKongVault
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { getHoldingsAliasVaultAddress } from '@pages/vaults/domain/normalizeVault'
-import { YVUSD_CHAIN_ID, YVUSD_DECIMALS, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
-import { useDeepCompareMemo } from '@react-hookz/web'
-import { useTokenList } from '@shared/contexts/WithTokenList'
-import type { TUseBalancesTokens } from '@shared/hooks/useBalances.multichains'
-import { useChainID } from '@shared/hooks/useChainID'
-import { ETH_TOKEN_ADDRESS } from '@shared/utils/constants'
-import { toAddress } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
-import { isDisabledVeyfiGaugePair } from '@shared/utils/veyfiGauges'
-import { getNetwork } from '@shared/utils/wagmi/utils'
-import type { TDict, TNDict, TToken } from '@yearn/util/types/mixed'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { getHoldingsAliasVaultAddress } from '@yearn/vaults/domain/normalizeVault'
+import { YVUSD_CHAIN_ID, YVUSD_DECIMALS, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { useMemo } from 'react'
 
 function mergeTokenMetadata(existing: TUseBalancesTokens, incoming: TUseBalancesTokens): TUseBalancesTokens {

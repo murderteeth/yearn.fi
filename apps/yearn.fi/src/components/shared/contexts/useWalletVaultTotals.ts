@@ -1,16 +1,15 @@
 import { isPortfolioDustValueVisible } from '@pages/portfolio/hooks/portfolioVisibility'
 import { useAppSettings } from '@pages/vaults/contexts/useAppSettings'
+import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
 import {
   getVaultAddress,
   getVaultChainID,
   getVaultStaking,
   getVaultVersion
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { getCanonicalHoldingsVaultAddress } from '@pages/vaults/domain/normalizeVault'
-import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
-import { getYvUsdSharePrice, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
-import { toAddress } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { getCanonicalHoldingsVaultAddress } from '@yearn/vaults/domain/normalizeVault'
+import { getYvUsdSharePrice, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { useMemo } from 'react'
 import { useWalletHoldings, useWalletTokens } from './useWallet'
 import { useYearn } from './useYearn'

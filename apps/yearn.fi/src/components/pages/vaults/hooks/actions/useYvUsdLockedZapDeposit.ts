@@ -1,9 +1,9 @@
 import type { UseWidgetDepositFlowReturn } from '@pages/vaults/types'
-import { YVUSD_LOCKED_ZAP_ADDRESS } from '@pages/vaults/utils/yvUsd'
 import { yvUsdLockedZapAbi } from '@shared/contracts/abi/yvUsdLockedZap.abi'
 import { type AppUseSimulateContractReturnType, useReadContract, useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { getApproveAbi } from '@shared/utils/approve'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
+import { YVUSD_LOCKED_ZAP_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import type { Address } from 'viem'
 import { useTokenAllowance } from '../useTokenAllowance'
 

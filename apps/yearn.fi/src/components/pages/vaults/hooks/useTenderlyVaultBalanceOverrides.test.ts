@@ -1,12 +1,12 @@
 // @vitest-environment jsdom
 
-import { YVBTC_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvBtc'
-import { YVUSD_CHAIN_ID, YVUSD_DECIMALS, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
 import { useWalletActions } from '@shared/contexts/useWallet'
 import { fetchTokenBalances } from '@shared/hooks/useBalancesQueries'
-import type { TAddress } from '@shared/types/address'
-import { toAddress } from '@shared/utils/tools.address'
 import { act, renderHook, waitFor } from '@testing-library/react'
+import type { TAddress } from '@yearn/util/types/address'
+import { toAddress } from '@yearn/util/utils/address'
+import { YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import { YVUSD_CHAIN_ID, YVUSD_DECIMALS, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   fetchTenderlyVaultBalanceOverrides,

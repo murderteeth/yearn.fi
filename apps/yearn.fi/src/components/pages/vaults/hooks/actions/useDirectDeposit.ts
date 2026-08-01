@@ -3,7 +3,7 @@ import { erc4626Abi } from '@shared/contracts/abi/4626.abi'
 import { vaultAbi } from '@shared/contracts/abi/vaultV2.abi'
 import { type AppUseSimulateContractReturnType, useReadContract, useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { getApproveAbi } from '@shared/utils/approve'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import type { Address } from 'viem'
 import { useTokenAllowance } from '../useTokenAllowance'
 

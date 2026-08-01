@@ -1,14 +1,3 @@
-import {
-  getVaultAddress,
-  getVaultAPR,
-  getVaultCategory,
-  getVaultChainID,
-  getVaultDescription,
-  getVaultKind,
-  getVaultSymbol,
-  getVaultToken,
-  type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
 import { deriveListKind } from '@pages/vaults/utils/vaultListFacets'
 import {
   getCategoryDescription,
@@ -22,11 +11,22 @@ import { TokenLogo } from '@shared/components/TokenLogo'
 import { IconChevron } from '@shared/icons/IconChevron'
 import { IconCopy } from '@shared/icons/IconCopy'
 import { IconLinkOut } from '@shared/icons/IconLinkOut'
-import { cl } from '@shared/utils/cl'
 import { copyToClipboard } from '@shared/utils/helpers'
-import { truncateHex } from '@shared/utils/tools.address'
 import { getNetwork } from '@shared/utils/wagmi/utils'
+import { truncateHex } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import { formatPercent } from '@yearn/util/utils/format'
+import {
+  getVaultAddress,
+  getVaultAPR,
+  getVaultCategory,
+  getVaultChainID,
+  getVaultDescription,
+  getVaultKind,
+  getVaultSymbol,
+  getVaultToken,
+  type TKongVaultInput
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import { type ReactElement, type ReactNode, useState } from 'react'
 import { env } from '@/env'
 

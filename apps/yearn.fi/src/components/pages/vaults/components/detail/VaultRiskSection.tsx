@@ -1,8 +1,8 @@
 import { VaultRiskScoreTag } from '@pages/vaults/components/table/VaultRiskScoreTag'
-import { getVaultInfo, getVaultKind, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import { deriveListKind } from '@pages/vaults/utils/vaultListFacets'
-import { isYvBtcVault, YVBTC_RISK_SCORE_ITEMS } from '@pages/vaults/utils/yvBtc'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
+import { getVaultInfo, getVaultKind, type TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
+import { isYvBtcVault, YVBTC_RISK_SCORE_ITEMS } from '@yearn/vaults/utils/yvBtc'
 import { type ReactElement, useState } from 'react'
 
 type TRiskScoreItem = {

@@ -1,5 +1,5 @@
-import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { YVBTC_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvBtc'
+import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
+import { YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
 import { describe, expect, it } from 'vitest'
 
 import { deriveListKind } from './vaultListFacets'

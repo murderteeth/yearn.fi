@@ -1,4 +1,4 @@
-import { YVUSD_LEARN_MORE_URL } from '@pages/vaults/utils/yvUsd'
+import { YVUSD_LEARN_MORE_URL } from '@yearn/vaults/utils/yvUsd'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { YvUsdHeaderBanner } from './YvUsdHeaderBanner'

@@ -1,4 +1,4 @@
-import { getVaultInfo, type TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
+import { getVaultInfo, type TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 
 export const PORTFOLIO_DUST_USD_THRESHOLD = 0.01
 

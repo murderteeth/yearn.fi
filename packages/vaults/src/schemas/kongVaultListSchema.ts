@@ -1,4 +1,4 @@
-import { addressSchema } from '@shared/types/address'
+import { addressSchema } from '@yearn/vaults/schemas/address'
 import * as z from 'zod'
 
 const coerceNullableNumber = z.preprocess(

@@ -1,11 +1,11 @@
-import { describe, expect, it } from 'vitest'
 import {
   getCanonicalHoldingsVaultAddress,
   getHoldingsAliasVaultAddress,
   isYBoldProductAddress,
   YBOLD_STAKING_ADDRESS,
   YBOLD_VAULT_ADDRESS
-} from './normalizeVault'
+} from '@yearn/vaults/domain/normalizeVault'
+import { describe, expect, it } from 'vitest'
 
 describe('yBOLD product helpers', () => {
   it('identifies the base and staked yBOLD vault addresses', () => {

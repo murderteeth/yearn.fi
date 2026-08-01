@@ -1,5 +1,11 @@
-import { KATANA_CHAIN_ID, SPECTRA_MARKET_VAULT_ADDRESSES } from '@pages/vaults/constants/addresses'
 import { getFixedTermMarkets, type TFixedTermMarket } from '@pages/vaults/constants/fixedTermMarkets'
+import type { TVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
+import { IconLinkOut } from '@shared/icons/IconLinkOut'
+import { IconPendle } from '@shared/icons/IconPendle'
+import { IconSpectra } from '@shared/icons/IconSpectra'
+import { formatAmount, formatApyDisplay } from '@yearn/util/utils/format'
+import { isZero } from '@yearn/util/utils/tools.is'
+import { KATANA_CHAIN_ID, SPECTRA_MARKET_VAULT_ADDRESSES } from '@yearn/vaults/constants/addresses'
 import {
   getVaultAddress,
   getVaultAPR,
@@ -7,13 +13,7 @@ import {
   getVaultInfo,
   getVaultStaking,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import type { TVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
-import { IconLinkOut } from '@shared/icons/IconLinkOut'
-import { IconPendle } from '@shared/icons/IconPendle'
-import { IconSpectra } from '@shared/icons/IconSpectra'
-import { isZero } from '@shared/utils/tools.is'
-import { formatAmount, formatApyDisplay } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import type { ReactElement, ReactNode } from 'react'
 import { Fragment } from 'react'
 import { APYSubline, getApySublineLines } from './APYSubline'

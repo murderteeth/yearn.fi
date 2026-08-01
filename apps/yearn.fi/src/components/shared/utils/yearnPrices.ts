@@ -1,4 +1,5 @@
-import type { TAddress } from '@shared/types/address'
+import type { TAddress } from '@yearn/util/types/address'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
 import {
   ARB_WETH_TOKEN_ADDRESS,
   BASE_WETH_TOKEN_ADDRESS,
@@ -6,10 +7,8 @@ import {
   OPT_WETH_TOKEN_ADDRESS,
   WETH_TOKEN_ADDRESS,
   WFTM_TOKEN_ADDRESS
-} from './constants'
+} from '@yearn/util/utils/constants'
 import type { TYearnPricesSpotResponse } from './schemas/yearnPricesSpotSchema'
-import { toAddress } from './tools.address'
-import { isZeroAddress } from './tools.is'
 
 export type TYearnPriceToken = {
   address?: string | null

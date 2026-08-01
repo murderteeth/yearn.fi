@@ -1,11 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
+import type { TAddress } from '@yearn/util/types/address'
 import type { TChainTokens, TNDict } from '@yearn/util/types/mixed'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
 import { toNormalizedBN } from '@yearn/util/utils/format'
 import { useMemo } from 'react'
 import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
-import type { TAddress } from '../types/address'
-import { toAddress } from '../utils/tools.address'
-import { isZeroAddress } from '../utils/tools.is'
 import { getBalanceQueryRefetchConfig } from './balanceQueryConfig'
 
 /*******************************************************************************

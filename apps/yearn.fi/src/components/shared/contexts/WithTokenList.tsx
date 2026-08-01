@@ -1,14 +1,14 @@
 import { useLocalStorageValue } from '@react-hookz/web'
-import { DEFAULT_ERC20 } from '@shared/utils/constants'
+import type { TAddress } from '@yearn/util/types/address'
 import type { TDict, TNDict, TToken, TTokenList } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
+import { DEFAULT_ERC20 } from '@yearn/util/utils/constants'
 import { zeroNormalizedBN } from '@yearn/util/utils/format'
 import type { Dispatch, ReactElement, SetStateAction } from 'react'
 import { createContext, useCallback, useContext, useMemo, useRef, useState } from 'react'
 import { isAddressEqual } from 'viem'
 import { env } from '@/env'
 import { useAsyncTrigger } from '../hooks/useAsyncTrigger'
-import type { TAddress } from '../types/address'
-import { toAddress } from '../utils/tools.address'
 import { useWeb3 } from './useWeb3'
 
 export type TTokenListProps = {

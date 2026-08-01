@@ -1,9 +1,3 @@
-import {
-  getVaultAddress,
-  getVaultChainID,
-  type TKongVaultInput,
-  type TKongVaultView
-} from '@pages/vaults/domain/kongVaultSelectors'
 import { type TPossibleSortBy, useSortVaults } from '@pages/vaults/hooks/useSortVaults'
 import { type TYvUsdListVaults, useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import {
@@ -15,19 +9,25 @@ import {
 import { getVaultFeeStructureKey } from '@pages/vaults/utils/vaultFees'
 import type { TVaultAggressiveness } from '@pages/vaults/utils/vaultListFacets'
 import type { TVaultType } from '@pages/vaults/utils/vaultTypeCopy'
-import { isYvBtcVault } from '@pages/vaults/utils/yvBtc'
+import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
+import { useV2VaultFilter } from '@shared/hooks/useV2VaultFilter'
+import { useV3VaultFilter } from '@shared/hooks/useV3VaultFilter'
+import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import type { TDict, TSortDirection } from '@yearn/util/types/mixed'
+import {
+  getVaultAddress,
+  getVaultChainID,
+  type TKongVaultInput,
+  type TKongVaultView
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { isYvBtcVault } from '@yearn/vaults/utils/yvBtc'
 import {
   getYvUsdPositionValues,
   isYvUsdAddress,
   YVUSD_CHAIN_ID,
   YVUSD_LOCKED_ADDRESS,
   YVUSD_UNLOCKED_ADDRESS
-} from '@pages/vaults/utils/yvUsd'
-import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
-import { useV2VaultFilter } from '@shared/hooks/useV2VaultFilter'
-import { useV3VaultFilter } from '@shared/hooks/useV3VaultFilter'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
-import type { TDict, TSortDirection } from '@yearn/util/types/mixed'
+} from '@yearn/vaults/utils/yvUsd'
 import { useMemo } from 'react'
 import { getProductPinnedSections, type TVaultsPinnedSection } from './useVaultsListModel.helpers'
 

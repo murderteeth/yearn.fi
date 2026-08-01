@@ -1,10 +1,10 @@
-import { type TYvUsdPositionApyBreakdown, YVUSD_LOCKED_COOLDOWN_DAYS } from '@pages/vaults/utils/yvUsd'
 import { RenderAmount } from '@shared/components/RenderAmount'
 import { IconInfinifiPoints } from '@shared/icons/IconInfinifiPoints'
 import { IconLock } from '@shared/icons/IconLock'
 import { IconLockOpen } from '@shared/icons/IconLockOpen'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import { formatApyDisplay, formatUSD } from '@yearn/util/utils/format'
+import { type TYvUsdPositionApyBreakdown, YVUSD_LOCKED_COOLDOWN_DAYS } from '@yearn/vaults/utils/yvUsd'
 import type { ReactElement } from 'react'
 
 type TYvUsdTooltipProps = {

@@ -1,12 +1,12 @@
+import type { TDict } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
 import {
   getVaultAddress,
   getVaultChainID,
   getVaultStakingAddress,
   getVaultToken,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils/tools.address'
-import type { TDict } from '@yearn/util/types/mixed'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import { zeroAddress } from 'viem'
 import { env } from '@/env'
 

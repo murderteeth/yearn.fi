@@ -1,5 +1,5 @@
-import type { TKongVault } from '@pages/vaults/domain/kongVaultSelectors'
 import type { TToken } from '@yearn/util/types/mixed'
+import type { TKongVault } from '@yearn/vaults/domain/kongVaultSelectors'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it, vi } from 'vitest'
 import { useYearnTokens } from './useYearn.helper'

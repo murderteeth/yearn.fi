@@ -1,14 +1,14 @@
 import { useVaultUserData } from '@pages/vaults/hooks/useVaultUserData'
 import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
+import type { TToken } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
+import { zeroNormalizedBN } from '@yearn/util/utils/format'
 import {
   convertYvUsdVariantAmountString,
   type TYvUsdVariant,
   YVUSD_LOCKED_ADDRESS,
   YVUSD_UNLOCKED_ADDRESS
-} from '@pages/vaults/utils/yvUsd'
-import { toAddress } from '@shared/utils/tools.address'
-import type { TToken } from '@yearn/util/types/mixed'
-import { zeroNormalizedBN } from '@yearn/util/utils/format'
+} from '@yearn/vaults/utils/yvUsd'
 import type { ReactElement } from 'react'
 import { useState } from 'react'
 import { useAccount } from 'wagmi'

@@ -1,4 +1,4 @@
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 import type { ImageProps } from '/src/components/Image'
 import Image from '/src/components/Image'

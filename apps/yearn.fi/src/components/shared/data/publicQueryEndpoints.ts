@@ -1,5 +1,5 @@
-import { KONG_REST_BASE } from '@pages/vaults/utils/kongRest'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
+import { KONG_REST_BASE } from '@yearn/vaults/data/kongRest'
 import { isAddress } from 'viem'
 
 export const YEARN_TVL_ENDPOINT = 'https://api.llama.fi/tvl/yearn'

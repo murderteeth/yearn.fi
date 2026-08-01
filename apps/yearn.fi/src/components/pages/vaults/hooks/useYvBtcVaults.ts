@@ -1,11 +1,16 @@
-import { getVaultView, type TKongVaultInput, type TKongVaultView } from '@pages/vaults/domain/kongVaultSelectors'
 import { useYearn } from '@shared/contexts/useYearn'
-import type { TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
-import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
+import { getVaultView, type TKongVaultInput, type TKongVaultView } from '@yearn/vaults/domain/kongVaultSelectors'
+import type { TKongVaultListItem } from '@yearn/vaults/schemas/kongVaultListSchema'
+import type { TKongVaultSnapshot } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
+import {
+  YVBTC_CHAIN_ID,
+  YVBTC_DESCRIPTION,
+  YVBTC_LOCKED_ADDRESS,
+  YVBTC_UNLOCKED_ADDRESS
+} from '@yearn/vaults/utils/yvBtc'
 import { useMemo } from 'react'
-import { YVBTC_CHAIN_ID, YVBTC_DESCRIPTION, YVBTC_LOCKED_ADDRESS, YVBTC_UNLOCKED_ADDRESS } from '../utils/yvBtc'
 import { useVaultSnapshot } from './useVaultSnapshot'
 import { getYvUsdVaultApy, getYvUsdVaultTvl, type TYvUsdMetrics } from './useYvUsdVaults.helpers'
 

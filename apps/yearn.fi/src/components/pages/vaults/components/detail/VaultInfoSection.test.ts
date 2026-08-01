@@ -1,5 +1,5 @@
-import { YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
-import { YVUSD_LOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
+import { YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
+import { YVUSD_LOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { describe, expect, it } from 'vitest'
 import { extractCurvePools, getVaultDocsLinks, resolveCurveDepositUrl, resolveGammaSourceUrl } from './VaultInfoSection'
 

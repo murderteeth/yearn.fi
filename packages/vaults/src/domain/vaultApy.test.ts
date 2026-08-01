@@ -1,13 +1,13 @@
-import type { TKongVault, TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
-import { describe, expect, it } from 'vitest'
+import type { TKongVault, TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
+import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
 import {
   calculateKatanaThirtyDayAPY,
   calculateVaultEstimatedAPY,
   calculateVaultHistoricalAPY,
   getKatanaAprData,
   getVaultForwardAPY
-} from './vaultApy'
+} from '@yearn/vaults/domain/vaultApy'
+import { describe, expect, it } from 'vitest'
 
 const BASE_VAULT: TKongVault = {
   chainId: 747474,

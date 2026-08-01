@@ -1,3 +1,5 @@
+import { deriveListKind, UNDERLYING_ASSET_OVERRIDES } from '@pages/vaults/utils/vaultListFacets'
+import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
 import {
   getVaultAPR,
   getVaultInfo,
@@ -6,9 +8,7 @@ import {
   getVaultTVL,
   getVaultVersion,
   type TKongVault
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { deriveListKind, UNDERLYING_ASSET_OVERRIDES } from '@pages/vaults/utils/vaultListFacets'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 
 export function normalizeSymbol(symbol: string): string {
   const upper = symbol.trim().toUpperCase()

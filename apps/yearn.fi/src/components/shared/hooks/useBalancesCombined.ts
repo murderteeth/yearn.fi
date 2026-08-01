@@ -1,10 +1,9 @@
 import { useQueryClient } from '@tanstack/react-query'
 import type { TChainTokens, TDict, TNDict, TToken } from '@yearn/util/types/mixed'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
 import { useCallback, useMemo } from 'react'
 import { isTenderlyModeEnabled, resolveExecutionChainId } from '@/config/tenderly'
 import { useWeb3 } from '../contexts/useWeb3'
-import { toAddress } from '../utils/tools.address'
-import { isZeroAddress } from '../utils/tools.is'
 import { isDisabledVeyfiGaugePair } from '../utils/veyfiGauges'
 import { shouldUseDiscoveryFallbackToken } from './balanceDiscoveryFallback'
 import {

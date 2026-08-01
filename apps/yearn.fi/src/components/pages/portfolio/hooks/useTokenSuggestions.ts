@@ -1,8 +1,8 @@
 import { getEligibleVaults, normalizeSymbol, selectPreferredVault } from '@pages/portfolio/hooks/getEligibleVaults'
-import { getVaultToken, type TKongVault } from '@pages/vaults/domain/kongVaultSelectors'
 import { useWalletTokens } from '@shared/contexts/useWallet'
 import { useYearn } from '@shared/contexts/useYearn'
 import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import { getVaultToken, type TKongVault } from '@yearn/vaults/domain/kongVaultSelectors'
 import { useMemo } from 'react'
 
 export type TTokenSuggestion = {

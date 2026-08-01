@@ -1,3 +1,10 @@
+import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
+import { useWalletHoldings, useWalletTokens } from '@shared/contexts/useWallet'
+import { numberSort, stringSort } from '@shared/utils/helpers'
+import type { TSortDirection } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
+import { ETH_TOKEN_ADDRESS, WETH_TOKEN_ADDRESS, WFTM_TOKEN_ADDRESS } from '@yearn/util/utils/constants'
+import { normalizeApyDisplayValue, toNormalizedBN } from '@yearn/util/utils/format'
 import {
   getVaultAPR,
   getVaultChainID,
@@ -8,16 +15,9 @@ import {
   getVaultTVL,
   type TKongVaultInput,
   type TKongVaultStrategy
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
-import { getYvUsdPositionValues, isYvUsdVault } from '@pages/vaults/utils/yvUsd'
-import { useWalletHoldings, useWalletTokens } from '@shared/contexts/useWallet'
-import { ETH_TOKEN_ADDRESS, WETH_TOKEN_ADDRESS, WFTM_TOKEN_ADDRESS } from '@shared/utils/constants'
-import { numberSort, stringSort } from '@shared/utils/helpers'
-import { toAddress } from '@shared/utils/tools.address'
-import { calculateVaultEstimatedAPY } from '@shared/utils/vaultApy'
-import type { TSortDirection } from '@yearn/util/types/mixed'
-import { normalizeApyDisplayValue, toNormalizedBN } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { calculateVaultEstimatedAPY } from '@yearn/vaults/domain/vaultApy'
+import { getYvUsdPositionValues, isYvUsdVault } from '@yearn/vaults/utils/yvUsd'
 import { useMemo } from 'react'
 
 export type TPossibleSortBy =

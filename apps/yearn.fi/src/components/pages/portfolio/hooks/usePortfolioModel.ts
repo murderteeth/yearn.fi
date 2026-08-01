@@ -5,8 +5,24 @@ import { useTokenSuggestions } from '@pages/portfolio/hooks/useTokenSuggestions'
 import { useVaultSuggestions } from '@pages/portfolio/hooks/useVaultSuggestions'
 import type { TYcrvPosition } from '@pages/portfolio/ycrv/types'
 import { useYcrvPosition } from '@pages/portfolio/ycrv/useYcrvPosition'
-import { KATANA_CHAIN_ID } from '@pages/vaults/constants/addresses'
 import { useAppSettings } from '@pages/vaults/contexts/useAppSettings'
+import { isNonYearnErc4626Vault } from '@pages/vaults/domain/vaultWarnings'
+import { type TPossibleSortBy, useSortVaults } from '@pages/vaults/hooks/useSortVaults'
+import { useYvUsdCharts } from '@pages/vaults/hooks/useYvUsdCharts'
+import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
+import { usePersistedShowHiddenVaults } from '@pages/vaults/hooks/vaultsFiltersStorage'
+import { deriveListKind, isAllocatorVaultOverride } from '@pages/vaults/utils/vaultListFacets'
+import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
+import { useWalletVaultTotals } from '@shared/contexts/useWalletVaultTotals'
+import { useWeb3 } from '@shared/contexts/useWeb3'
+import { useYearn } from '@shared/contexts/useYearn'
+import { getVaultKey, isV3Vault, type TVaultFlags } from '@shared/hooks/useVaultFilterUtils'
+import { useYearnSpotPrices } from '@shared/hooks/useYearnSpotPrices'
+import { numberSort, stringSort } from '@shared/utils/helpers'
+import type { TSortDirection } from '@yearn/util/types/mixed'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
+import { ETH_TOKEN_ADDRESS } from '@yearn/util/utils/constants'
+import { KATANA_CHAIN_ID } from '@yearn/vaults/constants/addresses'
 import {
   getVaultAddress,
   getVaultChainID,
@@ -17,14 +33,9 @@ import {
   getVaultTVL,
   type TKongVault,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { getCanonicalHoldingsVaultAddress } from '@pages/vaults/domain/normalizeVault'
-import { isNonYearnErc4626Vault } from '@pages/vaults/domain/vaultWarnings'
-import { type TPossibleSortBy, useSortVaults } from '@pages/vaults/hooks/useSortVaults'
-import { useYvUsdCharts } from '@pages/vaults/hooks/useYvUsdCharts'
-import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
-import { usePersistedShowHiddenVaults } from '@pages/vaults/hooks/vaultsFiltersStorage'
-import { deriveListKind, isAllocatorVaultOverride } from '@pages/vaults/utils/vaultListFacets'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { getCanonicalHoldingsVaultAddress } from '@yearn/vaults/domain/normalizeVault'
+import { calculateVaultEstimatedAPY, calculateVaultHistoricalAPY } from '@yearn/vaults/domain/vaultApy'
 import {
   getYvUsdPositionApyBreakdown,
   getYvUsdPositionValues,
@@ -33,19 +44,7 @@ import {
   type TYvUsdPositionApyBreakdown,
   YVUSD_LOCKED_ADDRESS,
   YVUSD_UNLOCKED_ADDRESS
-} from '@pages/vaults/utils/yvUsd'
-import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
-import { useWalletVaultTotals } from '@shared/contexts/useWalletVaultTotals'
-import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useYearn } from '@shared/contexts/useYearn'
-import { getVaultKey, isV3Vault, type TVaultFlags } from '@shared/hooks/useVaultFilterUtils'
-import { useYearnSpotPrices } from '@shared/hooks/useYearnSpotPrices'
-import { ETH_TOKEN_ADDRESS } from '@shared/utils/constants'
-import { numberSort, stringSort } from '@shared/utils/helpers'
-import { toAddress } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
-import { calculateVaultEstimatedAPY, calculateVaultHistoricalAPY } from '@shared/utils/vaultApy'
-import type { TSortDirection } from '@yearn/util/types/mixed'
+} from '@yearn/vaults/utils/yvUsd'
 import { useCallback, useMemo, useState } from 'react'
 import { hasClaimableRewardNotification } from '../claimRewards.helpers'
 import type { TPortfolioLiveBalanceSnapshot } from '../types/api'

@@ -1,4 +1,13 @@
 import { SuggestedVaultCard } from '@pages/vaults/components/SuggestedVaultCard'
+import { useVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
+import { RenderAmount } from '@shared/components/RenderAmount'
+import { TokenLogo } from '@shared/components/TokenLogo'
+import { useLocalStorage } from '@shared/hooks/useLocalStorage'
+import { IconChevron } from '@shared/icons/IconChevron'
+import { getNetwork } from '@shared/utils/wagmi/utils'
+import { toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
+import { formatPercent } from '@yearn/util/utils/format'
 import {
   getVaultAddress,
   getVaultChainID,
@@ -7,16 +16,7 @@ import {
   getVaultToken,
   getVaultTVL,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { useVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
-import { RenderAmount } from '@shared/components/RenderAmount'
-import { TokenLogo } from '@shared/components/TokenLogo'
-import { useLocalStorage } from '@shared/hooks/useLocalStorage'
-import { IconChevron } from '@shared/icons/IconChevron'
-import { cl } from '@shared/utils/cl'
-import { toAddress } from '@shared/utils/tools.address'
-import { getNetwork } from '@shared/utils/wagmi/utils'
-import { formatPercent } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import Link from 'next/link'
 import type { CSSProperties, ReactElement } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'

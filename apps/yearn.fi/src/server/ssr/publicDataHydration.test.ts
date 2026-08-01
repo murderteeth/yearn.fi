@@ -1,6 +1,6 @@
+import { YVBTC_CHAIN_ID, YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { YVBTC_CHAIN_ID, YVBTC_UNLOCKED_ADDRESS } from '@/components/pages/vaults/utils/yvBtc'
-import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@/components/pages/vaults/utils/yvUsd'
 import {
   buildVaultSnapshotEndpoint,
   YEARN_TVL_ENDPOINT,

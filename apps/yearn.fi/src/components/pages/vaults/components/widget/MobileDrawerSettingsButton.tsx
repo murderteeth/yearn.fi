@@ -1,13 +1,13 @@
 import { Popover, PopoverContent } from '@shared/components/Popover'
 import { useYearn } from '@shared/contexts/useYearn'
 import { IconSettings } from '@shared/icons/IconSettings'
-import { cl } from '@shared/utils/cl'
 import {
   clampZapSlippage,
   getZapSlippageSaveState,
   ZAP_SLIPPAGE_HARD_CAP,
   ZAP_SLIPPAGE_RISK_ACKNOWLEDGEMENT_TEXT
 } from '@shared/utils/slippage'
+import { cl } from '@yearn/util/utils/cl'
 import { type FC, useCallback, useEffect, useId, useState } from 'react'
 
 export const MobileDrawerSettingsButton: FC = () => {

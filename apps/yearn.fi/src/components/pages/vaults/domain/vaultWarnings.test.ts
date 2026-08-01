@@ -1,4 +1,4 @@
-import { YVBTC_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvBtc'
+import { YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
 import { describe, expect, it } from 'vitest'
 import { isNonYearnErc4626Vault, NON_YEARN_ERC4626_WARNING_MESSAGE } from './vaultWarnings'
 

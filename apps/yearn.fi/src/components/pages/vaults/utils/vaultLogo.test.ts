@@ -1,8 +1,8 @@
-import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
+import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
+import { YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import { YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { describe, expect, it } from 'vitest'
 import { getVaultPrimaryLogoSrc } from './vaultLogo'
-import { YVBTC_UNLOCKED_ADDRESS } from './yvBtc'
-import { YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from './yvUsd'
 
 const STANDARD_VAULT = {
   version: '3.0.0',

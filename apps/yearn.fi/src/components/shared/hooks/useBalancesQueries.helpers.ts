@@ -1,7 +1,7 @@
 import { replaceEqualDeep } from '@tanstack/query-core'
+import type { TAddress } from '@yearn/util/types/address'
 import type { TChainTokens, TDict, TNDict, TToken } from '@yearn/util/types/mixed'
 import { getAddress } from 'viem'
-import type { TAddress } from '../types/address'
 import type { TUseBalancesTokens } from './useBalances.multichains'
 
 type TStagedTokensByChain = {

@@ -1,4 +1,4 @@
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
 

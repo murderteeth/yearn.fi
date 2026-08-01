@@ -1,4 +1,4 @@
-import type { TAddress } from '@shared/types/address'
+import type { TAddress } from '@yearn/util/types/address'
 
 export type TGovernanceCooldown = {
   amountRaw: bigint

@@ -1,5 +1,5 @@
 import { buildVaultsInitialPayload, getVaultsInitialVaultSource } from '@pages/vaults/utils/vaultsInitialPayload'
-import type { TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
+import type { TKongVaultListItem } from '@yearn/vaults/schemas/kongVaultListSchema'
 import { zeroAddress } from 'viem'
 import { describe, expect, it } from 'vitest'
 

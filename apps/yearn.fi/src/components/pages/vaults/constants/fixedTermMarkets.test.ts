@@ -1,6 +1,6 @@
-import { VAULT_ADDRESSES } from '@pages/vaults/constants/addresses'
 import { getFixedTermMarkets } from '@pages/vaults/constants/fixedTermMarkets'
-import { YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
+import { VAULT_ADDRESSES } from '@yearn/vaults/constants/addresses'
+import { YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
 import { describe, expect, it } from 'vitest'
 
 describe('getFixedTermMarkets', () => {

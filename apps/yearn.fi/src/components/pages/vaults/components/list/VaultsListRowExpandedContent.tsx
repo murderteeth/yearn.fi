@@ -8,6 +8,20 @@ import {
 import { YvUsdChartsSection } from '@pages/vaults/components/detail/YvUsdChartsSection'
 import { resolveForwardApyDisplayConfig } from '@pages/vaults/components/table/apyDisplayConfig'
 import type { TVaultForwardAPYVariant } from '@pages/vaults/components/table/VaultForwardAPY'
+import { useVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
+import { useVaultSnapshot } from '@pages/vaults/hooks/useVaultSnapshot'
+import { getVaultUserHistoryVaults } from '@pages/vaults/utils/vaultUserHistoryVaults'
+import {
+  AllocationChart,
+  DARK_MODE_COLORS,
+  LIGHT_MODE_COLORS,
+  type TAllocationChartData,
+  useDarkMode
+} from '@shared/components/AllocationChart'
+import { useYearn } from '@shared/contexts/useYearn'
+import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
+import { toAddress } from '@yearn/util/utils/address'
+import { formatCounterValue, toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
 import {
   getVaultAddress,
   getVaultChainID,
@@ -20,23 +34,9 @@ import {
   getVaultView,
   type TKongVaultInput,
   type TKongVaultStrategy
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { useVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
-import { useVaultSnapshot } from '@pages/vaults/hooks/useVaultSnapshot'
-import { getVaultUserHistoryVaults } from '@pages/vaults/utils/vaultUserHistoryVaults'
-import { isYvUsdAddress, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
-import {
-  AllocationChart,
-  DARK_MODE_COLORS,
-  LIGHT_MODE_COLORS,
-  type TAllocationChartData,
-  useDarkMode
-} from '@shared/components/AllocationChart'
-import { useYearn } from '@shared/contexts/useYearn'
-import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
-import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
-import { toAddress } from '@shared/utils/tools.address'
-import { formatCounterValue, toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import type { TKongVaultSnapshot } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
+import { isYvUsdAddress, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import type { MouseEvent, ReactElement, ReactNode } from 'react'
 import { cloneElement, isValidElement, useMemo } from 'react'
 import { type TVaultsExpandedView, VaultsExpandedSelector } from './VaultsExpandedSelector'

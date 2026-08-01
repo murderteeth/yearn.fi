@@ -25,18 +25,6 @@ import { YvBtcWidget } from '@pages/vaults/components/widget/yvBTC/YvBtcWidget'
 import { YvUsdWidget } from '@pages/vaults/components/widget/yvUSD/YvUsdWidget'
 import { YvUsdApyTooltipContent } from '@pages/vaults/components/yvUSD/YvUsdBreakdown'
 import { YvUsdHeaderBanner } from '@pages/vaults/components/yvUSD/YvUsdHeaderBanner'
-import {
-  getVaultChainID,
-  getVaultView,
-  type TKongVault,
-  type TKongVaultView
-} from '@pages/vaults/domain/kongVaultSelectors'
-import {
-  mergeYBoldSnapshot,
-  mergeYBoldVault,
-  YBOLD_STAKING_ADDRESS,
-  YBOLD_VAULT_ADDRESS
-} from '@pages/vaults/domain/normalizeVault'
 import { isNonYearnErc4626Vault, NON_YEARN_ERC4626_WARNING_MESSAGE } from '@pages/vaults/domain/vaultWarnings'
 import { useEnsureVaultListFetch } from '@pages/vaults/hooks/useEnsureVaultListFetch'
 import { usePendingTimelockStrategies } from '@pages/vaults/hooks/usePendingTimelockStrategies'
@@ -50,16 +38,6 @@ import { WidgetActionType } from '@pages/vaults/types'
 import type { TPendingTimelockStrategy } from '@pages/vaults/types/timelockStrategies'
 import { formatTimelockEta, getTimelockBadgeLabel } from '@pages/vaults/utils/timelockStrategyDisplay'
 import { getVaultUserHistoryVaults } from '@pages/vaults/utils/vaultUserHistoryVaults'
-import { YVBTC_CHAIN_ID, YVBTC_LOCKED_ADDRESS, YVBTC_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvBtc'
-import {
-  getYvUsdInfinifiPointsNote,
-  getYvUsdSharePrice,
-  hasYvUsdInfinifiPoints,
-  type TYvUsdVariant,
-  YVUSD_CHAIN_ID,
-  YVUSD_LOCKED_ADDRESS,
-  YVUSD_UNLOCKED_ADDRESS
-} from '@pages/vaults/utils/yvUsd'
 import { useMediaQuery } from '@react-hookz/web'
 import { Breadcrumbs } from '@shared/components/Breadcrumbs'
 import { TokenLogo } from '@shared/components/TokenLogo'
@@ -70,12 +48,33 @@ import { useYearn } from '@shared/contexts/useYearn'
 import { useYearnSpotPrices } from '@shared/hooks/useYearnSpotPrices'
 import { IconChevron } from '@shared/icons/IconChevron'
 import { IconInfo } from '@shared/icons/IconInfo'
-import { cl } from '@shared/utils/cl'
 import { getVaultName } from '@shared/utils/helpers'
-import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
-import { toAddress } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import { toNormalizedBN } from '@yearn/util/utils/format'
+import {
+  getVaultChainID,
+  getVaultView,
+  type TKongVault,
+  type TKongVaultView
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import {
+  mergeYBoldSnapshot,
+  mergeYBoldVault,
+  YBOLD_STAKING_ADDRESS,
+  YBOLD_VAULT_ADDRESS
+} from '@yearn/vaults/domain/normalizeVault'
+import type { TKongVaultSnapshot } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
+import { YVBTC_CHAIN_ID, YVBTC_LOCKED_ADDRESS, YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import {
+  getYvUsdInfinifiPointsNote,
+  getYvUsdSharePrice,
+  hasYvUsdInfinifiPoints,
+  type TYvUsdVariant,
+  YVUSD_CHAIN_ID,
+  YVUSD_LOCKED_ADDRESS,
+  YVUSD_UNLOCKED_ADDRESS
+} from '@yearn/vaults/utils/yvUsd'
 import Link from 'next/link'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import type { ReactElement, ReactNode } from 'react'

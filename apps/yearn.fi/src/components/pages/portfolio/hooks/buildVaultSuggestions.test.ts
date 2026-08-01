@@ -1,6 +1,6 @@
 import type { TExternalToken } from '@pages/portfolio/constants/externalTokens'
 import { buildVaultSuggestions } from '@pages/portfolio/hooks/buildVaultSuggestions'
-import type { TKongVault } from '@pages/vaults/domain/kongVaultSelectors'
+import type { TKongVault } from '@yearn/vaults/domain/kongVaultSelectors'
 import { describe, expect, it } from 'vitest'
 
 const buildVault = ({

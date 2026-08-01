@@ -1,17 +1,4 @@
 import { useAppSettings } from '@pages/vaults/contexts/useAppSettings'
-import {
-  getVaultAddress,
-  getVaultChainID,
-  getVaultInfo,
-  getVaultMigration,
-  getVaultName,
-  getVaultStaking,
-  getVaultSymbol,
-  getVaultToken,
-  getVaultTVL,
-  type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { getHoldingsAliasVaultAddress } from '@pages/vaults/domain/normalizeVault'
 import { DEFAULT_MIN_TVL } from '@pages/vaults/utils/constants'
 import { getVaultFeeStructureKey } from '@pages/vaults/utils/vaultFees'
 import {
@@ -26,8 +13,21 @@ import {
 import { useDeepCompareMemo } from '@react-hookz/web'
 import { useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
 import { useYearn } from '@shared/contexts/useYearn'
-import { isZeroAddress } from '@shared/utils/tools.is'
 import type { TDict } from '@yearn/util/types/mixed'
+import { isZeroAddress } from '@yearn/util/utils/address'
+import {
+  getVaultAddress,
+  getVaultChainID,
+  getVaultInfo,
+  getVaultMigration,
+  getVaultName,
+  getVaultStaking,
+  getVaultSymbol,
+  getVaultToken,
+  getVaultTVL,
+  type TKongVaultInput
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { getHoldingsAliasVaultAddress } from '@yearn/vaults/domain/normalizeVault'
 import { useMemo } from 'react'
 import {
   createCheckHasAvailableBalance,

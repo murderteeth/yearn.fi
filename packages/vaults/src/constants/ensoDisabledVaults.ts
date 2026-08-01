@@ -1,4 +1,4 @@
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import type { Address } from 'viem'
 
 // Add vault addresses here to disable Enso routing on a per-vault basis.

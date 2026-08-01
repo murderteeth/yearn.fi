@@ -1,8 +1,8 @@
-import { getVaultName, type TKongVault } from '@pages/vaults/domain/kongVaultSelectors'
-import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
-import { BOLD_ADDRESS } from '@pages/vaults/utils/yBold'
 import type { TNotification } from '@shared/types/notifications'
-import { toAddress, truncateHex } from '@shared/utils/tools.address'
+import { toAddress, truncateHex } from '@yearn/util/utils/address'
+import { getVaultName, type TKongVault } from '@yearn/vaults/domain/kongVaultSelectors'
+import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
+import { BOLD_ADDRESS } from '@yearn/vaults/utils/yBold'
 import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 import type { TPortfolioActivityEntry } from './types/api'
 

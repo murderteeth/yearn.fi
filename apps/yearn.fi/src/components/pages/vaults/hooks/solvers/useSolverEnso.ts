@@ -1,7 +1,7 @@
 import { type AppUseSimulateContractReturnType, useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { getApproveAbi } from '@shared/utils/approve'
-import { isZeroAddress } from '@shared/utils/tools.is'
 import type { TNormalizedBN } from '@yearn/util/types/mixed'
+import { isZeroAddress } from '@yearn/util/utils/address'
 import { toNormalizedBN } from '@yearn/util/utils/format'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import type { Address } from 'viem'

@@ -1,6 +1,5 @@
+import { addressSchema } from '@yearn/vaults/schemas/address'
 import * as z from 'zod'
-
-import { addressSchema } from './address'
 
 export const priceSchema = z.string()
 export const pricesSchema = z.record(addressSchema, priceSchema)

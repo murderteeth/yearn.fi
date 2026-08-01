@@ -1,5 +1,5 @@
-import { YVBTC_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvBtc'
-import type { TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
+import type { TKongVaultListItem } from '@yearn/vaults/schemas/kongVaultListSchema'
+import { YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
 import { describe, expect, it } from 'vitest'
 import { isCatalogYearnVault } from './useFetchYearnVaults'
 

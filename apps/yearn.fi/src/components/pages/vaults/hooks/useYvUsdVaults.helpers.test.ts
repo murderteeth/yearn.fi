@@ -1,5 +1,5 @@
+import { YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { describe, expect, it } from 'vitest'
-import { YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '../utils/yvUsd'
 import { buildSyntheticBaseVault, buildYvUsdVaultsModel, getYvUsdTvlBreakdown } from './useYvUsdVaults.helpers'
 
 const UNDERLYING_ASSET = {

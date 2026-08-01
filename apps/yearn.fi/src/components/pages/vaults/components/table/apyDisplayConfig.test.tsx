@@ -1,6 +1,6 @@
-import { KATANA_CHAIN_ID, SPECTRA_MARKET_VAULT_ADDRESSES } from '@pages/vaults/constants/addresses'
-import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import type { TVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
+import { KATANA_CHAIN_ID, SPECTRA_MARKET_VAULT_ADDRESSES } from '@yearn/vaults/constants/addresses'
+import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 import { isValidElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'

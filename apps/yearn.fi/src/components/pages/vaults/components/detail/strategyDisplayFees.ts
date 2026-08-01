@@ -1,4 +1,4 @@
-import type { TKongVaultApr } from '@pages/vaults/domain/kongVaultSelectors'
+import type { TKongVaultApr } from '@yearn/vaults/domain/kongVaultSelectors'
 
 export type TStrategyDisplayFees = Pick<TKongVaultApr['fees'], 'management' | 'performance'>
 

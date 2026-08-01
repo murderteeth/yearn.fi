@@ -1,3 +1,4 @@
+import { toAddress } from '@yearn/util/utils/address'
 import {
   getVaultAddress,
   getVaultCategory,
@@ -10,8 +11,7 @@ import {
   getVaultVersion,
   isAutomatedVault,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils/tools.address'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 
 export type TVaultAssetCategory = 'Stablecoin' | 'Volatile'
 export type TVaultListKind = 'allocator' | 'strategy' | 'factory' | 'legacy'

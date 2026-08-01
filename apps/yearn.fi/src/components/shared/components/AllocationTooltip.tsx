@@ -1,4 +1,4 @@
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import { usePathname } from 'next/navigation'
 import type { ReactNode } from 'react'
 import type { NameType, Payload, ValueType } from 'recharts/types/component/DefaultTooltipContent'

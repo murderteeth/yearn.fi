@@ -1,6 +1,6 @@
-import type { TAddress } from '@shared/types/address'
 import { DISABLED_VEYFI_GAUGES_VAULTS_LIST } from '@shared/utils/constants'
-import { toAddress } from '@shared/utils/tools.address'
+import type { TAddress } from '@yearn/util/types/address'
+import { toAddress } from '@yearn/util/utils/address'
 
 export function isDisabledVeyfiGaugePair(vaultAddress: TAddress, stakingAddress: TAddress): boolean {
   return DISABLED_VEYFI_GAUGES_VAULTS_LIST.some(

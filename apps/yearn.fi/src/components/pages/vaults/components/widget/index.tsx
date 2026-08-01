@@ -1,3 +1,8 @@
+import type { VaultUserData } from '@pages/vaults/hooks/useVaultUserData'
+import { WidgetActionType as ActionType } from '@pages/vaults/types'
+import type { TAddress } from '@yearn/util/types/address'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import {
   getVaultAPR,
   getVaultInfo,
@@ -7,13 +12,7 @@ import {
   getVaultToken,
   getVaultVersion,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import type { VaultUserData } from '@pages/vaults/hooks/useVaultUserData'
-import { WidgetActionType as ActionType } from '@pages/vaults/types'
-import type { TAddress } from '@shared/types/address'
-import { cl } from '@shared/utils/cl'
-import { toAddress } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import { type ForwardedRef, forwardRef, type ReactElement, type ReactNode, useImperativeHandle, useState } from 'react'
 import { WidgetDeposit } from './deposit'
 import { WidgetMigrate } from './migrate'

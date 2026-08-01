@@ -1,4 +1,4 @@
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { parseAbi } from 'viem'
 
 export const YCRV_CHAIN_ID = 1

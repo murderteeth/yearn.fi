@@ -1,4 +1,4 @@
-import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
+import type { TKongVaultSnapshot } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
 import { useEffect, useRef, useState } from 'react'
 
 type TUseEnsureVaultListFetchProps = {

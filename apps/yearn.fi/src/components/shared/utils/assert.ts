@@ -1,7 +1,7 @@
-import type { TAddress } from '../types/address'
-import { ZERO_ADDRESS } from './constants'
-import { toAddress } from './tools.address'
-import { isEthAddress, isTAddress } from './tools.is'
+import type { TAddress } from '@yearn/util/types/address'
+import { isTAddress, toAddress } from '@yearn/util/utils/address'
+import { ZERO_ADDRESS } from '@yearn/util/utils/constants'
+import { isEthAddress } from '@yearn/util/utils/tools.is'
 
 export function assert(
   expression: unknown,

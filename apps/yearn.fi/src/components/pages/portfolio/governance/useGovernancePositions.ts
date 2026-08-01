@@ -25,15 +25,15 @@ import type {
   TGovernanceRawReward,
   TGovernanceReward
 } from '@pages/portfolio/governance/types'
-import { getVaultAPR, getVaultToken } from '@pages/vaults/domain/kongVaultSelectors'
 import { useWeb3 } from '@shared/contexts/useWeb3'
 import { useYearn } from '@shared/contexts/useYearn'
 import { usePublicClient } from '@shared/hooks/useAppWagmi'
 import { useYearnSpotPrices } from '@shared/hooks/useYearnSpotPrices'
-import type { TAddress } from '@shared/types/address'
-import { toAddress } from '@shared/utils/tools.address'
 import { useQuery } from '@tanstack/react-query'
+import type { TAddress } from '@yearn/util/types/address'
+import { toAddress } from '@yearn/util/utils/address'
 import { toNormalizedValue } from '@yearn/util/utils/format'
+import { getVaultAPR, getVaultToken } from '@yearn/vaults/domain/kongVaultSelectors'
 import { useCallback, useMemo } from 'react'
 import type { ContractFunctionParameters, PublicClient } from 'viem'
 

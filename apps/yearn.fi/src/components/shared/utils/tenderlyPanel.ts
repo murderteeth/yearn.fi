@@ -1,3 +1,6 @@
+import type { TDict, TNDict, TToken } from '@yearn/util/types/mixed'
+import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
+import { ETH_TOKEN_ADDRESS } from '@yearn/util/utils/constants'
 import {
   getVaultAddress,
   getVaultChainID,
@@ -7,8 +10,7 @@ import {
   getVaultSymbol,
   getVaultToken,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import type { TDict, TNDict, TToken } from '@yearn/util/types/mixed'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import { canonicalChains } from '@/config/chainDefinitions'
 import type {
   TTenderlyConfiguredChainStatus,
@@ -16,9 +18,6 @@ import type {
   TTenderlyFundTokenType,
   TTenderlySnapshotRecord
 } from '../types/tenderly'
-import { ETH_TOKEN_ADDRESS } from './constants'
-import { toAddress } from './tools.address'
-import { isZeroAddress } from './tools.is'
 
 export type TTenderlySnapshotStorage = Record<string, TTenderlySnapshotRecord[]>
 export type TTenderlyFastForwardUnit = 'minutes' | 'hours' | 'days'

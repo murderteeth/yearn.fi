@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import {
   calculateHistoricalAprFromPricePerShares,
   calculateHistoricalApyFromPricePerShares,
@@ -18,7 +17,8 @@ import {
   YVUSD_DECIMALS,
   YVUSD_LOCKED_ADDRESS,
   YVUSD_UNLOCKED_ADDRESS
-} from './yvUsd'
+} from '@yearn/vaults/utils/yvUsd'
+import { describe, expect, it } from 'vitest'
 
 describe('yvUSD token metadata', () => {
   it('uses Kong vault-share decimals for balance discovery', () => {

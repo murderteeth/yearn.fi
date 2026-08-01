@@ -1,5 +1,5 @@
-import type { TAddress } from '../types/address'
-import { toAddress } from '../utils/tools.address'
+import type { TAddress } from '@yearn/util/types/address'
+import { toAddress } from '@yearn/util/utils/address'
 
 /*******************************************************************************
  ** Query key factory for consistent cache key generation

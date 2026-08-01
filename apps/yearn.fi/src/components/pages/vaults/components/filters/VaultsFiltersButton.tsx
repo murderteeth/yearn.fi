@@ -1,5 +1,5 @@
 import { IconFilter } from '@shared/icons/IconFilter'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 
 type TVaultsFiltersButtonProps = {

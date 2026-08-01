@@ -1,6 +1,6 @@
 import { Button } from '@shared/components/Button'
 import { TokenLogoV2 } from '@shared/components/TokenLogoV2'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import { formatAmount, formatUSD } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 import { env } from '@/env'

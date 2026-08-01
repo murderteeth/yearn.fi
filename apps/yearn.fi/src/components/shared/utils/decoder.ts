@@ -1,6 +1,6 @@
+import type { TAddress } from '@yearn/util/types/address'
+import { toAddress } from '@yearn/util/utils/address'
 import { zeroAddress } from 'viem'
-import type { TAddress } from '../types/address'
-import { toAddress } from './tools.address'
 
 type TUnknowValueType =
   | {

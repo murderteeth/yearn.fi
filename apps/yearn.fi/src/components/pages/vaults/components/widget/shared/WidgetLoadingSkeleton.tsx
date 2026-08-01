@@ -1,5 +1,5 @@
 import { WidgetHeader } from '@pages/vaults/components/widget/shared/WidgetHeader'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 
 type TWidgetLoadingSkeletonProps = {

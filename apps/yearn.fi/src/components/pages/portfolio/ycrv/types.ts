@@ -1,5 +1,5 @@
 import type { TPortfolioProtocolPosition } from '@pages/portfolio/types/position'
-import type { TAddress } from '@shared/types/address'
+import type { TAddress } from '@yearn/util/types/address'
 
 export type TYcrvPosition = TPortfolioProtocolPosition & {
   kind: 'ycrv-staker'

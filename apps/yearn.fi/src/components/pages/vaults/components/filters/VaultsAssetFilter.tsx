@@ -4,7 +4,7 @@ import type { TMultiSelectOptionProps } from '@shared/components/MultiSelectDrop
 import { IconChevron } from '@shared/icons/IconChevron'
 import { IconCross } from '@shared/icons/IconCross'
 import { IconSearch } from '@shared/icons/IconSearch'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 import { useCallback, useMemo, useState } from 'react'
 

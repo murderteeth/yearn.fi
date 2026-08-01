@@ -1,6 +1,6 @@
 import { Renderable } from '@shared/components/Renderable'
 import { Tooltip } from '@shared/components/Tooltip'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { MouseEvent, ReactElement, ReactNode } from 'react'
 
 export type TApyTooltipMode = 'none' | 'tooltip' | 'tooltip+modal'

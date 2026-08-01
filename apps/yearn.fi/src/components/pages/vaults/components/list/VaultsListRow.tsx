@@ -7,18 +7,6 @@ import {
   YvUsdPositionApyTooltipContent,
   YvUsdTvlTooltipContent
 } from '@pages/vaults/components/yvUSD/YvUsdBreakdown'
-import {
-  getVaultAddress,
-  getVaultAPR,
-  getVaultCategory,
-  getVaultChainID,
-  getVaultName as getVaultDisplayName,
-  getVaultKind,
-  getVaultSymbol,
-  getVaultToken,
-  getVaultTVL,
-  type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
 import type { TYvUsdListVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import { getYvUsdTvlBreakdown } from '@pages/vaults/hooks/useYvUsdVaults.helpers'
 import {
@@ -38,12 +26,6 @@ import {
   NOT_YEARN_TAG_DESCRIPTION,
   RETIRED_TAG_DESCRIPTION
 } from '@pages/vaults/utils/vaultTagCopy'
-import {
-  getYvUsdInfinifiPointsNote,
-  getYvUsdPositionValues,
-  isYvUsdAddress,
-  type TYvUsdPositionApyBreakdown
-} from '@pages/vaults/utils/yvUsd'
 import { useMediaQuery } from '@react-hookz/web'
 import { RenderAmount } from '@shared/components/RenderAmount'
 import { TokenLogo } from '@shared/components/TokenLogo'
@@ -56,14 +38,32 @@ import { IconChevron } from '@shared/icons/IconChevron'
 import { IconEyeOff } from '@shared/icons/IconEyeOff'
 import { IconHandCoins } from '@shared/icons/IconHandCoins'
 import { IconInfinifiPoints } from '@shared/icons/IconInfinifiPoints'
-import { cl } from '@shared/utils/cl'
 import { getVaultName } from '@shared/utils/helpers'
 import { PLAUSIBLE_EVENTS, type TPlausibleEventName } from '@shared/utils/plausible'
-import { kongVaultSnapshotSchema } from '@shared/utils/schemas/kongVaultSnapshotSchema'
-import { toAddress } from '@shared/utils/tools.address'
 import { getNetwork } from '@shared/utils/wagmi/utils'
 import { useQueryClient } from '@tanstack/react-query'
+import { toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import { formatApyDisplay, formatTvlDisplay } from '@yearn/util/utils/format'
+import {
+  getVaultAddress,
+  getVaultAPR,
+  getVaultCategory,
+  getVaultChainID,
+  getVaultName as getVaultDisplayName,
+  getVaultKind,
+  getVaultSymbol,
+  getVaultToken,
+  getVaultTVL,
+  type TKongVaultInput
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { kongVaultSnapshotSchema } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
+import {
+  getYvUsdInfinifiPointsNote,
+  getYvUsdPositionValues,
+  isYvUsdAddress,
+  type TYvUsdPositionApyBreakdown
+} from '@yearn/vaults/utils/yvUsd'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import type { MouseEvent, ReactElement } from 'react'

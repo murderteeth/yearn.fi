@@ -1,21 +1,21 @@
 import { Dialog, Transition, TransitionChild } from '@headlessui/react'
 import { usePlausible } from '@hooks/usePlausible'
+import { getVaultPrimaryLogoSrc } from '@pages/vaults/utils/vaultLogo'
+import { TokenLogo } from '@shared/components/TokenLogo'
+import { useYearn } from '@shared/contexts/useYearn'
+import { IconClose } from '@shared/icons/IconClose'
+import { IconSpinner } from '@shared/icons/IconSpinner'
+import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
+import { toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
+import { formatUSD } from '@yearn/util/utils/format'
 import {
   getVaultChainID,
   getVaultName,
   getVaultSymbol,
   getVaultToken,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { getVaultPrimaryLogoSrc } from '@pages/vaults/utils/vaultLogo'
-import { TokenLogo } from '@shared/components/TokenLogo'
-import { useYearn } from '@shared/contexts/useYearn'
-import { IconClose } from '@shared/icons/IconClose'
-import { IconSpinner } from '@shared/icons/IconSpinner'
-import { cl } from '@shared/utils/cl'
-import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
-import { toAddress } from '@shared/utils/tools.address'
-import { formatUSD } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
 import { Fragment, useEffect, useMemo, useState } from 'react'

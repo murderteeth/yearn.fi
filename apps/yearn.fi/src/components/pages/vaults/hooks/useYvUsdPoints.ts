@@ -5,8 +5,8 @@ import {
   type TYvUsdAprServicePointsVault,
   yvUsdAprServicePointsSchema
 } from '@shared/utils/schemas/yvUsdAprServiceSchema'
-import { toAddress } from '@shared/utils/tools.address'
-import { YVUSD_APR_SERVICE_ENDPOINT, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '../utils/yvUsd'
+import { toAddress } from '@yearn/util/utils/address'
+import { YVUSD_APR_SERVICE_ENDPOINT, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 
 type TYvUsdPointsData = {
   unlocked: boolean

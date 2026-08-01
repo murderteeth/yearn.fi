@@ -1,6 +1,6 @@
 import { toAddress } from '@yearn/util'
-import type { TAddress } from '../types/address'
-import { ETH_TOKEN_ADDRESS } from './constants'
+import type { TAddress } from '@yearn/util/types/address'
+import { ETH_TOKEN_ADDRESS } from '@yearn/util/utils/constants'
 
 /**
  * The address predicates now live in `@yearn/util` alongside `toAddress`,

@@ -2,15 +2,6 @@ import { usePlausible } from '@hooks/usePlausible'
 import { VaultsListChip } from '@pages/vaults/components/list/VaultsListChip'
 import { VaultForwardAPY } from '@pages/vaults/components/table/VaultForwardAPY'
 import { VaultTVL } from '@pages/vaults/components/table/VaultTVL'
-import {
-  getVaultAddress,
-  getVaultCategory,
-  getVaultChainID,
-  getVaultName,
-  getVaultSymbol,
-  getVaultToken,
-  type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
 import { useVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
 import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import { deriveListKind } from '@pages/vaults/utils/vaultListFacets'
@@ -20,12 +11,21 @@ import {
   getChainDescription,
   getProductTypeDescription
 } from '@pages/vaults/utils/vaultTagCopy'
-import { isYvUsdVault, YVUSD_LOCKED_ADDRESS, YVUSD_LOCKED_COOLDOWN_DAYS } from '@pages/vaults/utils/yvUsd'
 import { TokenLogo } from '@shared/components/TokenLogo'
 import type { TPlausibleEventName } from '@shared/utils/plausible'
-import { toAddress } from '@shared/utils/tools.address'
 import { getNetwork } from '@shared/utils/wagmi/utils'
+import { toAddress } from '@yearn/util/utils/address'
 import { formatApyDisplay } from '@yearn/util/utils/format'
+import {
+  getVaultAddress,
+  getVaultCategory,
+  getVaultChainID,
+  getVaultName,
+  getVaultSymbol,
+  getVaultToken,
+  type TKongVaultInput
+} from '@yearn/vaults/domain/kongVaultSelectors'
+import { isYvUsdVault, YVUSD_LOCKED_ADDRESS, YVUSD_LOCKED_COOLDOWN_DAYS } from '@yearn/vaults/utils/yvUsd'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
 import { env } from '@/env'

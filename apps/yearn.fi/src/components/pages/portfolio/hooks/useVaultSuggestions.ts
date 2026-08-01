@@ -3,7 +3,7 @@ import { buildVaultSuggestions, type TVaultSuggestion } from '@pages/portfolio/h
 import { useWeb3 } from '@shared/contexts/useWeb3'
 import { useYearn } from '@shared/contexts/useYearn'
 import { useEnsoBalances } from '@shared/hooks/useEnsoBalances'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { useMemo } from 'react'
 
 export function useVaultSuggestions(holdingsKeySet: Set<string>): {

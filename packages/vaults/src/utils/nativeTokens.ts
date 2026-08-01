@@ -1,14 +1,12 @@
-import type { TAddress } from '@shared/types/address'
+import type { TAddress } from '@yearn/util/types/address'
 import {
   ARB_WETH_TOKEN_ADDRESS,
   OPT_WETH_TOKEN_ADDRESS,
   WETH_TOKEN_ADDRESS,
   WFTM_TOKEN_ADDRESS,
-  ZAP_ETH_WETH_CONTRACT,
-  ZAP_ETH_WETH_OPT_CONTRACT,
-  ZAP_FTM_WFTM_CONTRACT,
   ZERO_ADDRESS
-} from '@shared/utils/constants'
+} from '@yearn/util/utils/constants'
+import { ZAP_ETH_WETH_CONTRACT, ZAP_ETH_WETH_OPT_CONTRACT, ZAP_FTM_WFTM_CONTRACT } from '@yearn/vaults/constants/zaps'
 export function getEthZapperContract(chainID: number): TAddress {
   switch (chainID) {
     case 1:

@@ -1,6 +1,6 @@
-import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import type { TPossibleSortBy } from '@pages/vaults/hooks/useSortVaults'
 import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 
 export type TVaultsPinnedSection = {
   key: string

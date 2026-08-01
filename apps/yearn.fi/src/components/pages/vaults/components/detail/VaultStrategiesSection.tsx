@@ -3,6 +3,17 @@ import {
   type TStrategyDisplayFees
 } from '@pages/vaults/components/detail/strategyDisplayFees'
 import { ALL_VAULTSV3_KINDS_KEYS } from '@pages/vaults/constants'
+import { useQueryArguments } from '@pages/vaults/hooks/useVaultsQueryArgs'
+import type { TPendingTimelockStrategy } from '@pages/vaults/types/timelockStrategies'
+import type { TAllocationChartData } from '@shared/components/AllocationChart'
+import { DARK_MODE_COLORS, LIGHT_MODE_COLORS, useDarkMode } from '@shared/components/AllocationChart'
+import { useYearn } from '@shared/contexts/useYearn'
+import { useYearnTokenPrice } from '@shared/hooks/useYearnTokenPrice'
+import { IconChevron } from '@shared/icons/IconChevron'
+import type { TSortDirection } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
+import { formatTvlDisplay, toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
 import {
   getVaultAPR,
   getVaultChainID,
@@ -13,18 +24,7 @@ import {
   getVaultVersion,
   type TKongVaultInput,
   type TKongVaultStrategy
-} from '@pages/vaults/domain/kongVaultSelectors'
-import { useQueryArguments } from '@pages/vaults/hooks/useVaultsQueryArgs'
-import type { TPendingTimelockStrategy } from '@pages/vaults/types/timelockStrategies'
-import type { TAllocationChartData } from '@shared/components/AllocationChart'
-import { DARK_MODE_COLORS, LIGHT_MODE_COLORS, useDarkMode } from '@shared/components/AllocationChart'
-import { useYearn } from '@shared/contexts/useYearn'
-import { useYearnTokenPrice } from '@shared/hooks/useYearnTokenPrice'
-import { IconChevron } from '@shared/icons/IconChevron'
-import { cl } from '@shared/utils/cl'
-import { toAddress } from '@shared/utils/tools.address'
-import type { TSortDirection } from '@yearn/util/types/mixed'
-import { formatTvlDisplay, toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import type { ReactElement } from 'react'
 import { lazy, Suspense, useCallback, useMemo, useState } from 'react'
 import { PendingTimelockStrategiesTable } from './PendingTimelockStrategiesTable'

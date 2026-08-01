@@ -1,5 +1,5 @@
+import { kongVaultSnapshotSchema } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
 import { describe, expect, it } from 'vitest'
-import { kongVaultSnapshotSchema } from './kongVaultSnapshotSchema'
 
 describe('kongVaultSnapshotSchema', () => {
   it('retains Katana estimated component fields', () => {

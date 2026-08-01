@@ -1,6 +1,6 @@
-import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
 import type { TTenderlyConfiguredChainStatus, TTenderlySnapshotRecord } from '@shared/types/tenderly'
 import type { TDict, TToken } from '@yearn/util/types/mixed'
+import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 import { describe, expect, it } from 'vitest'
 import {
   addTenderlyTimeIncrement,

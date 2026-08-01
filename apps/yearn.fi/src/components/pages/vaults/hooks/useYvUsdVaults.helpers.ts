@@ -1,9 +1,14 @@
-import { getVaultView, type TKongVaultInput, type TKongVaultView } from '@pages/vaults/domain/kongVaultSelectors'
-import type { TKongVaultListItem } from '@shared/utils/schemas/kongVaultListSchema'
-import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
-import { YVUSD_CHAIN_ID, YVUSD_DESCRIPTION, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '../utils/yvUsd'
+import { getVaultView, type TKongVaultInput, type TKongVaultView } from '@yearn/vaults/domain/kongVaultSelectors'
+import type { TKongVaultListItem } from '@yearn/vaults/schemas/kongVaultListSchema'
+import type { TKongVaultSnapshot } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
+import {
+  YVUSD_CHAIN_ID,
+  YVUSD_DESCRIPTION,
+  YVUSD_LOCKED_ADDRESS,
+  YVUSD_UNLOCKED_ADDRESS
+} from '@yearn/vaults/utils/yvUsd'
 
 export type TYvUsdMetrics = {
   apy: number

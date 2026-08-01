@@ -1,4 +1,4 @@
-import { YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@pages/vaults/utils/yvUsd'
+import { YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import type { Address } from 'viem'
 import { describe, expect, it } from 'vitest'
 import { getStructurallyExcludedDepositTokenAddresses } from './tokenSelectorFiltering'

@@ -1,4 +1,4 @@
-import { type TYvUsdVariant, YVUSD_LOCKED_COOLDOWN_DAYS, YVUSD_WITHDRAW_WINDOW_DAYS } from '@pages/vaults/utils/yvUsd'
+import { type TYvUsdVariant, YVUSD_LOCKED_COOLDOWN_DAYS, YVUSD_WITHDRAW_WINDOW_DAYS } from '@yearn/vaults/utils/yvUsd'
 
 export function getYvUsdDepositTypeItems(variant: TYvUsdVariant): string[] {
   if (variant === 'locked') {

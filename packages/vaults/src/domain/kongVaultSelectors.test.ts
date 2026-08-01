@@ -1,6 +1,6 @@
-import { calculateVaultEstimatedAPY } from '@shared/utils/vaultApy'
+import { getVaultAPR, getVaultStaking, getVaultStrategies, getVaultTVL } from '@yearn/vaults/domain/kongVaultSelectors'
+import { calculateVaultEstimatedAPY } from '@yearn/vaults/domain/vaultApy'
 import { describe, expect, it } from 'vitest'
-import { getVaultAPR, getVaultStaking, getVaultStrategies, getVaultTVL } from './kongVaultSelectors'
 
 const LIST_REWARD = {
   address: '0x3333333333333333333333333333333333333333',

@@ -1,6 +1,11 @@
+import { toAddress } from '@yearn/util/utils/address'
+import {
+  ARB_WETH_TOKEN_ADDRESS,
+  ETH_TOKEN_ADDRESS,
+  WETH_TOKEN_ADDRESS,
+  ZERO_ADDRESS
+} from '@yearn/util/utils/constants'
 import { describe, expect, it } from 'vitest'
-import { ARB_WETH_TOKEN_ADDRESS, ETH_TOKEN_ADDRESS, WETH_TOKEN_ADDRESS, ZERO_ADDRESS } from './constants'
-import { toAddress } from './tools.address'
 import { buildYearnPricesSpotKeys, normalizeYearnPricesSpotResponse } from './yearnPrices'
 
 describe('yearnPrices spot helpers', () => {

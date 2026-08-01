@@ -16,7 +16,6 @@ import {
   getTimeframeLimit
 } from '@pages/vaults/utils/charts'
 import { IconChevron } from '@shared/icons/IconChevron'
-import { cl } from '@shared/utils/cl'
 import {
   rankPortfolioVaultGrowthChartSeries,
   type TPortfolioVaultGrowthChartMode,
@@ -24,6 +23,7 @@ import {
   type TPortfolioVaultGrowthRankableSeries
 } from '@shared/utils/portfolioVaultGrowth'
 import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { cl } from '@yearn/util/utils/cl'
 import { formatUSD } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 import { useMemo, useState } from 'react'

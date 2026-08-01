@@ -1,5 +1,5 @@
-import { isVaultEnsoDisabled } from '@pages/vaults/constants/ensoDisabledVaults'
 import { useEnsoStatus } from '@pages/vaults/contexts/useEnsoStatus'
+import { isVaultEnsoDisabled } from '@yearn/vaults/constants/ensoDisabledVaults'
 import type { Address } from 'viem'
 import { env } from '@/env'
 

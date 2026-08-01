@@ -1,5 +1,5 @@
-import { cl } from '@shared/utils/cl'
 import { useWindowVirtualizer } from '@tanstack/react-virtual'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 

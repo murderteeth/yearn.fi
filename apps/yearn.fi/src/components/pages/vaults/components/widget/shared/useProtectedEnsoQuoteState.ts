@@ -1,9 +1,9 @@
-import type { TAddress } from '@shared/types/address'
 import {
   calculateRemainingEnsoSlippagePercentage,
   optionalBasisPointsToPercentage,
   ZAP_SLIPPAGE_HARD_CAP
 } from '@shared/utils/slippage'
+import type { TAddress } from '@yearn/util/types/address'
 import { useEffect, useMemo, useRef } from 'react'
 import type { Hex } from 'viem'
 

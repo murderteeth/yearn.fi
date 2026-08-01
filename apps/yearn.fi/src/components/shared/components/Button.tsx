@@ -1,4 +1,4 @@
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type React from 'react'
 import type { ForwardedRef, ReactElement, ReactNode } from 'react'
 import { forwardRef } from 'react'

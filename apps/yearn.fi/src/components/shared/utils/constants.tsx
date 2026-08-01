@@ -1,5 +1,5 @@
-import type { TAddress } from '@shared/types/address'
 import { toAddress } from '@yearn/util'
+import type { TAddress } from '@yearn/util/types/address'
 import type { TNDict } from '@yearn/util/types/mixed'
 import { arbitrum, mainnet } from 'viem/chains'
 
@@ -21,6 +21,8 @@ export {
   WFTM_TOKEN_ADDRESS,
   ZERO_ADDRESS
 } from '@yearn/util/utils/constants'
+
+export { ZAP_ETH_WETH_CONTRACT, ZAP_ETH_WETH_OPT_CONTRACT, ZAP_FTM_WFTM_CONTRACT } from '@yearn/vaults/constants/zaps'
 
 export const YFI_ADDRESS = toAddress('0x0bc529c00C6401aEF6D220BE8C6Ea1667F6Ad93e')
 export const CRV_TOKEN_ADDRESS = toAddress('0xD533a949740bb3306d119CC777fa900bA034cd52')
@@ -60,9 +62,6 @@ export const VEBALPEG_QUERY_HELP_CONTRACT = toAddress('0xE39B5e3B6D74016b2F6A967
 export const YEARN_4626_ROUTER = toAddress('0x1112dbCF805682e828606f74AB717abf4b4FD8DE')
 
 // Theses constants are used by the yVault app
-export const ZAP_ETH_WETH_CONTRACT = toAddress('0xd1791428c38e25d459d5b01fb25e942d4ad83a25')
-export const ZAP_FTM_WFTM_CONTRACT = toAddress('0xfCE6CbeF3867102da383465cc237B49fF4B9d48F')
-export const ZAP_ETH_WETH_OPT_CONTRACT = toAddress('0xDeAFc27aC8f977E6973d671E43cBfd2573021d9e')
 export const ZAP_YVEMPIRE_CONTRACT = toAddress('0xEB8D98f9E42a15b0Eb35315F737bdfDa1a8D2Eaa')
 export const VAULT_FACTORY_ADDRESS = toAddress('0x21b1FC8A52f179757bf555346130bF27c0C2A17A')
 export const YVWETH_ADDRESS = toAddress('0xa258C4606Ca8206D8aA700cE2143D7db854D168c')

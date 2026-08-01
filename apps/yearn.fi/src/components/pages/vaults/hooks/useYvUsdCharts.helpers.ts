@@ -4,7 +4,7 @@ import {
   calculateHistoricalAprFromPricePerShares,
   calculateHistoricalApyFromPricePerShares,
   getYvUsdUnderlyingPricePerShare
-} from '@pages/vaults/utils/yvUsd'
+} from '@yearn/vaults/utils/yvUsd'
 
 export type TYvUsdSeriesPoint = {
   date: string

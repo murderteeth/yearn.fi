@@ -1,6 +1,6 @@
 import { STYFI_ADDRESS, STYFIX_ADDRESS, YVUSDC_REWARD_ADDRESS } from '@pages/portfolio/governance/constants'
 import type { TGovernanceGlobalData, TGovernanceRawAccount } from '@pages/portfolio/governance/types'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { describe, expect, it } from 'vitest'
 import {
   deriveCooldownEndsAt,

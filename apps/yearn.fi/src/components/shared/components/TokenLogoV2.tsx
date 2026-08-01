@@ -1,6 +1,6 @@
 'use client'
 
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { ImgHTMLAttributes, ReactElement } from 'react'
 import { useState } from 'react'
 import { env } from '@/env'

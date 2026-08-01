@@ -1,5 +1,5 @@
 import { useThemePreference } from '@hooks/useThemePreference'
-import { cl } from '@shared/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 import { useEffect, useRef } from 'react'
 

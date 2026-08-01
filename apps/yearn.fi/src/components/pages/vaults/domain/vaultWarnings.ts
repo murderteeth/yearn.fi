@@ -1,6 +1,6 @@
-import type { TKongVault } from '@pages/vaults/domain/kongVaultSelectors'
-import { isYvBtcAddress } from '@pages/vaults/utils/yvBtc'
-import type { TKongVaultSnapshot } from '@shared/utils/schemas/kongVaultSnapshotSchema'
+import type { TKongVault } from '@yearn/vaults/domain/kongVaultSelectors'
+import type { TKongVaultSnapshot } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
+import { isYvBtcAddress } from '@yearn/vaults/utils/yvBtc'
 
 export const NON_YEARN_ERC4626_WARNING_MESSAGE =
   'This is a non-Yearn ERC-4626 Vault. Please be careful when interacting with it.'

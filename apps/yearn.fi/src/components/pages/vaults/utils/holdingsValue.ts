@@ -1,3 +1,7 @@
+import type { TAddress } from '@yearn/util/types/address'
+import type { TNormalizedBN } from '@yearn/util/types/mixed'
+import { isZeroAddress } from '@yearn/util/utils/address'
+import { toNormalizedBN } from '@yearn/util/utils/format'
 import {
   getVaultAddress,
   getVaultAPR,
@@ -7,11 +11,7 @@ import {
   getVaultToken,
   getVaultTVL,
   type TKongVaultInput
-} from '@pages/vaults/domain/kongVaultSelectors'
-import type { TAddress } from '@shared/types/address'
-import { isZeroAddress } from '@shared/utils/tools.is'
-import type { TNormalizedBN } from '@yearn/util/types/mixed'
-import { toNormalizedBN } from '@yearn/util/utils/format'
+} from '@yearn/vaults/domain/kongVaultSelectors'
 
 type TTokenAndChain = { address: TAddress; chainID: number }
 type TBalanceGetter = (params: TTokenAndChain) => TNormalizedBN

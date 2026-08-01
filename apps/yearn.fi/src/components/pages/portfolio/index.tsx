@@ -33,15 +33,6 @@ import { MerkleRewardRow } from '@pages/vaults/components/widget/rewards/MerkleR
 import { StakingRewardRow } from '@pages/vaults/components/widget/rewards/StakingRewardRow'
 import type { TGroupedMerkleReward, TStakingReward } from '@pages/vaults/components/widget/rewards/types'
 import { TransactionOverlay, type TransactionStep } from '@pages/vaults/components/widget/shared/TransactionOverlay'
-import {
-  getVaultAddress,
-  getVaultChainID,
-  getVaultName,
-  getVaultStaking,
-  getVaultSymbol,
-  getVaultToken,
-  type TKongVault
-} from '@pages/vaults/domain/kongVaultSelectors'
 import { useMerkleRewards } from '@pages/vaults/hooks/rewards/useMerkleRewards'
 import { useStakingRewards } from '@pages/vaults/hooks/rewards/useStakingRewards'
 import type { TPossibleSortBy } from '@pages/vaults/hooks/useSortVaults'
@@ -76,14 +67,22 @@ import { IconStake } from '@shared/icons/IconStake'
 import { IconUnstake } from '@shared/icons/IconUnstake'
 import { IconWithdraw } from '@shared/icons/IconWithdraw'
 import { LogoYearn } from '@shared/icons/LogoYearn'
-import { cl } from '@shared/utils/cl'
 import { copyToClipboard } from '@shared/utils/helpers'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
-import { toAddress, truncateHex } from '@shared/utils/tools.address'
-import { isZeroAddress } from '@shared/utils/tools.is'
 import { getNetwork } from '@shared/utils/wagmi/utils'
 import type { TSortDirection } from '@yearn/util/types/mixed'
+import { isZeroAddress, toAddress, truncateHex } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import { formatPercent, formatUSD } from '@yearn/util/utils/format'
+import {
+  getVaultAddress,
+  getVaultChainID,
+  getVaultName,
+  getVaultStaking,
+  getVaultSymbol,
+  getVaultToken,
+  type TKongVault
+} from '@yearn/vaults/domain/kongVaultSelectors'
 import Link from 'next/link'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import type { CSSProperties, ReactElement } from 'react'

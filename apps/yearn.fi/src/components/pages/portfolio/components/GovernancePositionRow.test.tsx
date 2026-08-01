@@ -1,5 +1,5 @@
 import type { TGovernancePosition } from '@pages/portfolio/governance/types'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
 import { GovernancePositionRow } from './GovernancePositionRow'

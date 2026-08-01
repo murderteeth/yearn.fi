@@ -1,9 +1,9 @@
-import type { TKongVaultInput } from '@pages/vaults/domain/kongVaultSelectors'
-import { toAddress } from '@shared/utils/tools.address'
+import { toAddress } from '@yearn/util/utils/address'
+import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
+import { YVBTC_CHAIN_ID, YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import { YVUSD_CHAIN_ID, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { describe, expect, it } from 'vitest'
 import { isRouteChainAddressMatch, resolveRouteVaultFromMap } from './routeVault'
-import { YVBTC_CHAIN_ID, YVBTC_UNLOCKED_ADDRESS } from './yvBtc'
-import { YVUSD_CHAIN_ID, YVUSD_UNLOCKED_ADDRESS } from './yvUsd'
 
 const VAULT_ADDRESS = toAddress('0x1111111111111111111111111111111111111111')
 

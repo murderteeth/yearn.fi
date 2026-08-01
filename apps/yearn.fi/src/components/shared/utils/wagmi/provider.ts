@@ -1,5 +1,7 @@
 import type { TCTA } from '@shared/components/yToast'
 import { toast } from '@shared/components/yToast'
+import type { TAddress } from '@yearn/util/types/address'
+import { toAddress } from '@yearn/util/utils/address'
 import { toBigInt } from '@yearn/util/utils/format'
 import type { Client, Hash, SimulateContractParameters, WalletClient } from 'viem'
 import { BaseError } from 'viem'
@@ -12,9 +14,7 @@ import {
   writeContract
 } from 'wagmi/actions'
 import { resolveExecutionChainId } from '@/config/tenderly'
-import type { TAddress } from '../../types/address'
 import { assert, assertAddress } from '../assert'
-import { toAddress } from '../tools.address'
 import { retrieveConfig } from './config'
 import type { TTxResponse } from './transaction'
 import { defaultTxStatus } from './transaction'

@@ -1,9 +1,9 @@
-import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@pages/vaults/domain/normalizeVault'
 import type { TChartTimeseriesResponse } from '@pages/vaults/types/charts'
-import { KONG_REST_BASE } from '@pages/vaults/utils/kongRest'
 import { vaultChartTimeseriesSchema } from '@shared/utils/schemas/vaultChartsSchema'
-import { toAddress } from '@shared/utils/tools.address'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
+import { toAddress } from '@yearn/util/utils/address'
+import { KONG_REST_BASE } from '@yearn/vaults/data/kongRest'
+import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'
 import { isAddressEqual } from 'viem'
 
 const TIMESERIES_BASE = `${KONG_REST_BASE}/timeseries`
