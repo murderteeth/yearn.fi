@@ -4,12 +4,38 @@ Bun-workspace monorepo. Yearn Finance vaults interface — Next.js 16 App Router
 
 ## Workspaces
 
-| Path | Package | Role |
-| --- | --- | --- |
-| `apps/yearn.fi` | `yearnfi` | The deployed app |
+| Path | Package | Role | Demo |
+| --- | --- | --- | --- |
+| `apps/yearn.fi` | `yearnfi` | The deployed app | — |
+| `packages/components` | `@yearn/components` | Design tokens, UI primitives, wallet connection layer | `:3001` |
+| `packages/deposit` | `@yearn/deposit` | Deposit/withdraw widget, transaction flows, its server routes | `:3002` |
 
 Workspace globs are `apps/*` and `packages/*`. Dependencies hoist to the repo root — there is no
 `apps/yearn.fi/node_modules`, so any path that reaches into `node_modules` must go up two levels.
+
+`@yearn/deposit` depends on `@yearn/components`; never the reverse. Each package is both a library
+and a Next.js demo site, so the demo exercises the package exactly the way a consuming app does.
+
+### Package conventions
+
+Packages are consumed as **TypeScript source**, not as build artifacts — consumers list them in
+`transpilePackages`. There is no build step for the library itself.
+
+IMPORTANT: inside a package, import by the package's own name, never `@/*` or a relative path:
+
+```ts
+import { cl } from '@yearn/components/utils/cl'   // ✅ resolves for every consumer
+import { cl } from '@/utils/cl'                   // ❌ `@/` belongs to the consuming app
+import { cl } from '../utils/cl'                  // ❌ violates the no-relative-imports rule
+```
+
+This resolves through two mechanisms that must be kept in sync when adding a package:
+- **bundlers** use the `exports` map (`"./*": "./src/*"`) via the workspace symlink
+- **tsc** uses `paths` in each `tsconfig.json`, because it will not extension-probe through an
+  `exports` wildcard
+
+Every workspace that imports a package needs both a `paths` entry and a `transpilePackages` entry.
+Vitest needs a matching `resolve.alias`, since it reads neither.
 
 ## Commands
 
@@ -23,6 +49,9 @@ bun run build                            # Next production build
 bun run test                             # Vitest across every workspace
 bun run lint:fix                         # Biome format and fix (whole repo)
 bun run tslint                           # TypeScript type check across every workspace
+bun run build:all                        # Build the app and both package demos
+bun run dev:components                   # @yearn/components demo on 127.0.0.1:3001
+bun run dev:deposit                      # @yearn/deposit demo on 127.0.0.1:3002
 ```
 
 Single test file, from inside the workspace:

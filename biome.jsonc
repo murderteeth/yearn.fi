@@ -45,7 +45,9 @@
   "css": {
     "parser": {
       "cssModules": false,
-      "allowWrongLineComments": false
+      "allowWrongLineComments": false,
+      // Package stylesheets use `@source` and `@theme` to drive Tailwind 4's CSS-first config.
+      "tailwindDirectives": true
     }
   },
   "javascript": {

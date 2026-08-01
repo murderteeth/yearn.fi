@@ -1,0 +1,8 @@
+/**
+ * Widget styles.
+ *
+ * The design tokens live in `@yearn/components`; this file exists so consumers
+ * have a stable import even before the widget adds styles of its own.
+ */
+
+@import "@yearn/components/styles.css";

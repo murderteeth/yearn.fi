@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@yearn/components": ["./src/index.ts"],
+      "@yearn/components/*": ["./src/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "exclude": ["node_modules", ".next"],
+  "include": ["**/*.css", "**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"]
+}

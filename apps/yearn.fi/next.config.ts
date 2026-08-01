@@ -45,6 +45,8 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // Workspace packages are consumed as TypeScript source, not as build artifacts.
+  transpilePackages: ['@yearn/components', '@yearn/deposit'],
   turbopack: {
     resolveAlias: {
       // Bun workspaces hoist dependencies to the monorepo root.

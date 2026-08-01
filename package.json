@@ -9,6 +9,9 @@
   "scripts": {
     "dev": "bun run --filter yearnfi dev",
     "build": "bun run --filter yearnfi build",
+    "build:all": "bun run --filter '*' build",
+    "dev:components": "bun run --filter @yearn/components dev",
+    "dev:deposit": "bun run --filter @yearn/deposit dev",
     "preview": "bun run --filter yearnfi preview",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",

@@ -1,0 +1,44 @@
+{
+  "name": "@yearn/components",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Shared Yearn UI primitives, design tokens, and the wallet connection layer.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles/index.css",
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3001",
+    "build": "next build",
+    "preview": "next start --hostname 127.0.0.1 --port 3001",
+    "tslint": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "peerDependencies": {
+    "@rainbow-me/rainbowkit": "2.2.11",
+    "@tanstack/react-query": "5.90.21",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "viem": "2.46.1",
+    "wagmi": "2.18.2"
+  },
+  "devDependencies": {
+    "@rainbow-me/rainbowkit": "2.2.11",
+    "@tailwindcss/postcss": "4.1.18",
+    "@tanstack/react-query": "5.90.21",
+    "@types/node": "25.3.0",
+    "@types/react": "19.2.15",
+    "@types/react-dom": "19.2.3",
+    "next": "16.2.6",
+    "postcss": "8.5.15",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "tailwindcss": "4.1.18",
+    "typescript": "5.9.3",
+    "viem": "2.46.1",
+    "vitest": "4.1.8",
+    "wagmi": "2.18.2"
+  }
+}

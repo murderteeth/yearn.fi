@@ -7,8 +7,12 @@
 This is a bun-workspace monorepo.
 
 ```
-apps/yearn.fi     the deployed Next.js app
+apps/yearn.fi          the deployed Next.js app
+packages/components    @yearn/components — design tokens, UI primitives, wallet connection
+packages/deposit       @yearn/deposit — deposit/withdraw widget and its server routes
 ```
+
+Each package doubles as a Next.js demo site (`bun run dev:components`, `bun run dev:deposit`).
 
 All commands below run from the repo root unless noted; root `package.json` scripts delegate to the
 workspaces.

@@ -1,0 +1,18 @@
+import path from 'path'
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  esbuild: {
+    jsx: 'automatic'
+  },
+  resolve: {
+    alias: {
+      '@yearn/components': path.resolve(__dirname, '../components/src'),
+      '@yearn/deposit': path.resolve(__dirname, './src')
+    }
+  },
+  test: {
+    globals: true,
+    environment: 'node'
+  }
+})

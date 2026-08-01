@@ -9,7 +9,11 @@
       "@pages/*": ["src/components/pages/*"],
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
-      "/src/*": ["src/*"]
+      "/src/*": ["src/*"],
+      "@yearn/components": ["../../packages/components/src/index.ts"],
+      "@yearn/components/*": ["../../packages/components/src/*"],
+      "@yearn/deposit": ["../../packages/deposit/src/index.ts"],
+      "@yearn/deposit/*": ["../../packages/deposit/src/*"]
     },
     "plugins": [
       {
