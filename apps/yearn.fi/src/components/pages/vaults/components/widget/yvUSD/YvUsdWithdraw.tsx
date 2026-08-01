@@ -2,13 +2,13 @@ import { useVaultUserData } from '@pages/vaults/hooks/useVaultUserData'
 import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import { Button } from '@shared/components/Button'
 import { useWalletActions } from '@shared/contexts/useWallet'
-import { erc4626Abi } from '@shared/contracts/abi/4626.abi'
-import { yvUsdLockedVaultAbi } from '@shared/contracts/abi/yvUsdLockedVault.abi'
 import { type AppUseSimulateContractReturnType, useReadContract, useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { useChainTimestamp } from '@shared/hooks/useChainTimestamp'
 import { IconCheck } from '@shared/icons/IconCheck'
 import { toAddress } from '@yearn/util/utils/address'
 import { formatTAmount } from '@yearn/util/utils/format'
+import { erc4626Abi } from '@yearn/vaults/abi/4626.abi'
+import { yvUsdLockedVaultAbi } from '@yearn/vaults/abi/yvUsdLockedVault.abi'
 import {
   convertYvUsdLockedAssetRawAmountToUnderlying,
   convertYvUsdLockedPricePerShareToUnderlying,

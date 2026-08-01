@@ -1,7 +1,7 @@
-import { erc4626Abi } from '@shared/contracts/abi/4626.abi'
-import { STAKING_REWARDS_ABI } from '@shared/contracts/abi/stakingRewards.abi'
-import { TOKENIZED_STRATEGY_ABI } from '@shared/contracts/abi/tokenizedStrategy.abi'
-import { VEYFI_GAUGE_ABI } from '@shared/contracts/abi/veYFIGauge.abi'
+import { erc4626Abi } from '@yearn/vaults/abi/4626.abi'
+import { STAKING_REWARDS_ABI } from '@yearn/vaults/abi/stakingRewards.abi'
+import { TOKENIZED_STRATEGY_ABI } from '@yearn/vaults/abi/tokenizedStrategy.abi'
+import { VEYFI_GAUGE_ABI } from '@yearn/vaults/abi/veYFIGauge.abi'
 import type { Address } from 'viem'
 
 export type StakingSourceKind = 'VeYFI' | 'yBOLD' | 'default'

@@ -1,8 +1,8 @@
-import { JUICED_STAKING_REWARDS_ABI } from '@shared/contracts/abi/juicedStakingRewards.abi'
-import { STAKING_REWARDS_ABI } from '@shared/contracts/abi/stakingRewards.abi'
-import { V3_STAKING_REWARDS_ABI } from '@shared/contracts/abi/V3StakingRewards.abi'
-import { VEYFI_GAUGE_ABI } from '@shared/contracts/abi/veYFIGauge.abi'
 import { useSimulateContract } from '@shared/hooks/useAppWagmi'
+import { JUICED_STAKING_REWARDS_ABI } from '@yearn/vaults/abi/juicedStakingRewards.abi'
+import { STAKING_REWARDS_ABI } from '@yearn/vaults/abi/stakingRewards.abi'
+import { V3_STAKING_REWARDS_ABI } from '@yearn/vaults/abi/V3StakingRewards.abi'
+import { VEYFI_GAUGE_ABI } from '@yearn/vaults/abi/veYFIGauge.abi'
 
 type UseClaimStakingRewardsParams = {
   stakingAddress?: `0x${string}`

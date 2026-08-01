@@ -47,6 +47,12 @@ The `vaults` split exists because the domain model has heavy use outside the wid
 (`kongVaultSelectors` alone has ~30 importers beyond it); folding it into `deposit` would make every
 vault page import from a package named for a single action.
 
+`vaults` is a **model, not a data layer**: selectors, APY maths, schemas, protocol constants, ABIs,
+and the framework-free Kong client. React Query hooks stay with their consumer. Moving them in would
+have forced `vaults` to depend on generic React primitives living in `components`, inverting the
+rule that a headless domain model does not depend on a UI package — the hooks are the wrong side of
+that line, not the rule.
+
 Packages own no app singletons. Anything app-specific is injected as a prop with a working default:
 analytics is a sink the host supplies, and `TYearnChainResolver` maps a displayed chain to the chain
 transactions execute on (yearn.fi passes its Tenderly resolver; the default is identity). Contexts

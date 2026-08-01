@@ -1,7 +1,7 @@
 import type { TGroupedMerkleReward } from '@pages/vaults/components/widget/rewards/types'
-import { MERKLE_DISTRIBUTOR_ABI } from '@shared/contracts/abi/merkleDistributor.abi'
 import { useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { MERKLE_DISTRIBUTOR_ADDRESS } from '@shared/utils/constants'
+import { MERKLE_DISTRIBUTOR_ABI } from '@yearn/vaults/abi/merkleDistributor.abi'
 
 type UseClaimMerkleRewardsParams = {
   groupedReward?: TGroupedMerkleReward

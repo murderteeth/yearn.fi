@@ -1,7 +1,7 @@
-import { VAULT_V3_ABI } from '@shared/contracts/abi/vaultV3.abi'
 import { useQuery } from '@tanstack/react-query'
 import { isZeroAddress } from '@yearn/util/utils/address'
 import { toNormalizedBN } from '@yearn/util/utils/format'
+import { VAULT_V3_ABI } from '@yearn/vaults/abi/vaultV3.abi'
 import { useCallback, useMemo } from 'react'
 import { type Address, getContract } from 'viem'
 import { useConfig } from 'wagmi'

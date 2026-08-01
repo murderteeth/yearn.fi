@@ -1,7 +1,7 @@
 import type { UseWidgetWithdrawFlowReturn } from '@pages/vaults/types'
-import { yvUsdLockedZapAbi } from '@shared/contracts/abi/yvUsdLockedZap.abi'
 import { type AppUseSimulateContractReturnType, useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { toAddress } from '@yearn/util/utils/address'
+import { yvUsdLockedZapAbi } from '@yearn/vaults/abi/yvUsdLockedZap.abi'
 import { YVUSD_LOCKED_ADDRESS, YVUSD_LOCKED_ZAP_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import type { Address } from 'viem'
 import { erc20Abi } from 'viem'

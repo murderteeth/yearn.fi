@@ -2,7 +2,6 @@ import { useVaultUserData, type VaultUserData } from '@pages/vaults/hooks/useVau
 import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import { useNotifications } from '@shared/contexts/useNotifications'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { yvUsdLockedVaultAbi } from '@shared/contracts/abi/yvUsdLockedVault.abi'
 import { useReadContract } from '@shared/hooks/useAppWagmi'
 import { useChainTimestamp } from '@shared/hooks/useChainTimestamp'
 import { useTransactionStatusPoller } from '@shared/hooks/useTransactionStatusPoller'
@@ -17,6 +16,7 @@ import { getNetwork } from '@shared/utils/wagmi/utils'
 import { toAddress, truncateHex } from '@yearn/util/utils/address'
 import { cl } from '@yearn/util/utils/cl'
 import { formatTAmount, formatUSD, toNormalizedBN } from '@yearn/util/utils/format'
+import { yvUsdLockedVaultAbi } from '@yearn/vaults/abi/yvUsdLockedVault.abi'
 import {
   getVaultDecimals,
   getVaultSymbol,

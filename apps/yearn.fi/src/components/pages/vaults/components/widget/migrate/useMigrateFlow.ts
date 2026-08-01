@@ -1,10 +1,10 @@
 import { useTokenAllowance } from '@pages/vaults/hooks/useTokenAllowance'
 import type { MigrateRouteType, UseMigrateFlowReturn } from '@pages/vaults/types'
-import { ERC_4626_ROUTER_ABI } from '@shared/contracts/abi/erc4626Router.abi'
 import { type AppUseSimulateContractReturnType, usePublicClient, useSimulateContract } from '@shared/hooks/useAppWagmi'
 import { detectPermitType, type PermitType, type TPermitSignature } from '@shared/hooks/usePermit'
 import { YEARN_4626_ROUTER } from '@shared/utils/constants'
 import { getMigratorConfig, type MigratorConfig } from '@shared/utils/migratorRegistry'
+import { ERC_4626_ROUTER_ABI } from '@yearn/vaults/abi/erc4626Router.abi'
 import { useEffect, useMemo, useState } from 'react'
 import { type Address, encodeFunctionData, erc20Abi } from 'viem'
 

@@ -1,7 +1,7 @@
-import { ERC_4626_ROUTER_ABI } from '@shared/contracts/abi/erc4626Router.abi'
-import { VAULT_MIGRATOR_ABI } from '@shared/contracts/abi/vaultMigrator.abi'
-import { ZAP_VE_CRV_ABI } from '@shared/contracts/abi/zapVeCRV.abi'
 import type { MigratorConfig } from '@shared/utils/migratorRegistry'
+import { ERC_4626_ROUTER_ABI } from '@yearn/vaults/abi/erc4626Router.abi'
+import { VAULT_MIGRATOR_ABI } from '@yearn/vaults/abi/vaultMigrator.abi'
+import { ZAP_VE_CRV_ABI } from '@yearn/vaults/abi/zapVeCRV.abi'
 import { type Address, encodeFunctionData, toFunctionSelector } from 'viem'
 import { describe, expect, it } from 'vitest'
 import {
