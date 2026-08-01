@@ -16,6 +16,21 @@ Workspace globs are `apps/*` and `packages/*`. Dependencies hoist to the repo ro
 `@yearn/deposit` depends on `@yearn/components`; never the reverse. Each package is both a library
 and a Next.js demo site, so the demo exercises the package exactly the way a consuming app does.
 
+### What belongs in a package
+
+`@yearn/components` owns the **chain-connection layer** — tokens, primitives, wallet identity and
+the connect button. `@yearn/deposit` owns the **vault-domain layer** — the widget, its transaction
+flows, the Enso solver, and the server routes those call.
+
+Packages own no app singletons. Anything app-specific is injected as a prop with a working default:
+analytics is a sink the host supplies, and `TYearnChainResolver` maps a displayed chain to the chain
+transactions execute on (yearn.fi passes its Tenderly resolver; the default is identity). Contexts
+that belong to the app — vault totals, notifications, app settings — are never imported by a
+package; the value crosses as a prop instead (e.g. `<Yearn.ConnectButton isBusy={…} />`).
+
+Components are exported individually and grouped under a `Yearn` namespace, so call sites read
+`<Yearn.ConnectButton />`. `@yearn/deposit` re-exports that namespace with the widget merged in.
+
 ### Package conventions
 
 Packages are consumed as **TypeScript source**, not as build artifacts — consumers list them in

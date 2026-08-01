@@ -1,275 +1,45 @@
+'use client'
+
 import { usePlausible } from '@hooks/usePlausible'
-import { useAccountModal, useChainModal, useConnectModal } from '@rainbow-me/rainbowkit'
-import type { TAddress } from '@shared/types/address'
-import { fetchClusterName, getClusterImageUrl, isAddress, isSafeConnectorId } from '@shared/utils'
-import { isIframe } from '@shared/utils/helpers'
-import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
-import { toAddress } from '@shared/utils/tools.address'
+import { type TYearnChainResolver, useYearnWallet, YearnWalletProvider } from '@yearn/components'
 import type { ReactElement } from 'react'
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
-import { mainnet } from 'viem/chains'
-import { useAccount, useConnect, useDisconnect, useEnsName } from 'wagmi'
+import { useMemo } from 'react'
 import { AGENT_WALLET_ID, shouldAutoConnectAgentWallet } from '@/config/agentWallet'
 import { resolveConnectedCanonicalChainId, resolveExecutionChainId } from '@/config/tenderly'
 
-type TWeb3Context = {
-  address: TAddress | undefined
-  ens: string | undefined
-  clusters: { name: string; avatar: string } | undefined
-  chainID: number
-  isActive: boolean
-  isWalletSafe: boolean
-  isWalletLedger: boolean
-  isUserConnecting: boolean
-  isIdentityLoading: boolean
-  openLoginModal: () => void
-  onDesactivate: () => void
+/**
+ * The wallet layer lives in `@yearn/components`. This file supplies the two
+ * things the package deliberately does not own — where analytics go, and how
+ * yearn.fi maps a displayed chain to the chain transactions execute on for
+ * Tenderly forknets — and keeps the `useWeb3` name the app already imports.
+ */
+
+const tenderlyChainResolver: TYearnChainResolver = {
+  toCanonicalChainId: resolveConnectedCanonicalChainId,
+  toExecutionChainId: resolveExecutionChainId
 }
 
-const defaultState: TWeb3Context = {
-  address: undefined,
-  ens: undefined,
-  clusters: undefined,
-  chainID: 1,
-  isActive: false,
-  isWalletSafe: false,
-  isWalletLedger: false,
-  isUserConnecting: false,
-  isIdentityLoading: false,
-  openLoginModal: (): void => undefined,
-  onDesactivate: (): void => undefined
+const agentAutoConnect = {
+  connectorId: AGENT_WALLET_ID,
+  shouldConnect: shouldAutoConnectAgentWallet
 }
-
-const Web3Context = createContext<TWeb3Context>(defaultState)
 
 export const Web3ContextApp = (props: { children: ReactElement }): ReactElement => {
-  const { address, isConnecting, isConnected, connector, chain } = useAccount()
-  const { connectors, connectAsync } = useConnect()
-  const { disconnect } = useDisconnect()
-  const { data: ensName, isLoading: isEnsLoading } = useEnsName({
-    address: isConnected ? address : undefined,
-    chainId: mainnet.id
-  })
-  const { openAccountModal } = useAccountModal()
-  const { openConnectModal } = useConnectModal()
-  const { openChainModal } = useChainModal()
   const trackEvent = usePlausible()
-  const [clusters, setClusters] = useState<{ name: string; avatar: string } | undefined>(undefined)
-  const [isFetchingClusters, setIsFetchingClusters] = useState(false)
-  const wasConnectedRef = useRef(false)
-  const previousChainIDRef = useRef<number | undefined>(undefined)
-  const hasUserRequestedConnectionRef = useRef(false)
-  const hasAutoConnectedAgentWalletRef = useRef(false)
 
-  const chainID = resolveConnectedCanonicalChainId(chain?.id) ?? (isConnected ? 0 : 1)
-
-  useEffect(() => {
-    if (!wasConnectedRef.current && isConnected && hasUserRequestedConnectionRef.current) {
-      trackEvent(PLAUSIBLE_EVENTS.CONNECT_WALLET, {
-        props: { connector: connector?.name ?? '', chainID: String(chainID) }
-      })
-      hasUserRequestedConnectionRef.current = false
-    }
-    wasConnectedRef.current = isConnected
-  }, [isConnected, connector, chainID, trackEvent])
-
-  useEffect(() => {
-    if (isConnected && previousChainIDRef.current !== undefined && previousChainIDRef.current !== chainID) {
-      trackEvent(PLAUSIBLE_EVENTS.CHANGE_NETWORK, {
-        props: { fromChainID: String(previousChainIDRef.current), toChainID: String(chainID) }
-      })
-    }
-    if (isConnected) {
-      previousChainIDRef.current = chainID
-    } else {
-      previousChainIDRef.current = undefined
-    }
-  }, [isConnected, chainID, trackEvent])
-
-  useEffect(() => {
-    if (hasAutoConnectedAgentWalletRef.current || isConnected || isConnecting || !shouldAutoConnectAgentWallet()) {
-      return
-    }
-
-    const agentConnector = connectors.find((eachConnector) => eachConnector.id === AGENT_WALLET_ID)
-    if (!agentConnector) {
-      return
-    }
-
-    hasAutoConnectedAgentWalletRef.current = true
-    hasUserRequestedConnectionRef.current = true
-    void connectAsync({
-      connector: agentConnector,
-      chainId: resolveExecutionChainId(chainID) ?? chainID
-    }).catch((error) => {
-      hasAutoConnectedAgentWalletRef.current = false
-      hasUserRequestedConnectionRef.current = false
-      console.error(error)
-    })
-  }, [chainID, connectAsync, connectors, isConnected, isConnecting])
-
-  const onDesactivate = useCallback((): void => {
-    trackEvent(PLAUSIBLE_EVENTS.DISCONNECT_WALLET, {
-      props: { chainID: String(chainID) }
-    })
-    disconnect()
-  }, [disconnect, trackEvent, chainID])
-
-  const openLoginModal = useCallback(async (): Promise<void> => {
-    if (isConnected && connector && address) {
-      if (openAccountModal) {
-        openAccountModal()
-      } else if (openChainModal) {
-        openChainModal()
-      } else {
-        console.warn('Impossible to open account modal')
-      }
-    } else {
-      const ledgerConnector = connectors.find((c) => c.id.toLowerCase().includes('ledger'))
-      if (isIframe() && ledgerConnector) {
-        hasUserRequestedConnectionRef.current = true
-        await connectAsync({
-          connector: ledgerConnector,
-          chainId: resolveExecutionChainId(chainID) ?? chainID
-        })
-        return
-      }
-
-      if (openConnectModal) {
-        hasUserRequestedConnectionRef.current = true
-        openConnectModal()
-      } else if (openChainModal) {
-        openChainModal()
-      } else {
-        console.warn('Impossible to open login modal')
-      }
-    }
-  }, [
-    address,
-    connectAsync,
-    connector,
-    connectors,
-    chainID,
-    isConnected,
-    openAccountModal,
-    openChainModal,
-    openConnectModal
-  ])
-
-  useEffect(() => {
-    if (!isConnected || !isAddress(address)) {
-      setClusters(undefined)
-      setIsFetchingClusters(false)
-      return undefined
-    }
-
-    if (ensName) {
-      setClusters(undefined)
-      setIsFetchingClusters(false)
-      return undefined
-    }
-
-    let isCancelled = false
-    let timeoutId: number | undefined
-    let idleId: number | undefined
-    const supportsIdleCallback =
-      typeof window !== 'undefined' && 'requestIdleCallback' in window && 'cancelIdleCallback' in window
-
-    const run = async (): Promise<void> => {
-      setIsFetchingClusters(true)
-      try {
-        const clustersTag = await fetchClusterName(address)
-        if (isCancelled) {
-          return
-        }
-
-        if (clustersTag) {
-          const [clustersName] = clustersTag.split('/')
-          const profileImage = getClusterImageUrl(clustersName)
-          setClusters({ name: `${clustersTag}`, avatar: profileImage })
-          return
-        }
-
-        setClusters(undefined)
-      } catch (error) {
-        console.error(error)
-        if (!isCancelled) {
-          setClusters(undefined)
-        }
-      } finally {
-        if (!isCancelled) {
-          setIsFetchingClusters(false)
-        }
-      }
-    }
-
-    if (supportsIdleCallback) {
-      const idleWindow = window as Window & {
-        requestIdleCallback: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number
-        cancelIdleCallback: (handle: number) => void
-      }
-      idleId = idleWindow.requestIdleCallback(
-        () => {
-          void run()
-        },
-        { timeout: 2000 }
-      )
-    } else {
-      timeoutId = window.setTimeout(() => {
-        void run()
-      }, 400)
-    }
-
-    return () => {
-      isCancelled = true
-      if (timeoutId !== undefined) {
-        window.clearTimeout(timeoutId)
-      }
-      if (idleId !== undefined && supportsIdleCallback) {
-        const idleWindow = window as Window & {
-          cancelIdleCallback: (handle: number) => void
-        }
-        idleWindow.cancelIdleCallback(idleId)
-      }
-    }
-  }, [address, ensName, isConnected])
-
-  const isUserConnecting = isConnecting && hasUserRequestedConnectionRef.current
-
-  const isIdentityLoading = Boolean((isEnsLoading && !!address) || isFetchingClusters)
-  const isWalletSafe = isSafeConnectorId(connector?.id)
-  const isWalletLedger = connector?.id.toLowerCase().includes('ledger') ?? false
-
-  const contextValue = useMemo(
-    () => ({
-      address: isConnected && address ? toAddress(address) : undefined,
-      ens: isConnected && ensName ? ensName : undefined,
-      clusters: isConnected ? clusters : undefined,
-      chainID,
-      isActive: isConnected,
-      isWalletSafe,
-      isWalletLedger,
-      isUserConnecting,
-      isIdentityLoading,
-      openLoginModal,
-      onDesactivate
-    }),
-    [
-      address,
-      ensName,
-      clusters,
-      chainID,
-      isConnected,
-      isWalletSafe,
-      isWalletLedger,
-      isUserConnecting,
-      isIdentityLoading,
-      openLoginModal,
-      onDesactivate
-    ]
+  const analytics = useMemo(
+    () =>
+      (event: string, options?: { props?: Record<string, string> }): void => {
+        trackEvent(event, options ?? {})
+      },
+    [trackEvent]
   )
 
-  return <Web3Context.Provider value={contextValue}>{props.children}</Web3Context.Provider>
+  return (
+    <YearnWalletProvider analytics={analytics} chainResolver={tenderlyChainResolver} autoConnect={agentAutoConnect}>
+      {props.children}
+    </YearnWalletProvider>
+  )
 }
 
-export const useWeb3 = (): TWeb3Context => useContext(Web3Context)
+export const useWeb3 = useYearnWallet

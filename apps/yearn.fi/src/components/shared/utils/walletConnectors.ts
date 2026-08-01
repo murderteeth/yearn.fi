@@ -1,3 +1,1 @@
-export function isSafeConnectorId(connectorId?: string): boolean {
-  return connectorId?.toLowerCase() === 'safe'
-}
+export { isSafeConnectorId } from '@yearn/components'

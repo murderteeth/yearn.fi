@@ -1,14 +1,13 @@
+import { ADDRESS_REGEX, type TAddress } from '@yearn/components'
 import * as z from 'zod'
 
-/*******************************************************************************
- ** TAddress is used to represent a checksummed address
- ******************************************************************************/
-export type TAddressSmol = '/^0x[0-9a-f]{40}$/i'
-export type TAddressWagmi = `0x${string}`
-export type TAddress = TAddressWagmi
-export type TAddressLike = TAddressSmol | TAddressWagmi | string
-
-export const ADDRESS_REGEX = new RegExp(/^0x[0-9a-f]{40}$/i)
+export type { TAddress, TAddressLike, TAddressSmol, TAddressWagmi } from '@yearn/components'
+/**
+ * The address types now live in `@yearn/components`, re-exported here to keep
+ * the existing `@shared/types/address` import path working. `addressSchema`
+ * stays in the app because the package does not depend on zod.
+ */
+export { ADDRESS_REGEX } from '@yearn/components'
 
 export const addressSchema = z.custom<TAddress>((val): boolean => {
   return ADDRESS_REGEX.test(val as TAddress)

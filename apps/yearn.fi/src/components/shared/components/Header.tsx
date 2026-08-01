@@ -8,13 +8,12 @@ import { useWalletStatus } from '@shared/contexts/useWallet'
 import { useWeb3 } from '@shared/contexts/useWeb3'
 import { IconBurgerPlain } from '@shared/icons/IconBurgerPlain'
 import { IconMoon } from '@shared/icons/IconMoon'
-import { IconSpinner } from '@shared/icons/IconSpinner'
 import { IconSun } from '@shared/icons/IconSun'
-import { IconWallet } from '@shared/icons/IconWallet'
 import { TypeMarkYearn } from '@shared/icons/TypeMarkYearn'
 import { cl } from '@shared/utils'
 import { normalizePathname } from '@shared/utils/routes'
 import { truncateHex } from '@shared/utils/tools.address'
+import { Yearn } from '@yearn/components'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type { KeyboardEvent, MouseEvent, ReactElement } from 'react'
@@ -31,85 +30,6 @@ import {
 import { AccountDropdown } from './AccountDropdown'
 import { HeaderNavMenu } from './HeaderNavMenu'
 import { MobileNavMenu } from './MobileNavMenu'
-
-type TWalletSelectorProps = {
-  onAccountClick: () => void
-  notificationStatus: 'pending' | 'submitted' | 'success' | 'error' | null
-}
-
-function WalletSelector({ onAccountClick, notificationStatus }: TWalletSelectorProps): ReactElement {
-  const { isActive, isUserConnecting, isIdentityLoading, address, ens, clusters, openLoginModal } = useWeb3()
-  const { isLoading: isWalletLoading } = useWalletStatus()
-
-  const walletIdentity = useMemo((): string | undefined => {
-    if (isUserConnecting) return 'Connecting...'
-    if (ens) return ens
-    if (clusters) return clusters.name
-    if (address) return truncateHex(address, 4)
-    return undefined
-  }, [ens, clusters, address, isUserConnecting])
-
-  const shouldShowSpinner = address && walletIdentity && !isUserConnecting && (isIdentityLoading || isWalletLoading)
-
-  const notificationDotColor = useMemo((): string => {
-    switch (notificationStatus) {
-      case 'error':
-        return 'bg-red'
-      case 'success':
-        return 'bg-[#0C9000]'
-      case 'pending':
-      case 'submitted':
-        return 'bg-primary animate-pulse'
-      default:
-        return ''
-    }
-  }, [notificationStatus])
-
-  function handleClick(): void {
-    if (shouldShowSpinner || isUserConnecting) return
-    if (isActive || address || ens || clusters) {
-      onAccountClick()
-      return
-    }
-    openLoginModal()
-  }
-
-  return (
-    <div
-      onMouseDown={(e) => e.stopPropagation()}
-      onClick={handleClick}
-      className={cl('relative', shouldShowSpinner ? 'cursor-wait' : 'cursor-pointer')}
-    >
-      {walletIdentity && notificationStatus && (
-        <div className={cl('absolute -right-0.5 -top-0.5 size-2 rounded-full', notificationDotColor)} />
-      )}
-      <p
-        suppressHydrationWarning
-        className={'text-xs font-normal text-text-secondary transition-colors hover:text-text-primary md:text-sm'}
-      >
-        {walletIdentity ? (
-          <span className={'inline-flex items-center gap-2 rounded-lg bg-surface-secondary px-3 py-1.5'}>
-            <IconWallet className={'size-4 text-text-secondary'} />
-            <span>{walletIdentity}</span>
-            {shouldShowSpinner && <IconSpinner className={'size-3.5 text-text-tertiary'} />}
-          </span>
-        ) : (
-          <span>
-            <IconWallet className={'mt-0.5 block size-4 text-text-secondary md:hidden'} />
-            <span
-              className={
-                'relative hidden h-8 cursor-pointer items-center gap-2 justify-center rounded-lg border border-transparent bg-text-primary px-3 text-xs font-normal text-surface transition-all hover:opacity-90 md:flex'
-              }
-            >
-              <IconWallet className={'size-4 text-surface'} />
-              <span>{'Connect wallet'}</span>
-            </span>
-          </span>
-        )}
-      </p>
-    </div>
-  )
-}
 
 function getConfiguredTenderlyMappingsLabel(): string {
   return tenderlyConfiguredRuntime.configuredCanonicalChainIds
@@ -235,6 +155,7 @@ function AppHeader(): ReactElement {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { notificationStatus } = useNotifications()
   const { address, ens, clusters } = useWeb3()
+  const { isLoading: isWalletLoading } = useWalletStatus()
   const themePreference = useThemePreference()
   const isDarkTheme = themePreference !== 'light'
 
@@ -299,9 +220,10 @@ function AppHeader(): ReactElement {
                     {isDarkTheme ? <IconSun className={'size-5'} /> : <IconMoon className={'size-5'} />}
                   </button>
                   <div className={'relative'}>
-                    <WalletSelector
+                    <Yearn.ConnectButton
                       onAccountClick={() => setIsAccountSidebarOpen(!isAccountSidebarOpen)}
                       notificationStatus={notificationStatus}
+                      isBusy={isWalletLoading}
                     />
                     <AccountDropdown isOpen={isAccountSidebarOpen} onClose={() => setIsAccountSidebarOpen(false)} />
                   </div>
