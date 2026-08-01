@@ -20,6 +20,25 @@ packages/deposit       @yearn/deposit — deposit/withdraw widget and its server
 All commands below run from the repo root unless noted; root `package.json` scripts delegate to the
 workspaces.
 
+### Running it
+
+```bash
+bun install
+bun run dev              # the app            → http://127.0.0.1:3000
+bun run dev:components   # component demo     → http://127.0.0.1:3001
+bun run dev:deposit      # widget demo        → http://127.0.0.1:3002
+```
+
+The app needs `apps/yearn.fi/.env`; each package demo has its own `.env.example`. The widget demo
+serves the Enso and price routes itself, so it runs without the app.
+
+To check a production build the way Vercel will:
+
+```bash
+bun run build && bun run preview
+```
+
+
 ### Initial Setup
 
 - Fork the [original repo](https://github.com/yearn/yearn.fi) into your GitHub account

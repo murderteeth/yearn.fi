@@ -198,8 +198,16 @@ compiler options, extended by each workspace), `biome.jsonc`, `.lintstagedrc.jso
 
 ## Deployment
 
-The Vercel project's **Root Directory must be `apps/yearn.fi`**. Vercel detects the bun workspace root
-and installs from the repo root; `apps/yearn.fi/vercel.json` holds the install and build commands.
+The Vercel project's **Root Directory must be `apps/yearn.fi`**. Vercel detects the bun workspace
+root and installs from the repo root; `apps/yearn.fi/vercel.json` holds the install and build
+commands.
+
+This is a dashboard setting, not a repo setting, and it cannot be set from here — the
+`VERCEL_API_TOKEN` in this environment is rejected for both the `yearn` and personal scopes.
+
+Note the ordering hazard: the existing production project builds `yearn/yearn.fi`, whose default
+branch is still flat. Changing *that* project's root directory before the monorepo lands on its
+default branch breaks production. A fork deployment wants its own project instead.
 
 ## Multi-Chain
 
