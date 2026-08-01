@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@yearn/components": ["../components/src/index.ts"],
+      "@yearn/components/*": ["../components/src/*"],
+      "@yearn/vaults": ["./src/index.ts"],
+      "@yearn/vaults/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts", "**/*.tsx"]
+}

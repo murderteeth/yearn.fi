@@ -8,19 +8,29 @@ Bun-workspace monorepo. Yearn Finance vaults interface — Next.js 16 App Router
 | --- | --- | --- | --- |
 | `apps/yearn.fi` | `yearnfi` | The deployed app | — |
 | `packages/components` | `@yearn/components` | Design tokens, UI primitives, wallet connection layer | `:3001` |
+| `packages/vaults` | `@yearn/vaults` | Vault domain model: selectors, types, ABIs, Kong client | headless |
 | `packages/deposit` | `@yearn/deposit` | Deposit/withdraw widget, transaction flows, its server routes | `:3002` |
 
 Workspace globs are `apps/*` and `packages/*`. Dependencies hoist to the repo root — there is no
 `apps/yearn.fi/node_modules`, so any path that reaches into `node_modules` must go up two levels.
 
-`@yearn/deposit` depends on `@yearn/components`; never the reverse. Each package is both a library
-and a Next.js demo site, so the demo exercises the package exactly the way a consuming app does.
+Dependencies point one way only: `components` ← `vaults` ← `deposit`. `components` depends on
+nothing; `vaults` may use `components`; `deposit` may use both. Never the reverse.
+
+`components` and `deposit` are each a library plus a Next.js demo site, so the demo exercises the
+package exactly the way a consuming app does. `vaults` is headless and has no demo.
 
 ### What belongs in a package
 
-`@yearn/components` owns the **chain-connection layer** — tokens, primitives, wallet identity and
-the connect button. `@yearn/deposit` owns the **vault-domain layer** — the widget, its transaction
-flows, the Enso solver, and the server routes those call.
+`@yearn/components` owns the **chain-connection layer** — tokens, primitives, wallet identity, the
+connect button, and generic server helpers. `@yearn/vaults` owns the **domain model** — vault
+selectors, types, ABIs, and the Kong client, which yearn.fi's list, detail, and portfolio pages use
+directly, not only the widget. `@yearn/deposit` owns the **widget** — its UI, transaction flows, the
+Enso solver, and the server routes those call.
+
+The `vaults` split exists because the domain model has heavy use outside the widget
+(`kongVaultSelectors` alone has ~30 importers beyond it); folding it into `deposit` would make every
+vault page import from a package named for a single action.
 
 Packages own no app singletons. Anything app-specific is injected as a prop with a working default:
 analytics is a sink the host supplies, and `TYearnChainResolver` maps a displayed chain to the chain

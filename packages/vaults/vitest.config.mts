@@ -8,8 +8,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@yearn/components': path.resolve(__dirname, '../components/src'),
-      '@yearn/vaults': path.resolve(__dirname, '../vaults/src'),
-      '@yearn/deposit': path.resolve(__dirname, './src')
+      '@yearn/vaults': path.resolve(__dirname, './src')
     }
   },
   test: {

@@ -24,6 +24,7 @@
         "@upstash/redis": "1.37.0",
         "@yearn/components": "workspace:*",
         "@yearn/deposit": "workspace:*",
+        "@yearn/vaults": "workspace:*",
         "cross-fetch": "4.1.0",
         "ethers": "5.7.2",
         "framer-motion": "12.34.0",
@@ -93,6 +94,7 @@
       "version": "0.0.0",
       "dependencies": {
         "@yearn/components": "workspace:*",
+        "@yearn/vaults": "workspace:*",
       },
       "devDependencies": {
         "@rainbow-me/rainbowkit": "2.2.11",
@@ -115,6 +117,34 @@
         "@rainbow-me/rainbowkit": "2.2.11",
         "@tanstack/react-query": "5.90.21",
         "next": "16.2.6",
+        "react": "19.2.6",
+        "react-dom": "19.2.6",
+        "viem": "2.46.1",
+        "wagmi": "2.18.2",
+      },
+    },
+    "packages/vaults": {
+      "name": "@yearn/vaults",
+      "version": "0.0.0",
+      "dependencies": {
+        "@yearn/components": "workspace:*",
+      },
+      "devDependencies": {
+        "@rainbow-me/rainbowkit": "2.2.11",
+        "@tanstack/react-query": "5.90.21",
+        "@types/node": "25.3.0",
+        "@types/react": "19.2.15",
+        "@types/react-dom": "19.2.3",
+        "react": "19.2.6",
+        "react-dom": "19.2.6",
+        "typescript": "5.9.3",
+        "viem": "2.46.1",
+        "vitest": "4.1.8",
+        "wagmi": "2.18.2",
+      },
+      "peerDependencies": {
+        "@rainbow-me/rainbowkit": "2.2.11",
+        "@tanstack/react-query": "5.90.21",
         "react": "19.2.6",
         "react-dom": "19.2.6",
         "viem": "2.46.1",
@@ -689,6 +719,8 @@
     "@yearn/components": ["@yearn/components@workspace:packages/components"],
 
     "@yearn/deposit": ["@yearn/deposit@workspace:packages/deposit"],
+
+    "@yearn/vaults": ["@yearn/vaults@workspace:packages/vaults"],
 
     "abitype": ["abitype@1.2.3", "", { "peerDependencies": { "typescript": ">=5.0.4", "zod": "^3.22.0 || ^4.0.0" }, "optionalPeers": ["typescript", "zod"] }, "sha512-Ofer5QUnuUdTFsBRwARMoWKOH1ND5ehwYhJ3OJ/BQO+StkwQjHw0XyVh4vDttzHB7QOFhPHa/o413PJ82gU/Tg=="],
 

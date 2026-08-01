@@ -8,7 +8,7 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  transpilePackages: ['@yearn/components', '@yearn/deposit']
+  transpilePackages: ['@yearn/components', '@yearn/vaults', '@yearn/deposit']
 }
 
 export default nextConfig

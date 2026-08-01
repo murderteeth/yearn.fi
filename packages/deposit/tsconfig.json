@@ -5,6 +5,8 @@
     "paths": {
       "@yearn/components": ["../components/src/index.ts"],
       "@yearn/components/*": ["../components/src/*"],
+      "@yearn/vaults": ["../vaults/src/index.ts"],
+      "@yearn/vaults/*": ["../vaults/src/*"],
       "@yearn/deposit": ["./src/index.ts"],
       "@yearn/deposit/*": ["./src/*"]
     },

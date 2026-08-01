@@ -23,6 +23,9 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/components/pages'),
       '@components': path.resolve(__dirname, './src/components'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@yearn/components': path.resolve(__dirname, '../../packages/components/src'),
+      '@yearn/vaults': path.resolve(__dirname, '../../packages/vaults/src'),
+      '@yearn/deposit': path.resolve(__dirname, '../../packages/deposit/src'),
       '@plausible-analytics/tracker': resolveHoisted('@plausible-analytics/tracker/plausible.js')
     }
   },

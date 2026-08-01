@@ -9,6 +9,7 @@ This is a bun-workspace monorepo.
 ```
 apps/yearn.fi          the deployed Next.js app
 packages/components    @yearn/components — design tokens, UI primitives, wallet connection
+packages/vaults        @yearn/vaults — vault domain model (headless)
 packages/deposit       @yearn/deposit — deposit/withdraw widget and its server routes
 ```
 
