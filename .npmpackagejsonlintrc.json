@@ -1,6 +1,12 @@
 {
   "rules": {
-    "prefer-absolute-version-dependencies": "error",
+    "prefer-absolute-version-dependencies": [
+      "error",
+      {
+        "//": "Workspace packages are linked by bun via the workspace: protocol, which has no absolute version to pin. Every third-party dependency is still held to an exact version.",
+        "exceptions": ["@yearn/components", "@yearn/deposit", "@yearn/util", "@yearn/vaults"]
+      }
+    ],
     "prefer-absolute-version-devDependencies": "error"
   }
 }
