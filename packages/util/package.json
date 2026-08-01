@@ -1,0 +1,23 @@
+{
+  "name": "@yearn/util",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Framework-free Yearn helpers: addresses, class names, and web-standard server plumbing.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*"
+  },
+  "scripts": {
+    "tslint": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "peerDependencies": {
+    "viem": "2.46.1"
+  },
+  "devDependencies": {
+    "@types/node": "25.3.0",
+    "typescript": "5.9.3",
+    "viem": "2.46.1",
+    "vitest": "4.1.8"
+  }
+}

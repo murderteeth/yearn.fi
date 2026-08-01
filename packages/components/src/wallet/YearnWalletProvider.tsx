@@ -1,10 +1,6 @@
 'use client'
 
 import { useAccountModal, useChainModal, useConnectModal } from '@rainbow-me/rainbowkit'
-import { isAddress, toAddress } from '@yearn/components/utils/address'
-import { fetchClusterName, getClusterImageUrl } from '@yearn/components/utils/clusters'
-import { isIframe } from '@yearn/components/utils/isIframe'
-import { isSafeConnectorId } from '@yearn/components/utils/walletConnectors'
 import {
   identityChainResolver,
   type TYearnAutoConnect,
@@ -13,6 +9,10 @@ import {
   type TYearnWalletContext,
   YEARN_WALLET_EVENTS
 } from '@yearn/components/wallet/types'
+import { isAddress, toAddress } from '@yearn/util/utils/address'
+import { fetchClusterName, getClusterImageUrl } from '@yearn/util/utils/clusters'
+import { isIframe } from '@yearn/util/utils/isIframe'
+import { isSafeConnectorId } from '@yearn/util/utils/walletConnectors'
 import type { ReactElement, ReactNode } from 'react'
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { mainnet } from 'viem/chains'

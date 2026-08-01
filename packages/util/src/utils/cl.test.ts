@@ -1,4 +1,4 @@
-import { cl } from '@yearn/components/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 import { describe, expect, it } from 'vitest'
 
 describe('cl', () => {

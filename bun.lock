@@ -24,6 +24,7 @@
         "@upstash/redis": "1.37.0",
         "@yearn/components": "workspace:*",
         "@yearn/deposit": "workspace:*",
+        "@yearn/util": "workspace:*",
         "@yearn/vaults": "workspace:*",
         "cross-fetch": "4.1.0",
         "ethers": "5.7.2",
@@ -62,6 +63,9 @@
     "packages/components": {
       "name": "@yearn/components",
       "version": "0.0.0",
+      "dependencies": {
+        "@yearn/util": "workspace:*",
+      },
       "devDependencies": {
         "@rainbow-me/rainbowkit": "2.2.11",
         "@tailwindcss/postcss": "4.1.18",
@@ -94,6 +98,7 @@
       "version": "0.0.0",
       "dependencies": {
         "@yearn/components": "workspace:*",
+        "@yearn/util": "workspace:*",
         "@yearn/vaults": "workspace:*",
       },
       "devDependencies": {
@@ -123,11 +128,24 @@
         "wagmi": "2.18.2",
       },
     },
+    "packages/util": {
+      "name": "@yearn/util",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@types/node": "25.3.0",
+        "typescript": "5.9.3",
+        "viem": "2.46.1",
+        "vitest": "4.1.8",
+      },
+      "peerDependencies": {
+        "viem": "2.46.1",
+      },
+    },
     "packages/vaults": {
       "name": "@yearn/vaults",
       "version": "0.0.0",
       "dependencies": {
-        "@yearn/components": "workspace:*",
+        "@yearn/util": "workspace:*",
       },
       "devDependencies": {
         "@rainbow-me/rainbowkit": "2.2.11",
@@ -719,6 +737,8 @@
     "@yearn/components": ["@yearn/components@workspace:packages/components"],
 
     "@yearn/deposit": ["@yearn/deposit@workspace:packages/deposit"],
+
+    "@yearn/util": ["@yearn/util@workspace:packages/util"],
 
     "@yearn/vaults": ["@yearn/vaults@workspace:packages/vaults"],
 

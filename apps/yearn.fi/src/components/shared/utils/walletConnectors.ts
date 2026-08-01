@@ -1,1 +1,1 @@
-export { isSafeConnectorId } from '@yearn/components'
+export { isSafeConnectorId } from '@yearn/util'

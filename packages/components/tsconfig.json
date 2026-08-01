@@ -3,6 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@yearn/util": ["../util/src/index.ts"],
+      "@yearn/util/*": ["../util/src/*"],
       "@yearn/components": ["./src/index.ts"],
       "@yearn/components/*": ["./src/*"]
     },

@@ -8,7 +8,7 @@ import type { NextConfig } from 'next'
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  transpilePackages: ['@yearn/components']
+  transpilePackages: ['@yearn/util', '@yearn/components']
 }
 
 export default nextConfig

@@ -1,4 +1,4 @@
-import type { TAddress } from '@yearn/components/types/address'
+import type { TAddress } from '@yearn/util/types/address'
 
 /**
  * Analytics sink. The package emits events but owns no tracker — the host app

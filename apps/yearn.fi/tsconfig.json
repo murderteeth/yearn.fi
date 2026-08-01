@@ -10,6 +10,8 @@
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "/src/*": ["src/*"],
+      "@yearn/util": ["../../packages/util/src/index.ts"],
+      "@yearn/util/*": ["../../packages/util/src/*"],
       "@yearn/components": ["../../packages/components/src/index.ts"],
       "@yearn/components/*": ["../../packages/components/src/*"],
       "@yearn/vaults": ["../../packages/vaults/src/index.ts"],

@@ -1,4 +1,4 @@
-import { cl } from '@yearn/components/utils/cl'
+import { cl } from '@yearn/util/utils/cl'
 
 import type { ReactElement } from 'react'
 

@@ -12,7 +12,7 @@
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@yearn/components": "workspace:*"
+    "@yearn/util": "workspace:*"
   },
   "peerDependencies": {
     "@rainbow-me/rainbowkit": "2.2.11",

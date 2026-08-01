@@ -1,6 +1,10 @@
 /**
  * Public entry point for `@yearn/components`.
  *
+ * Client UI: design tokens, primitives, and the wallet connection layer.
+ * Framework-free helpers live in `@yearn/util`; this package does not
+ * re-export them, so consumers depend on the layer they actually use.
+ *
  * The package is consumed as TypeScript source: apps list it in
  * `transpilePackages` rather than importing a build artifact.
  *
@@ -18,21 +22,6 @@ export const Yearn = {
 
 export { IconSpinner } from '@yearn/components/icons/IconSpinner'
 export { IconWallet } from '@yearn/components/icons/IconWallet'
-export type { TAddress, TAddressLike, TAddressSmol, TAddressWagmi } from '@yearn/components/types/address'
-export { ADDRESS_REGEX } from '@yearn/components/types/address'
-export {
-  getColorFromAdddress,
-  isAddress,
-  isTAddress,
-  isZeroAddress,
-  toAddress,
-  toSafeAddress,
-  truncateHex
-} from '@yearn/components/utils/address'
-export { cl } from '@yearn/components/utils/cl'
-export { fetchClusterName, getClusterImageUrl } from '@yearn/components/utils/clusters'
-export { isIframe } from '@yearn/components/utils/isIframe'
-export { isSafeConnectorId } from '@yearn/components/utils/walletConnectors'
 export type { TConnectButtonNotificationStatus, TConnectButtonProps } from '@yearn/components/wallet/ConnectButton'
 export { ConnectButton } from '@yearn/components/wallet/ConnectButton'
 export {

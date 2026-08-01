@@ -1,6 +1,6 @@
 'use client'
 
-import { cl } from '@yearn/components'
+import { cl } from '@yearn/util'
 import type { ReactElement } from 'react'
 import { useState } from 'react'
 

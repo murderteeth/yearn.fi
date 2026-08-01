@@ -1,4 +1,4 @@
-import type { TAddress, TAddressLike, TAddressSmol } from '@yearn/components/types/address'
+import type { TAddress, TAddressLike, TAddressSmol } from '@yearn/util/types/address'
 import { getAddress, zeroAddress } from 'viem'
 
 /******************************************************************************

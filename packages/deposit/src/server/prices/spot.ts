@@ -1,5 +1,5 @@
-import { GET_CORS_HEADERS, json, noContent, queryString } from '@yearn/components/server/http'
 import { pricesConfig } from '@yearn/deposit/server/prices/config'
+import { GET_CORS_HEADERS, json, noContent, queryString } from '@yearn/util/server/http'
 
 const SPOT_CACHE_CONTROL = 'public, s-maxage=120, stale-while-revalidate=600'
 const CLIENT_CACHE_CONTROL = 'public, max-age=0, must-revalidate'

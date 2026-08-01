@@ -23,6 +23,7 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/components/pages'),
       '@components': path.resolve(__dirname, './src/components'),
       '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@yearn/util': path.resolve(__dirname, '../../packages/util/src'),
       '@yearn/components': path.resolve(__dirname, '../../packages/components/src'),
       '@yearn/vaults': path.resolve(__dirname, '../../packages/vaults/src'),
       '@yearn/deposit': path.resolve(__dirname, '../../packages/deposit/src'),

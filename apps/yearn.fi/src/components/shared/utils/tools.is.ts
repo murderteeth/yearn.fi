@@ -1,12 +1,12 @@
-import { toAddress } from '@yearn/components'
+import { toAddress } from '@yearn/util'
 import type { TAddress } from '../types/address'
 import { ETH_TOKEN_ADDRESS } from './constants'
 
 /**
- * The address predicates now live in `@yearn/components` alongside `toAddress`,
+ * The address predicates now live in `@yearn/util` alongside `toAddress`,
  * and are re-exported here to keep the existing import path working.
  */
-export { isAddress, isTAddress, isZeroAddress } from '@yearn/components'
+export { isAddress, isTAddress, isZeroAddress } from '@yearn/util'
 
 export function isZero(value?: bigint | number | string | null): boolean {
   if (value === null || value === undefined) {

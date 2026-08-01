@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@yearn/components": "workspace:*",
+    "@yearn/util": "workspace:*",
     "@yearn/vaults": "workspace:*"
   },
   "peerDependencies": {

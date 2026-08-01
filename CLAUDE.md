@@ -7,6 +7,7 @@ Bun-workspace monorepo. Yearn Finance vaults interface — Next.js 16 App Router
 | Path | Package | Role | Demo |
 | --- | --- | --- | --- |
 | `apps/yearn.fi` | `yearnfi` | The deployed app | — |
+| `packages/util` | `@yearn/util` | Framework-free helpers: addresses, class names, server plumbing | headless |
 | `packages/components` | `@yearn/components` | Design tokens, UI primitives, wallet connection layer | `:3001` |
 | `packages/vaults` | `@yearn/vaults` | Vault domain model: selectors, types, ABIs, Kong client | headless |
 | `packages/deposit` | `@yearn/deposit` | Deposit/withdraw widget, transaction flows, its server routes | `:3002` |
@@ -14,16 +15,30 @@ Bun-workspace monorepo. Yearn Finance vaults interface — Next.js 16 App Router
 Workspace globs are `apps/*` and `packages/*`. Dependencies hoist to the repo root — there is no
 `apps/yearn.fi/node_modules`, so any path that reaches into `node_modules` must go up two levels.
 
-Dependencies point one way only: `components` ← `vaults` ← `deposit`. `components` depends on
-nothing; `vaults` may use `components`; `deposit` may use both. Never the reverse.
+Dependencies point one way only:
+
+```
+util                  viem only — no React, no wagmi, no Next
+components  → util    client UI: tokens, primitives, wallet
+vaults      → util    domain model
+deposit     → util, components, vaults
+```
+
+`vaults` deliberately does not depend on `components`: a headless domain model should not pull a UI
+package's React and wagmi peers in just to reach `toAddress`. That is the whole reason `util` exists.
 
 `components` and `deposit` are each a library plus a Next.js demo site, so the demo exercises the
 package exactly the way a consuming app does. `vaults` is headless and has no demo.
 
 ### What belongs in a package
 
-`@yearn/components` owns the **chain-connection layer** — tokens, primitives, wallet identity, the
-connect button, and generic server helpers. `@yearn/vaults` owns the **domain model** — vault
+`@yearn/util` owns **framework-free helpers** — addresses, class names, and web-standard server
+plumbing. Its dependency rule is what keeps it from becoming a junk drawer: **no React, no wagmi, no
+RainbowKit, no Next.** `viem` is allowed, because addresses and ABIs are the domain, not a framework.
+If a helper needs a hook, it does not belong here.
+
+`@yearn/components` owns the **client UI layer** — tokens, primitives, wallet identity, and the
+connect button. `@yearn/vaults` owns the **domain model** — vault
 selectors, types, ABIs, and the Kong client, which yearn.fi's list, detail, and portfolio pages use
 directly, not only the widget. `@yearn/deposit` owns the **widget** — its UI, transaction flows, the
 Enso solver, and the server routes those call.

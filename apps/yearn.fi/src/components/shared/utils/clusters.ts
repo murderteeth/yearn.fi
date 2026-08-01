@@ -1,1 +1,1 @@
-export { fetchClusterName, getClusterImageUrl } from '@yearn/components'
+export { fetchClusterName, getClusterImageUrl } from '@yearn/util'

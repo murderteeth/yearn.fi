@@ -1,5 +1,5 @@
-import { GET_CORS_HEADERS, json, noContent, queryString } from '@yearn/components/server/http'
 import { ENSO_BALANCES_CACHE_CONTROL } from '@yearn/deposit/server/enso/cache'
+import { GET_CORS_HEADERS, json, noContent, queryString } from '@yearn/util/server/http'
 
 const ENSO_API_BASE = 'https://api.enso.build'
 

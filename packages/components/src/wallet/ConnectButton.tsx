@@ -2,9 +2,9 @@
 
 import { IconSpinner } from '@yearn/components/icons/IconSpinner'
 import { IconWallet } from '@yearn/components/icons/IconWallet'
-import { truncateHex } from '@yearn/components/utils/address'
-import { cl } from '@yearn/components/utils/cl'
 import { useYearnWallet } from '@yearn/components/wallet/YearnWalletProvider'
+import { truncateHex } from '@yearn/util/utils/address'
+import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 import { useMemo } from 'react'
 

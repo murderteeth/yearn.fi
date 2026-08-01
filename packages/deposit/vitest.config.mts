@@ -7,6 +7,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@yearn/util': path.resolve(__dirname, '../util/src'),
       '@yearn/components': path.resolve(__dirname, '../components/src'),
       '@yearn/vaults': path.resolve(__dirname, '../vaults/src'),
       '@yearn/deposit': path.resolve(__dirname, './src')

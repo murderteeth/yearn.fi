@@ -1,8 +1,8 @@
-import { cl } from '@yearn/components'
+import { cl } from '@yearn/util'
 
 /**
  * Placeholder landing page. Replaced by the live widget demo once the deposit
- * and withdraw flows land. It imports from `@yearn/components` to prove the
+ * and withdraw flows land. It imports from `@yearn/util` to prove the
  * package-to-package dependency resolves through the workspace.
  */
 export default function DemoPage() {
