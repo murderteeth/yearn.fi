@@ -1,4 +1,4 @@
-import { GET_CORS_HEADERS, json, noContent } from '../http'
+import { GET_CORS_HEADERS, json, noContent } from '@yearn/components/server/http'
 
 export function OPTIONS(): Response {
   return noContent(GET_CORS_HEADERS)

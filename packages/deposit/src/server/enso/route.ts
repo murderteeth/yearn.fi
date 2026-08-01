@@ -1,4 +1,4 @@
-import { GET_CORS_HEADERS, json, noContent, queryString } from '../http'
+import { GET_CORS_HEADERS, json, noContent, queryString } from '@yearn/components/server/http'
 
 const ENSO_API_BASE = 'https://api.enso.build'
 

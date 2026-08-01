@@ -1,5 +1,5 @@
-import { GET_CORS_HEADERS, json, noContent, queryString } from '@/server/http'
-import { holdingsConfig } from '@/server/lib/holdings/config'
+import { GET_CORS_HEADERS, json, noContent, queryString } from '@yearn/components/server/http'
+import { pricesConfig } from '@yearn/deposit/server/prices/config'
 
 const SPOT_CACHE_CONTROL = 'public, s-maxage=120, stale-while-revalidate=600'
 const CLIENT_CACHE_CONTROL = 'public, max-age=0, must-revalidate'
@@ -27,7 +27,7 @@ function parseCoins(rawCoins: string | undefined): string[] {
 }
 
 function buildUpstreamUrl(coins: string[]): string {
-  const url = new URL(`${holdingsConfig.yearnPricesBaseUrl}/api/prices/spot`)
+  const url = new URL(`${pricesConfig.yearnPricesBaseUrl}/api/prices/spot`)
   url.searchParams.set('coins', JSON.stringify([...new Set(coins)].sort((left, right) => left.localeCompare(right))))
   return url.toString()
 }
@@ -45,7 +45,7 @@ export async function OPTIONS(): Promise<Response> {
 }
 
 export async function GET(request: Request): Promise<Response> {
-  const apiKey = holdingsConfig.yearnPricesApiKey
+  const apiKey = pricesConfig.yearnPricesApiKey
   if (!apiKey) {
     return json(
       { error: 'YEARN_PRICES_API_KEY or API_KEY_PORTFOLIO is not configured' },

@@ -1,5 +1,5 @@
+import { GET } from '@yearn/deposit/server/prices/spot'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { GET } from './spot'
 
 function createSpotRequest(coins: string[]): Request {
   return new Request(`https://yearn.fi/api/prices/spot?coins=${encodeURIComponent(JSON.stringify(coins))}`)
