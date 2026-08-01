@@ -5,11 +5,11 @@ import {
   getTimelockBadgeLabel
 } from '@pages/vaults/utils/timelockStrategyDisplay'
 import { TokenLogo } from '@shared/components/TokenLogo'
-import { copyToClipboard } from '@shared/utils/helpers'
-import { getNetwork } from '@shared/utils/wagmi/utils'
 import { IconChevron } from '@yearn/components/icons/IconChevron'
 import { IconCopy } from '@yearn/components/icons/IconCopy'
 import { IconLinkOut } from '@yearn/components/icons/IconLinkOut'
+import { copyToClipboard } from '@yearn/deposit/utils/helpers'
+import { getNetwork } from '@yearn/deposit/utils/wagmi/utils'
 import type { TAddress } from '@yearn/util/types/address'
 import { truncateHex } from '@yearn/util/utils/address'
 import { cl } from '@yearn/util/utils/cl'

@@ -10,7 +10,7 @@ vi.mock('@shared/contexts/useWeb3', () => ({
   useWeb3: () => ({ address: '0x1111111111111111111111111111111111111111' })
 }))
 
-vi.mock('@shared/hooks/useFetch', () => ({
+vi.mock('@yearn/components/hooks/useFetch', () => ({
   fetchWithSchema: vi.fn()
 }))
 

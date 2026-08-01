@@ -1,7 +1,5 @@
 import { useLocalStorageValue } from '@react-hookz/web'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useYearn } from '@shared/contexts/useYearn'
-import { useTokenList } from '@shared/contexts/WithTokenList'
 import type {
   TTenderlyFundableAsset,
   TTenderlyFundRequest,
@@ -25,6 +23,8 @@ import {
 } from '@shared/utils/tenderlyPanel'
 import { useQueryClient } from '@tanstack/react-query'
 import { toast } from '@yearn/components/components/yToast'
+import { useYearn } from '@yearn/deposit/contexts/useYearn'
+import { useTokenList } from '@yearn/deposit/contexts/WithTokenList'
 import {
   createContext,
   type ReactElement,

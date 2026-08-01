@@ -1,7 +1,7 @@
 import { VaultsListRowPresentation } from '@pages/vaults/components/list/VaultsListRow'
 import { VirtualizedVaultsList } from '@pages/vaults/components/list/VirtualizedVaultsList'
 import type { TVaultForwardAPYVariant } from '@pages/vaults/components/table/VaultForwardAPY'
-import type { TYvUsdListVaults } from '@pages/vaults/hooks/useYvUsdVaults'
+import type { TYvUsdListVaults } from '@yearn/deposit/hooks/useYvUsdVaults'
 import { toAddress } from '@yearn/util/utils/address'
 import { cl } from '@yearn/util/utils/cl'
 import { getVaultAddress, getVaultChainID, type TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'

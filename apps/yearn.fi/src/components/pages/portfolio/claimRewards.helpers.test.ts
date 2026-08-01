@@ -1,4 +1,4 @@
-import type { TGroupedMerkleReward } from '@pages/vaults/components/widget/rewards/types'
+import type { TGroupedMerkleReward } from '@yearn/deposit/widget/rewards/types'
 import { describe, expect, it, vi } from 'vitest'
 import { hasClaimableRewardNotification, mergeChainMerkleData } from './claimRewards.helpers'
 

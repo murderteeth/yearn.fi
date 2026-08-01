@@ -1,0 +1,141 @@
+import { useLocalStorageValue } from '@react-hookz/web'
+import type { QueryObserverResult } from '@tanstack/react-query'
+import { clampZapSlippage } from '@yearn/components/utils/slippage'
+import { useFetchYearnVaults } from '@yearn/deposit/hooks/useFetchYearnVaults'
+import type { TYDaemonEarned } from '@yearn/deposit/schemas/yDaemonEarnedSchema'
+import { Solver, type TSolver } from '@yearn/deposit/types/solvers'
+import { EMPTY_YEARN_PRICES_BY_CHAIN, type TYearnPricesByChain } from '@yearn/deposit/utils/yearnPrices'
+import type { TAddress } from '@yearn/util/types/address'
+import type { TDict, TNormalizedBN } from '@yearn/util/types/mixed'
+import { toAddress } from '@yearn/util/utils/address'
+import { zeroNormalizedBN } from '@yearn/util/utils/format'
+import type { TKongVaultList, TKongVaultListItem } from '@yearn/vaults/schemas/kongVaultListSchema'
+import { usePathname } from 'next/navigation'
+import type { ReactElement } from 'react'
+import { createContext, memo, useCallback, useContext, useEffect, useState } from 'react'
+import { deserialize, serialize } from 'wagmi'
+
+export const DEFAULT_SLIPPAGE = 0.5
+export const DEFAULT_MAX_LOSS = 1n
+
+type TTokenAndChain = { address: TAddress; chainID: number }
+export type TYearnContext = {
+  currentPartner: TAddress
+  earned?: TYDaemonEarned
+  prices?: TYearnPricesByChain
+  vaults: TDict<TKongVaultListItem>
+  allVaults: TDict<TKongVaultListItem>
+  isLoadingVaultList: boolean
+  zapSlippage: number
+  maxLoss: bigint
+  zapProvider: TSolver
+  isAutoStakingEnabled: boolean
+  mutateVaultList: () => Promise<QueryObserverResult<TKongVaultList, Error>>
+  enableVaultListFetch: () => void
+  setMaxLoss: (value: bigint) => void
+  setZapSlippage: (value: number) => void
+  setZapProvider: (value: TSolver) => void
+  setIsAutoStakingEnabled: (value: boolean) => void
+  //
+  //Price context
+  getPrice: ({ address, chainID }: TTokenAndChain) => TNormalizedBN
+}
+
+const YearnContext = createContext<TYearnContext>({
+  currentPartner: toAddress(process.env.NEXT_PUBLIC_PARTNER_ID_ADDRESS),
+  earned: {
+    earned: {},
+    totalRealizedGainsUSD: 0,
+    totalUnrealizedGainsUSD: 0
+  },
+  prices: {},
+  vaults: {},
+  allVaults: {},
+  isLoadingVaultList: false,
+  maxLoss: DEFAULT_MAX_LOSS,
+  zapSlippage: DEFAULT_SLIPPAGE,
+  zapProvider: Solver.enum.Cowswap,
+  isAutoStakingEnabled: true,
+  mutateVaultList: (): Promise<QueryObserverResult<TKongVaultList, Error>> =>
+    Promise.resolve({} as QueryObserverResult<TKongVaultList, Error>),
+  enableVaultListFetch: (): void => undefined,
+  setMaxLoss: (): void => undefined,
+  setZapSlippage: (): void => undefined,
+  setZapProvider: (): void => undefined,
+  setIsAutoStakingEnabled: (): void => undefined,
+
+  //Price context
+  getPrice: (): TNormalizedBN => zeroNormalizedBN
+})
+
+export const YearnContextApp = memo(function YearnContextApp({ children }: { children: ReactElement }): ReactElement {
+  const pathname = usePathname() || '/'
+  const { value: maxLoss, set: setMaxLoss } = useLocalStorageValue<bigint>('yearn.fi/max-loss', {
+    defaultValue: DEFAULT_MAX_LOSS,
+    parse: (str, fallback): bigint => (str ? deserialize(str) : (fallback ?? DEFAULT_MAX_LOSS)),
+    stringify: (data: bigint): string => serialize(data)
+  })
+  const { value: zapSlippage, set: setZapSlippage } = useLocalStorageValue<number>('yearn.fi/zap-slippage', {
+    defaultValue: DEFAULT_SLIPPAGE
+  })
+  const { value: zapProvider, set: setZapProvider } = useLocalStorageValue<TSolver>('yearn.fi/zap-provider', {
+    defaultValue: Solver.enum.Cowswap
+  })
+  const { value: isAutoStakingEnabled, set: setIsAutoStakingEnabled } = useLocalStorageValue<boolean>(
+    'yearn.fi/staking-op-boosted-vaults',
+    {
+      defaultValue: true
+    }
+  )
+
+  const isPortfolioRoute = pathname.startsWith('/portfolio')
+  const shouldEnableVaultList = isPortfolioRoute
+  const [isManuallyEnabled, setIsManuallyEnabled] = useState(false)
+  const isVaultListEnabled = shouldEnableVaultList || isManuallyEnabled
+  const sanitizedZapSlippage = clampZapSlippage(zapSlippage ?? DEFAULT_SLIPPAGE)
+
+  const enableVaultListFetch = useCallback(() => {
+    setIsManuallyEnabled(true)
+  }, [])
+
+  useEffect(() => {
+    if ((zapSlippage ?? DEFAULT_SLIPPAGE) !== sanitizedZapSlippage) {
+      setZapSlippage(sanitizedZapSlippage)
+    }
+  }, [sanitizedZapSlippage, setZapSlippage, zapSlippage])
+
+  const prices = EMPTY_YEARN_PRICES_BY_CHAIN
+  //RG this endpoint returns empty objects for retired and migrations
+  const { vaults, allVaults, isLoading, refetch } = useFetchYearnVaults(undefined, {
+    enabled: isVaultListEnabled
+  })
+
+  const getPrice = useCallback((): TNormalizedBN => zeroNormalizedBN, [])
+
+  return (
+    <YearnContext.Provider
+      value={{
+        currentPartner: toAddress(process.env.NEXT_PUBLIC_PARTNER_ID_ADDRESS),
+        prices,
+        zapSlippage: sanitizedZapSlippage,
+        maxLoss: maxLoss ?? DEFAULT_MAX_LOSS,
+        zapProvider: zapProvider ?? Solver.enum.Cowswap,
+        isAutoStakingEnabled: isAutoStakingEnabled ?? true,
+        setZapSlippage: (value: number) => setZapSlippage(clampZapSlippage(value)),
+        setMaxLoss,
+        setZapProvider,
+        setIsAutoStakingEnabled,
+        vaults,
+        allVaults,
+        isLoadingVaultList: isLoading,
+        mutateVaultList: refetch,
+        enableVaultListFetch,
+        getPrice
+      }}
+    >
+      {children}
+    </YearnContext.Provider>
+  )
+})
+
+export const useYearn = (): TYearnContext => useContext(YearnContext)

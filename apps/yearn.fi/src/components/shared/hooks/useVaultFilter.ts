@@ -1,4 +1,3 @@
-import { useAppSettings } from '@pages/vaults/contexts/useAppSettings'
 import { DEFAULT_MIN_TVL } from '@pages/vaults/utils/constants'
 import {
   deriveAssetCategory,
@@ -10,8 +9,16 @@ import {
   type TVaultAggressiveness
 } from '@pages/vaults/utils/vaultListFacets'
 import { useDeepCompareMemo } from '@react-hookz/web'
-import { useWalletTokens } from '@shared/contexts/useWallet'
-import { useYearn } from '@shared/contexts/useYearn'
+import { useAppSettings } from '@yearn/deposit/contexts/useAppSettings'
+import { useWalletTokens } from '@yearn/deposit/contexts/useWallet'
+import { useYearn } from '@yearn/deposit/contexts/useYearn'
+import {
+  createCheckHasAvailableBalance,
+  createCheckHasHoldings,
+  getVaultKey,
+  isV3Vault,
+  type TVaultFlags
+} from '@yearn/deposit/hooks/useVaultFilterUtils'
 import {
   getVaultAddress,
   getVaultChainID,
@@ -24,13 +31,6 @@ import {
   type TKongVault
 } from '@yearn/vaults/domain/kongVaultSelectors'
 import { useMemo } from 'react'
-import {
-  createCheckHasAvailableBalance,
-  createCheckHasHoldings,
-  getVaultKey,
-  isV3Vault,
-  type TVaultFlags
-} from './useVaultFilterUtils'
 
 export type TVaultVersion = 'v2' | 'v3' | 'all'
 

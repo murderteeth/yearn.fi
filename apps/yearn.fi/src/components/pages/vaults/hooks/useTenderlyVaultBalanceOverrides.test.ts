@@ -1,26 +1,26 @@
 // @vitest-environment jsdom
 
-import { useWalletActions } from '@shared/contexts/useWallet'
-import { fetchTokenBalances } from '@shared/hooks/useBalancesQueries'
-import { act, renderHook, waitFor } from '@testing-library/react'
-import type { TAddress } from '@yearn/util/types/address'
-import { toAddress } from '@yearn/util/utils/address'
-import { YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
-import { YVUSD_CHAIN_ID, YVUSD_DECIMALS, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   fetchTenderlyVaultBalanceOverrides,
   getTenderlyVaultBalanceOverrideScopeId,
   getTenderlyVaultOverrideRefreshKey,
   getVaultTenderlyOverrideTokens,
   useTenderlyVaultBalanceOverrides
-} from './useTenderlyVaultBalanceOverrides'
+} from '@pages/vaults/hooks/useTenderlyVaultBalanceOverrides'
+import { act, renderHook, waitFor } from '@testing-library/react'
+import { useWalletActions } from '@yearn/deposit/contexts/useWallet'
+import { fetchTokenBalances } from '@yearn/deposit/hooks/useBalancesQueries'
+import type { TAddress } from '@yearn/util/types/address'
+import { toAddress } from '@yearn/util/utils/address'
+import { YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import { YVUSD_CHAIN_ID, YVUSD_DECIMALS, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
-vi.mock('@shared/contexts/useWallet', () => ({
+vi.mock('@yearn/deposit/contexts/useWallet', () => ({
   useWalletActions: vi.fn()
 }))
 
-vi.mock('@shared/hooks/useBalancesQueries', () => ({
+vi.mock('@yearn/deposit/hooks/useBalancesQueries', () => ({
   fetchTokenBalances: vi.fn()
 }))
 

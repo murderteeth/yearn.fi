@@ -26,10 +26,10 @@ import type {
   TGovernanceReward
 } from '@pages/portfolio/governance/types'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useYearn } from '@shared/contexts/useYearn'
-import { usePublicClient } from '@shared/hooks/useAppWagmi'
-import { useYearnSpotPrices } from '@shared/hooks/useYearnSpotPrices'
 import { useQuery } from '@tanstack/react-query'
+import { useYearn } from '@yearn/deposit/contexts/useYearn'
+import { usePublicClient } from '@yearn/deposit/hooks/useAppWagmi'
+import { useYearnSpotPrices } from '@yearn/deposit/hooks/useYearnSpotPrices'
 import type { TAddress } from '@yearn/util/types/address'
 import { toAddress } from '@yearn/util/utils/address'
 import { toNormalizedValue } from '@yearn/util/utils/format'

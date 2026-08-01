@@ -1,5 +1,5 @@
 import type { TPossibleSortBy } from '@pages/vaults/hooks/useSortVaults'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import { getVaultKey } from '@yearn/deposit/hooks/useVaultFilterUtils'
 import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 
 export type TVaultsPinnedSection = {

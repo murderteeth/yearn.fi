@@ -1,0 +1,80 @@
+import { type AppUseSimulateContractReturnType, useSimulateContract } from '@yearn/deposit/hooks/useAppWagmi'
+import { useTokenAllowance } from '@yearn/deposit/hooks/useTokenAllowance'
+import type { UseWidgetWithdrawFlowReturn } from '@yearn/deposit/types/index'
+import { toAddress } from '@yearn/util/utils/address'
+import { yvUsdLockedZapAbi } from '@yearn/vaults/abi/yvUsdLockedZap.abi'
+import { YVUSD_LOCKED_ADDRESS, YVUSD_LOCKED_ZAP_ADDRESS } from '@yearn/vaults/utils/yvUsd'
+import type { Address } from 'viem'
+import { erc20Abi } from 'viem'
+
+interface UseYvUsdLockedZapWithdrawParams {
+  amount: bigint
+  requiredShares: bigint
+  optimisticApprovedShares?: bigint | null
+  account?: Address
+  chainId: number
+  enabled: boolean
+}
+
+function getEffectiveApprovedShares(allowance: bigint, optimisticApprovedShares?: bigint | null): bigint {
+  if (optimisticApprovedShares && optimisticApprovedShares > allowance) {
+    return optimisticApprovedShares
+  }
+
+  return allowance
+}
+
+export function useYvUsdLockedZapWithdraw(params: UseYvUsdLockedZapWithdrawParams): UseWidgetWithdrawFlowReturn {
+  const { allowance = 0n } = useTokenAllowance({
+    account: params.account,
+    token: YVUSD_LOCKED_ADDRESS,
+    spender: YVUSD_LOCKED_ZAP_ADDRESS,
+    watch: true,
+    chainId: params.chainId
+  })
+
+  const effectiveApprovedShares = getEffectiveApprovedShares(allowance, params.optimisticApprovedShares)
+  const isAllowanceSufficient = effectiveApprovedShares >= params.requiredShares
+  const prepareApproveEnabled =
+    !!params.account && params.enabled && params.amount > 0n && params.requiredShares > 0n && !isAllowanceSufficient
+  const prepareWithdrawEnabled =
+    !!params.account && params.enabled && params.amount > 0n && params.requiredShares > 0n && isAllowanceSufficient
+
+  const prepareApprove: AppUseSimulateContractReturnType = useSimulateContract({
+    abi: erc20Abi,
+    functionName: 'approve',
+    address: YVUSD_LOCKED_ADDRESS,
+    args: params.requiredShares > 0n ? [YVUSD_LOCKED_ZAP_ADDRESS, params.requiredShares] : undefined,
+    chainId: params.chainId,
+    query: { enabled: prepareApproveEnabled }
+  })
+
+  const prepareWithdraw: AppUseSimulateContractReturnType = useSimulateContract({
+    address: YVUSD_LOCKED_ZAP_ADDRESS,
+    abi: yvUsdLockedZapAbi,
+    functionName: 'zapOut',
+    args: params.account && params.requiredShares > 0n ? [params.requiredShares, toAddress(params.account)] : undefined,
+    account: params.account ? toAddress(params.account) : undefined,
+    chainId: params.chainId,
+    query: { enabled: prepareWithdrawEnabled }
+  })
+
+  return {
+    actions: {
+      prepareApprove,
+      prepareWithdraw
+    },
+    periphery: {
+      prepareApproveEnabled,
+      prepareWithdrawEnabled,
+      isAllowanceSufficient,
+      allowance,
+      expectedOut: params.amount,
+      minExpectedOut: params.amount,
+      isLoadingRoute: false,
+      isCrossChain: false,
+      routerAddress: YVUSD_LOCKED_ZAP_ADDRESS,
+      error: undefined
+    }
+  }
+}

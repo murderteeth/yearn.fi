@@ -1,11 +1,11 @@
-import { YVBTC_CHAIN_ID, YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
-import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   buildVaultSnapshotEndpoint,
   YEARN_TVL_ENDPOINT,
   YEARN_VAULT_LIST_ENDPOINT
-} from '@/components/shared/data/publicQueryEndpoints'
+} from '@yearn/deposit/data/publicQueryEndpoints'
+import { YVBTC_CHAIN_ID, YVBTC_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvBtc'
+import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   getLandingPageDehydratedState,
   getVaultDetailPageDehydratedState,

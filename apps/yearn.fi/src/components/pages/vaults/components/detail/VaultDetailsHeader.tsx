@@ -2,21 +2,9 @@ import { VaultsListChip } from '@pages/vaults/components/list/VaultsListChip'
 import { VaultForwardAPY } from '@pages/vaults/components/table/VaultForwardAPY'
 import { VaultHistoricalAPY } from '@pages/vaults/components/table/VaultHistoricalAPY'
 import { VaultTVL } from '@pages/vaults/components/table/VaultTVL'
-import { WidgetTabs } from '@pages/vaults/components/widget'
-import {
-  formatDuration,
-  parseCooldownStatus,
-  resolveCooldownWindowState,
-  resolveYvUsdCooldownSummary
-} from '@pages/vaults/components/widget/yvUSD/cooldownUtils'
 import { YvUsdApyTooltipContent, YvUsdTvlTooltipContent } from '@pages/vaults/components/yvUSD/YvUsdBreakdown'
 import { YvUsdHeaderBanner } from '@pages/vaults/components/yvUSD/YvUsdHeaderBanner'
 import { useHeaderCompression } from '@pages/vaults/hooks/useHeaderCompression'
-import { useVaultUserData, type VaultUserData } from '@pages/vaults/hooks/useVaultUserData'
-import { useYvBtcVaults } from '@pages/vaults/hooks/useYvBtcVaults'
-import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
-import { getYvUsdTvlBreakdown } from '@pages/vaults/hooks/useYvUsdVaults.helpers'
-import type { WidgetActionType } from '@pages/vaults/types'
 import { deriveListKind } from '@pages/vaults/utils/vaultListFacets'
 import { getVaultPrimaryLogoSrc } from '@pages/vaults/utils/vaultLogo'
 import {
@@ -37,18 +25,30 @@ import {
 import { RenderAmount } from '@shared/components/RenderAmount'
 import { TokenLogo } from '@shared/components/TokenLogo'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useReadContract } from '@shared/hooks/useAppWagmi'
-import { useChainTimestamp } from '@shared/hooks/useChainTimestamp'
-import { useYearnSpotPrices } from '@shared/hooks/useYearnSpotPrices'
 import { IconInfinifiPoints } from '@shared/icons/IconInfinifiPoints'
-import { getVaultName } from '@shared/utils/helpers'
-import { getNetwork } from '@shared/utils/wagmi/utils'
 import { Tooltip } from '@yearn/components/components/Tooltip'
 import { IconAlertWarning } from '@yearn/components/icons/IconAlertWarning'
 import { IconLinkOut } from '@yearn/components/icons/IconLinkOut'
 import { IconLock } from '@yearn/components/icons/IconLock'
 import { IconLockOpen } from '@yearn/components/icons/IconLockOpen'
 import { SELECTOR_BAR_STYLES } from '@yearn/components/utils/selectorStyles'
+import { useReadContract } from '@yearn/deposit/hooks/useAppWagmi'
+import { useChainTimestamp } from '@yearn/deposit/hooks/useChainTimestamp'
+import { useVaultUserData, type VaultUserData } from '@yearn/deposit/hooks/useVaultUserData'
+import { useYearnSpotPrices } from '@yearn/deposit/hooks/useYearnSpotPrices'
+import { useYvBtcVaults } from '@yearn/deposit/hooks/useYvBtcVaults'
+import { useYvUsdVaults } from '@yearn/deposit/hooks/useYvUsdVaults'
+import { getYvUsdTvlBreakdown } from '@yearn/deposit/hooks/useYvUsdVaults.helpers'
+import type { WidgetActionType } from '@yearn/deposit/types/index'
+import { getVaultName } from '@yearn/deposit/utils/helpers'
+import { getNetwork } from '@yearn/deposit/utils/wagmi/utils'
+import { WidgetTabs } from '@yearn/deposit/widget/index'
+import {
+  formatDuration,
+  parseCooldownStatus,
+  resolveCooldownWindowState,
+  resolveYvUsdCooldownSummary
+} from '@yearn/deposit/widget/yvUSD/cooldownUtils'
 import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
 import { cl } from '@yearn/util/utils/cl'
 import { formatApyDisplay, formatTAmount, formatUSD, toNormalizedBN } from '@yearn/util/utils/format'

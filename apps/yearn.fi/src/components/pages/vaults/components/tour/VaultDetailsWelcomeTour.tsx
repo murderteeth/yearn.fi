@@ -1,6 +1,6 @@
 import { useMediaQuery } from '@react-hookz/web'
-import { useLocalStorage } from '@shared/hooks/useLocalStorage'
 import { Button } from '@yearn/components/components/Button'
+import { useLocalStorage } from '@yearn/components/hooks/useLocalStorage'
 import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'

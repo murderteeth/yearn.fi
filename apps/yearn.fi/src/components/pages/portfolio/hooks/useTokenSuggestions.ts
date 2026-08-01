@@ -1,7 +1,7 @@
 import { getEligibleVaults, normalizeSymbol, selectPreferredVault } from '@pages/portfolio/hooks/getEligibleVaults'
-import { useWalletTokens } from '@shared/contexts/useWallet'
-import { useYearn } from '@shared/contexts/useYearn'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import { useWalletTokens } from '@yearn/deposit/contexts/useWallet'
+import { useYearn } from '@yearn/deposit/contexts/useYearn'
+import { getVaultKey } from '@yearn/deposit/hooks/useVaultFilterUtils'
 import { getVaultToken, type TKongVault } from '@yearn/vaults/domain/kongVaultSelectors'
 import { useMemo } from 'react'
 

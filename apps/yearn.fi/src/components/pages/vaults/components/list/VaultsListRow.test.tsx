@@ -33,7 +33,7 @@ vi.mock('@react-hookz/web', () => ({
   useMediaQuery: mockUseMediaQuery
 }))
 
-vi.mock('@shared/contexts/useWallet', () => ({
+vi.mock('@yearn/deposit/contexts/useWallet', () => ({
   useWallet: () => ({
     getBalance: () => ({ raw: 0n, normalized: 0 }),
     getToken: () => ({ value: 0 }),
@@ -62,11 +62,11 @@ vi.mock('@hooks/usePlausible', () => ({
   usePlausible: () => vi.fn()
 }))
 
-vi.mock('@pages/vaults/hooks/useYvUsdVaults', () => ({
+vi.mock('@yearn/deposit/hooks/useYvUsdVaults', () => ({
   useYvUsdVaults: mockUseYvUsdVaults
 }))
 
-vi.mock('@pages/vaults/hooks/useVaultSnapshot', () => ({
+vi.mock('@yearn/deposit/hooks/useVaultSnapshot', () => ({
   useVaultSnapshot: mockUseVaultSnapshot
 }))
 

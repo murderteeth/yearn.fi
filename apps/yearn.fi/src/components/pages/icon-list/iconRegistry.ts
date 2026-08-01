@@ -1,4 +1,3 @@
-import * as IconsModule from '@pages/vaults/components/widget/shared/Icons'
 import * as IconAddToMetamaskModule from '@shared/icons/IconAddToMetamask'
 import * as IconArrowModule from '@shared/icons/IconArrow'
 import * as IconBellModule from '@shared/icons/IconBell'
@@ -46,7 +45,6 @@ import * as IconTwitterModule from '@shared/icons/IconTwitter'
 import * as IconUnstakeModule from '@shared/icons/IconUnstake'
 import * as IconVaultsModule from '@shared/icons/IconVaults'
 import * as IconVolatileModule from '@shared/icons/IconVolatile'
-import * as IconWalletModule from '@shared/icons/IconWallet'
 import * as IconWithdrawModule from '@shared/icons/IconWithdraw'
 import * as LogoCurationModule from '@shared/icons/LogoCuration'
 import * as LogoDiscordModule from '@shared/icons/LogoDiscord'
@@ -76,6 +74,8 @@ import * as IconLoaderModule from '@yearn/components/icons/IconLoader'
 import * as IconLockModule from '@yearn/components/icons/IconLock'
 import * as IconLockOpenModule from '@yearn/components/icons/IconLockOpen'
 import * as IconSettingsModule from '@yearn/components/icons/IconSettings'
+import * as IconWalletModule from '@yearn/components/icons/IconWallet'
+import * as IconsModule from '@yearn/deposit/widget/shared/Icons'
 
 export const ICON_MODULES: Record<string, Record<string, unknown>> = {
   '/src/components/pages/vaults/components/widget/shared/Icons.tsx': IconsModule,

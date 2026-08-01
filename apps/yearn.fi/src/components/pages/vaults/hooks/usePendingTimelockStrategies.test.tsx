@@ -1,5 +1,5 @@
+import { buildPendingTimelockStrategiesUrl } from '@pages/vaults/hooks/usePendingTimelockStrategies'
 import { describe, expect, it } from 'vitest'
-import { buildPendingTimelockStrategiesUrl } from './usePendingTimelockStrategies'
 
 describe('buildPendingTimelockStrategiesUrl', () => {
   it('builds the timelock strategies API URL', () => {

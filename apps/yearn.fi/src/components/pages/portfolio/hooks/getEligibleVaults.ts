@@ -1,5 +1,5 @@
 import { deriveListKind, UNDERLYING_ASSET_OVERRIDES } from '@pages/vaults/utils/vaultListFacets'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import { getVaultKey } from '@yearn/deposit/hooks/useVaultFilterUtils'
 import {
   getVaultAPR,
   getVaultInfo,

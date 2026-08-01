@@ -1,6 +1,6 @@
 import type { TExternalToken } from '@pages/portfolio/constants/externalTokens'
 import { getEligibleVaults, normalizeSymbol, selectPreferredVault } from '@pages/portfolio/hooks/getEligibleVaults'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import { getVaultKey } from '@yearn/deposit/hooks/useVaultFilterUtils'
 import { getVaultToken, type TKongVault } from '@yearn/vaults/domain/kongVaultSelectors'
 
 export type TVaultSuggestion = {

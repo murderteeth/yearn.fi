@@ -4,9 +4,9 @@ import {
   YCRV_REWARDS_DISTRIBUTOR_ADDRESS
 } from '@pages/portfolio/ycrv/constants'
 import type { TYcrvReward } from '@pages/portfolio/ycrv/types'
-import { RewardRow } from '@pages/vaults/components/widget/rewards/RewardRow'
-import type { TransactionStep } from '@pages/vaults/components/widget/shared/TransactionOverlay'
-import { useChainId, useReadContract, useSimulateContract } from '@shared/hooks/useAppWagmi'
+import { useChainId, useReadContract, useSimulateContract } from '@yearn/deposit/hooks/useAppWagmi'
+import { RewardRow } from '@yearn/deposit/widget/rewards/RewardRow'
+import type { TransactionStep } from '@yearn/deposit/widget/shared/TransactionOverlay'
 import type { ReactElement } from 'react'
 import { useCallback, useMemo } from 'react'
 import { useWriteContract } from 'wagmi'

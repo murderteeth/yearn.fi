@@ -1,5 +1,5 @@
+import { compareDepositedValues } from '@pages/vaults/hooks/useSortVaults'
 import { describe, expect, it } from 'vitest'
-import { compareDepositedValues } from './useSortVaults'
 
 describe('compareDepositedValues', () => {
   const values = [0, 5, 20, 0]

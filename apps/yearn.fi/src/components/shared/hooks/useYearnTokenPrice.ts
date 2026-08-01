@@ -1,4 +1,4 @@
-import { useYearnSpotPrices } from '@shared/hooks/useYearnSpotPrices'
+import { useYearnSpotPrices } from '@yearn/deposit/hooks/useYearnSpotPrices'
 import type { TAddress } from '@yearn/util/types/address'
 
 /******************************************************************************

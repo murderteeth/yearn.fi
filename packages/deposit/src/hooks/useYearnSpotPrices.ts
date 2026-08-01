@@ -1,0 +1,32 @@
+import { useFetchYearnPrices } from '@yearn/deposit/hooks/useFetchYearnPrices'
+import {
+  resolveYearnPricesSpotAddress,
+  type TYearnPricesByChain,
+  type TYearnPriceToken
+} from '@yearn/deposit/utils/yearnPrices'
+import type { TAddress } from '@yearn/util/types/address'
+import type { TNormalizedBN } from '@yearn/util/types/mixed'
+import { toNormalizedBN, zeroNormalizedBN } from '@yearn/util/utils/format'
+import { useCallback } from 'react'
+
+type TTokenAndChain = { address: TAddress; chainID: number }
+
+export function useYearnSpotPrices(tokens: Array<TYearnPriceToken | null | undefined>): {
+  prices: TYearnPricesByChain
+  getPrice: ({ address, chainID }: TTokenAndChain) => TNormalizedBN
+} {
+  const prices = useFetchYearnPrices(tokens)
+  const getPrice = useCallback(
+    ({ address, chainID }: TTokenAndChain): TNormalizedBN => {
+      const resolvedAddress = resolveYearnPricesSpotAddress(address, chainID)
+      const price = resolvedAddress ? (prices?.[chainID]?.[resolvedAddress] ?? 0) : 0
+      if (!Number.isFinite(price) || price <= 0) {
+        return zeroNormalizedBN
+      }
+      return toNormalizedBN(Math.round(price * 1_000_000), 6) || zeroNormalizedBN
+    },
+    [prices]
+  )
+
+  return { prices, getPrice }
+}

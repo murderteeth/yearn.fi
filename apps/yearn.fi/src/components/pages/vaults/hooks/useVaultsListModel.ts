@@ -1,5 +1,5 @@
 import { type TPossibleSortBy, useSortVaults } from '@pages/vaults/hooks/useSortVaults'
-import { type TYvUsdListVaults, useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
+import { getProductPinnedSections, type TVaultsPinnedSection } from '@pages/vaults/hooks/useVaultsListModel.helpers'
 import {
   AGGRESSIVENESS_OPTIONS,
   AVAILABLE_TOGGLE_VALUE,
@@ -9,10 +9,11 @@ import {
 import { getVaultFeeStructureKey } from '@pages/vaults/utils/vaultFees'
 import type { TVaultAggressiveness } from '@pages/vaults/utils/vaultListFacets'
 import type { TVaultType } from '@pages/vaults/utils/vaultTypeCopy'
-import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
 import { useV2VaultFilter } from '@shared/hooks/useV2VaultFilter'
 import { useV3VaultFilter } from '@shared/hooks/useV3VaultFilter'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@yearn/deposit/contexts/useWallet'
+import { getVaultKey } from '@yearn/deposit/hooks/useVaultFilterUtils'
+import { type TYvUsdListVaults, useYvUsdVaults } from '@yearn/deposit/hooks/useYvUsdVaults'
 import type { TDict, TSortDirection } from '@yearn/util/types/mixed'
 import {
   getVaultAddress,
@@ -29,7 +30,6 @@ import {
   YVUSD_UNLOCKED_ADDRESS
 } from '@yearn/vaults/utils/yvUsd'
 import { useMemo } from 'react'
-import { getProductPinnedSections, type TVaultsPinnedSection } from './useVaultsListModel.helpers'
 
 type TVaultsListModelArgs = {
   enabled?: boolean

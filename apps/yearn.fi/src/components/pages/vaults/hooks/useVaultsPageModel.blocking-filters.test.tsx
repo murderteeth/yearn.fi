@@ -49,7 +49,7 @@ vi.mock('@shared/contexts/useWeb3', () => ({
   useWeb3: () => ({ address: undefined })
 }))
 
-vi.mock('@shared/hooks/useFetchYearnVaults', () => ({
+vi.mock('@yearn/deposit/hooks/useFetchYearnVaults', () => ({
   usePrefetchYearnVaults: vi.fn()
 }))
 
@@ -61,11 +61,11 @@ vi.mock('@react-hookz/web', () => ({
   useMediaQuery: vi.fn(() => false)
 }))
 
-vi.mock('@shared/hooks/useVaultFilterUtils', () => ({
+vi.mock('@yearn/deposit/hooks/useVaultFilterUtils', () => ({
   getVaultKey: (vault: typeof HIDDEN_ZERO_TVL_VAULT) => vault.key
 }))
 
-vi.mock('@pages/vaults/domain/kongVaultSelectors', () => ({
+vi.mock('@yearn/vaults/domain/kongVaultSelectors', () => ({
   getVaultChainID: (vault: typeof HIDDEN_ZERO_TVL_VAULT) => vault.chainID,
   getVaultInfo: (vault: typeof HIDDEN_ZERO_TVL_VAULT) => vault.info,
   getVaultToken: (vault: typeof HIDDEN_ZERO_TVL_VAULT) => vault.token,
@@ -97,7 +97,7 @@ vi.mock('./useVaultsListModel', () => ({
   useVaultsListModel: useVaultsListModelMock
 }))
 
-import { useVaultsPageModel } from './useVaultsPageModel'
+import { useVaultsPageModel } from '@pages/vaults/hooks/useVaultsPageModel'
 
 function renderHookState(): string {
   function HookState(): React.ReactNode {

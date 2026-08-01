@@ -9,7 +9,6 @@ import { YvUsdChartsSection } from '@pages/vaults/components/detail/YvUsdChartsS
 import { resolveForwardApyDisplayConfig } from '@pages/vaults/components/table/apyDisplayConfig'
 import type { TVaultForwardAPYVariant } from '@pages/vaults/components/table/VaultForwardAPY'
 import { useVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
-import { useVaultSnapshot } from '@pages/vaults/hooks/useVaultSnapshot'
 import { getVaultUserHistoryVaults } from '@pages/vaults/utils/vaultUserHistoryVaults'
 import {
   AllocationChart,
@@ -18,8 +17,9 @@ import {
   type TAllocationChartData,
   useDarkMode
 } from '@shared/components/AllocationChart'
-import { useYearn } from '@shared/contexts/useYearn'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
+import { useYearn } from '@yearn/deposit/contexts/useYearn'
+import { useVaultSnapshot } from '@yearn/deposit/hooks/useVaultSnapshot'
 import { toAddress } from '@yearn/util/utils/address'
 import { formatCounterValue, toBigInt, toNormalizedBN } from '@yearn/util/utils/format'
 import {

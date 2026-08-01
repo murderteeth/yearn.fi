@@ -7,8 +7,6 @@ import {
   YvUsdPositionApyTooltipContent,
   YvUsdTvlTooltipContent
 } from '@pages/vaults/components/yvUSD/YvUsdBreakdown'
-import type { TYvUsdListVaults } from '@pages/vaults/hooks/useYvUsdVaults'
-import { getYvUsdTvlBreakdown } from '@pages/vaults/hooks/useYvUsdVaults.helpers'
 import {
   formatFeeStructureFilterAriaLabel,
   formatFeeStructureLabel,
@@ -29,20 +27,22 @@ import {
 import { useMediaQuery } from '@react-hookz/web'
 import { RenderAmount } from '@shared/components/RenderAmount'
 import { TokenLogo } from '@shared/components/TokenLogo'
-import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@shared/contexts/useWallet'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { buildVaultSnapshotEndpoint } from '@shared/data/publicQueryEndpoints'
 import { IconEyeOff } from '@shared/icons/IconEyeOff'
 import { IconHandCoins } from '@shared/icons/IconHandCoins'
 import { IconInfinifiPoints } from '@shared/icons/IconInfinifiPoints'
-import { getVaultName } from '@shared/utils/helpers'
 import { PLAUSIBLE_EVENTS, type TPlausibleEventName } from '@shared/utils/plausible'
-import { getNetwork } from '@shared/utils/wagmi/utils'
 import { useQueryClient } from '@tanstack/react-query'
 import { TokenLogoV2 } from '@yearn/components/components/TokenLogoV2'
 import { Tooltip } from '@yearn/components/components/Tooltip'
 import { fetchWithSchema, getFetchQueryKey } from '@yearn/components/hooks/useFetch'
 import { IconChevron } from '@yearn/components/icons/IconChevron'
+import { useWalletHoldings, useWalletStatus, useWalletTokens } from '@yearn/deposit/contexts/useWallet'
+import { buildVaultSnapshotEndpoint } from '@yearn/deposit/data/publicQueryEndpoints'
+import type { TYvUsdListVaults } from '@yearn/deposit/hooks/useYvUsdVaults'
+import { getYvUsdTvlBreakdown } from '@yearn/deposit/hooks/useYvUsdVaults.helpers'
+import { getVaultName } from '@yearn/deposit/utils/helpers'
+import { getNetwork } from '@yearn/deposit/utils/wagmi/utils'
 import { toAddress } from '@yearn/util/utils/address'
 import { cl } from '@yearn/util/utils/cl'
 import { formatApyDisplay, formatTvlDisplay } from '@yearn/util/utils/format'

@@ -14,7 +14,7 @@ vi.mock('@hooks/usePlausible', () => ({
   usePlausible: () => vi.fn()
 }))
 
-vi.mock('@pages/vaults/hooks/useYvUsdVaults', () => ({
+vi.mock('@yearn/deposit/hooks/useYvUsdVaults', () => ({
   useYvUsdVaults: () => ({
     metrics: {
       locked: { apy: 0.09 },

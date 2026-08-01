@@ -1,8 +1,8 @@
 import { EXTERNAL_TOKENS } from '@pages/portfolio/constants/externalTokens'
 import { buildVaultSuggestions, type TVaultSuggestion } from '@pages/portfolio/hooks/buildVaultSuggestions'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useYearn } from '@shared/contexts/useYearn'
-import { useEnsoBalances } from '@shared/hooks/useEnsoBalances'
+import { useYearn } from '@yearn/deposit/contexts/useYearn'
+import { useEnsoBalances } from '@yearn/deposit/hooks/useEnsoBalances'
 import { toAddress } from '@yearn/util/utils/address'
 import { useMemo } from 'react'
 

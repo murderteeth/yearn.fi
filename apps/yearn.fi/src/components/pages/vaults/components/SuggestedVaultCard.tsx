@@ -3,7 +3,6 @@ import { VaultsListChip } from '@pages/vaults/components/list/VaultsListChip'
 import { VaultForwardAPY } from '@pages/vaults/components/table/VaultForwardAPY'
 import { VaultTVL } from '@pages/vaults/components/table/VaultTVL'
 import { useVaultApyData } from '@pages/vaults/hooks/useVaultApyData'
-import { useYvUsdVaults } from '@pages/vaults/hooks/useYvUsdVaults'
 import { deriveListKind } from '@pages/vaults/utils/vaultListFacets'
 import { getVaultPrimaryLogoSrc } from '@pages/vaults/utils/vaultLogo'
 import {
@@ -13,7 +12,8 @@ import {
 } from '@pages/vaults/utils/vaultTagCopy'
 import { TokenLogo } from '@shared/components/TokenLogo'
 import type { TPlausibleEventName } from '@shared/utils/plausible'
-import { getNetwork } from '@shared/utils/wagmi/utils'
+import { useYvUsdVaults } from '@yearn/deposit/hooks/useYvUsdVaults'
+import { getNetwork } from '@yearn/deposit/utils/wagmi/utils'
 import { toAddress } from '@yearn/util/utils/address'
 import { formatApyDisplay } from '@yearn/util/utils/format'
 import {

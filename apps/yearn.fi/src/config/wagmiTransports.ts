@@ -1,4 +1,4 @@
-import { getNetwork, getRpcUriFor } from '@shared/utils/wagmi/utils'
+import { getNetwork, getRpcUriFor } from '@yearn/deposit/utils/wagmi/utils'
 import type { Chain, Transport } from 'viem'
 import { mainnet } from 'viem/chains'
 import { fallback, http } from 'wagmi'

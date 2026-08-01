@@ -1,4 +1,4 @@
-import type { TGroupedMerkleReward } from '@pages/vaults/components/widget/rewards/types'
+import type { TGroupedMerkleReward } from '@yearn/deposit/widget/rewards/types'
 
 type TChainMerkleData = Record<
   number,

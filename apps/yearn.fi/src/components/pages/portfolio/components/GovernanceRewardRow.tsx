@@ -4,9 +4,9 @@ import {
   GOVERNANCE_REWARD_CLAIMER_ADDRESS
 } from '@pages/portfolio/governance/constants'
 import type { TGovernanceReward } from '@pages/portfolio/governance/types'
-import { RewardRow } from '@pages/vaults/components/widget/rewards/RewardRow'
-import type { TransactionStep } from '@pages/vaults/components/widget/shared/TransactionOverlay'
-import { useChainId, useSimulateContract } from '@shared/hooks/useAppWagmi'
+import { useChainId, useSimulateContract } from '@yearn/deposit/hooks/useAppWagmi'
+import { RewardRow } from '@yearn/deposit/widget/rewards/RewardRow'
+import type { TransactionStep } from '@yearn/deposit/widget/shared/TransactionOverlay'
 import type { ReactElement } from 'react'
 import { useCallback, useMemo } from 'react'
 import { useWriteContract } from 'wagmi'

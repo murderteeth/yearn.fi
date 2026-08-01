@@ -6,6 +6,7 @@ import type { ReactElement } from 'react'
 import { useMemo } from 'react'
 import { AGENT_WALLET_ID, shouldAutoConnectAgentWallet } from '@/config/agentWallet'
 import { resolveConnectedCanonicalChainId, resolveExecutionChainId } from '@/config/tenderly'
+import { configureDepositWidget } from '@/config/yearnDeposit'
 
 /**
  * The wallet layer lives in `@yearn/components`. This file supplies the two
@@ -34,6 +35,11 @@ export const Web3ContextApp = (props: { children: ReactElement }): ReactElement 
       },
     [trackEvent]
   )
+
+  // `@yearn/deposit` reads its configuration at module scope, so it is supplied
+  // during render rather than from an effect — the widget below must see it on
+  // its first pass.
+  configureDepositWidget(analytics)
 
   return (
     <YearnWalletProvider analytics={analytics} chainResolver={tenderlyChainResolver} autoConnect={agentAutoConnect}>

@@ -1,4 +1,4 @@
-import { useVaultSnapshot } from '@pages/vaults/hooks/useVaultSnapshot'
+import { useVaultSnapshot } from '@yearn/deposit/hooks/useVaultSnapshot'
 import { isZeroAddress } from '@yearn/util/utils/address'
 import {
   getVaultAddress,

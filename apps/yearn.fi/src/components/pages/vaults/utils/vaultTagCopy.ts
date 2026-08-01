@@ -1,4 +1,4 @@
-import { getNetwork } from '@shared/utils/wagmi/utils'
+import { getNetwork } from '@yearn/deposit/utils/wagmi/utils'
 import type { TVaultListKind } from './vaultListFacets'
 
 export const TOOLTIP_DELAY_MS = 400

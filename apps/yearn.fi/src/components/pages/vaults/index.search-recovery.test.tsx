@@ -73,7 +73,7 @@ vi.mock('@pages/vaults/components/tour/VaultsWelcomeTour', () => ({
   VaultsWelcomeTour: () => <div>{'welcome-tour'}</div>
 }))
 
-vi.mock('@pages/vaults/domain/kongVaultSelectors', () => ({
+vi.mock('@yearn/vaults/domain/kongVaultSelectors', () => ({
   getVaultAddress: () => '0x0000000000000000000000000000000000000001',
   getVaultChainID: (vault: typeof MOCK_VAULT) => vault.chainID
 }))
@@ -87,11 +87,11 @@ vi.mock('@shared/components/Breadcrumbs', () => ({
   Breadcrumbs: () => <div>{'breadcrumbs'}</div>
 }))
 
-vi.mock('@shared/components/Button', () => ({
+vi.mock('@yearn/components/components/Button', () => ({
   Button: ({ children }: { children: React.ReactNode }) => <button type={'button'}>{children}</button>
 }))
 
-vi.mock('@shared/hooks/useVaultFilterUtils', () => ({
+vi.mock('@yearn/deposit/hooks/useVaultFilterUtils', () => ({
   getVaultKey: (vault: typeof MOCK_VAULT) => vault.key
 }))
 

@@ -40,7 +40,7 @@ vi.mock('@shared/contexts/useWeb3', () => ({
   })
 }))
 
-vi.mock('@shared/contexts/useYearn', () => ({
+vi.mock('@yearn/deposit/contexts/useYearn', () => ({
   useYearn: () => ({
     getPrice: () => ({
       normalized: 1
@@ -48,7 +48,7 @@ vi.mock('@shared/contexts/useYearn', () => ({
   })
 }))
 
-vi.mock('@shared/hooks/useYearnSpotPrices', () => ({
+vi.mock('@yearn/deposit/hooks/useYearnSpotPrices', () => ({
   useYearnSpotPrices: () => ({
     getPrice: () => ({
       normalized: 1
@@ -56,23 +56,23 @@ vi.mock('@shared/hooks/useYearnSpotPrices', () => ({
   })
 }))
 
-vi.mock('@shared/hooks/useAppWagmi', () => ({
+vi.mock('@yearn/deposit/hooks/useAppWagmi', () => ({
   useReadContract: () => ({
     data: undefined
   })
 }))
 
-vi.mock('@shared/hooks/useChainTimestamp', () => ({
+vi.mock('@yearn/deposit/hooks/useChainTimestamp', () => ({
   useChainTimestamp: () => ({
     timestamp: 0
   })
 }))
 
-vi.mock('@pages/vaults/hooks/useVaultUserData', () => ({
+vi.mock('@yearn/deposit/hooks/useVaultUserData', () => ({
   useVaultUserData: useVaultUserDataMock
 }))
 
-vi.mock('@pages/vaults/hooks/useYvUsdVaults', () => ({
+vi.mock('@yearn/deposit/hooks/useYvUsdVaults', () => ({
   useYvUsdVaults: () => ({
     metrics: undefined,
     unlockedVault: {
@@ -120,7 +120,7 @@ vi.mock('@pages/vaults/hooks/useYvUsdVaults', () => ({
   })
 }))
 
-vi.mock('@pages/vaults/hooks/useYvBtcVaults', () => ({
+vi.mock('@yearn/deposit/hooks/useYvBtcVaults', () => ({
   useYvBtcVaults: () => ({
     metrics: {
       unlocked: {
@@ -219,7 +219,7 @@ vi.mock('@pages/vaults/components/table/VaultTVL', () => ({
   VaultTVL: () => <div>{'TVL'}</div>
 }))
 
-vi.mock('@pages/vaults/components/widget', () => ({
+vi.mock('@yearn/deposit/widget/index', () => ({
   WidgetTabs: () => <div>{'Widget Tabs'}</div>
 }))
 

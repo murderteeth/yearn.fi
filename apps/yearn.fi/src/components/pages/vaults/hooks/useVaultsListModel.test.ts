@@ -1,8 +1,7 @@
+import { getProductPinnedSections } from '@pages/vaults/hooks/useVaultsListModel.helpers'
 import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 import { YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { describe, expect, it } from 'vitest'
-
-import { getProductPinnedSections } from './useVaultsListModel.helpers'
 
 const YVUSD_VAULT = {
   version: '3.0.4',

@@ -7,6 +7,9 @@ import type {
 } from '@pages/vaults/components/filters/VaultsFiltersPanel'
 import type { TListHead } from '@pages/vaults/components/list/VaultsListHead'
 import type { TPossibleSortBy } from '@pages/vaults/hooks/useSortVaults'
+import { useVaultsListModel } from '@pages/vaults/hooks/useVaultsListModel'
+import { useVaultsQueryState } from '@pages/vaults/hooks/useVaultsQueryState'
+import { VAULTS_FILTERS_STORAGE_KEY } from '@pages/vaults/hooks/vaultsFiltersStorage'
 import {
   getBlockingFilterActionGroups,
   isVaultHiddenByMinTvl,
@@ -46,9 +49,10 @@ import { useMediaQuery } from '@react-hookz/web'
 import type { TMultiSelectOptionProps } from '@shared/components/MultiSelectDropdown'
 import { TokenLogo } from '@shared/components/TokenLogo'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useYearn } from '@shared/contexts/useYearn'
 import { useOptimisticValue } from '@shared/hooks/useOptimisticValue'
-import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
+import { useYearn } from '@yearn/deposit/contexts/useYearn'
+import { getVaultKey } from '@yearn/deposit/hooks/useVaultFilterUtils'
+import type { TYvUsdListVaults } from '@yearn/deposit/hooks/useYvUsdVaults'
 import type { TSortDirection } from '@yearn/util/types/mixed'
 import {
   getVaultChainID,
@@ -68,10 +72,6 @@ import {
   useState
 } from 'react'
 import { env } from '@/env'
-import { useVaultsListModel } from './useVaultsListModel'
-import { useVaultsQueryState } from './useVaultsQueryState'
-import type { TYvUsdListVaults } from './useYvUsdVaults'
-import { VAULTS_FILTERS_STORAGE_KEY } from './vaultsFiltersStorage'
 
 const DEFAULT_VAULT_TYPES = DEFAULT_VAULT_QUERY_TYPES
 const DEFAULT_SORT_BY: TPossibleSortBy = DEFAULT_VAULT_QUERY_SORT_BY

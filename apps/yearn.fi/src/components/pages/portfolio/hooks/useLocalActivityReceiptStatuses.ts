@@ -1,6 +1,6 @@
-import { retrieveConfig } from '@shared/utils/wagmi/config'
 import { useQueries } from '@tanstack/react-query'
 import type { TNotification } from '@yearn/components/types/notifications'
+import { retrieveConfig } from '@yearn/deposit/utils/wagmi/config'
 import { useMemo } from 'react'
 import { getTransactionReceipt } from 'wagmi/actions'
 
