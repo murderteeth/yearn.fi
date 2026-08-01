@@ -28,6 +28,17 @@ export type TDepositConfig = {
   isConnectedToExecutionChain: (connectedChainId?: number, canonicalChainId?: number) => boolean
   /** True when the host is running against a forked network. */
   isForkedNetwork: () => boolean
+  /**
+   * Per-chain RPC endpoint override.
+   *
+   * This has to come from the host rather than being read here: Next only
+   * inlines `process.env.NEXT_PUBLIC_*` into the client bundle when the
+   * reference is statically analysable, and a per-chain lookup is a computed
+   * key. The host resolves it from an object whose values were inlined at their
+   * own static references. Returning undefined falls back to the chain's
+   * default RPC.
+   */
+  rpcUri: (chainId: number) => string | undefined
   /** RPC endpoint for a forked execution chain, when the host has one. */
   forkedRpcUri: (chainId?: number) => string | undefined
   /** Block explorer for a forked execution chain, when the host has one. */
@@ -48,6 +59,7 @@ const DEFAULTS: TDepositConfig = {
   isConnectedToExecutionChain: (connectedChainId, canonicalChainId) =>
     connectedChainId !== undefined && connectedChainId === canonicalChainId,
   isForkedNetwork: () => false,
+  rpcUri: () => undefined,
   forkedRpcUri: () => undefined,
   forkedExplorerUri: () => undefined,
   analytics: () => undefined,

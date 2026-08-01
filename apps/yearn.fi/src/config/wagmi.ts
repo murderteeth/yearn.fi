@@ -15,6 +15,7 @@ import { agentWallet, isAgentWalletEnabled } from '@/config/agentWallet'
 import { supportedAppChains, supportedWalletChains } from './supportedChains'
 import { getWagmiConfigChains } from './wagmiChains'
 import { buildTransports } from './wagmiTransports'
+import { configureDepositWidget } from './yearnDeposit'
 
 const projectId = env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID as string
 const appName = (env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_NAME as string) || 'Yearn Finance'
@@ -45,6 +46,11 @@ const walletGroups: WalletList = [
 ]
 
 const connectors = connectorsForWallets(walletGroups, { projectId, appName })
+
+// Must run before `buildTransports` below: the widget package resolves each
+// chain's RPC through its configuration, and this module builds its transports
+// at import time, long before anything renders.
+configureDepositWidget()
 
 const wagmiChains = getWagmiConfigChains(supportedWalletChains, supportedAppChains)
 

@@ -71,8 +71,7 @@ export function getRpcUriFor(chainId: number | string): string {
     }
   }
 
-  const key = `NEXT_PUBLIC_RPC_URI_FOR_${chainId}`
-  const value = (process.env as Record<string, string | undefined>)[key]
+  const value = depositConfig().rpcUri(normalizedChainId)
   if (typeof value !== 'string') {
     return ''
   }
