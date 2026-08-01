@@ -60,7 +60,28 @@ that belong to the app — vault totals, notifications, app settings — are nev
 package; the value crosses as a prop instead (e.g. `<Yearn.ConnectButton isBusy={…} />`).
 
 Components are exported individually and grouped under a `Yearn` namespace, so call sites read
-`<Yearn.ConnectButton />`. `@yearn/deposit` re-exports that namespace with the widget merged in.
+`<Yearn.ConnectButton />`. `@yearn/deposit` re-exports that namespace with the widget merged in, so
+an app using both packages imports `Yearn` from `@yearn/deposit` alone.
+
+### Using the widget
+
+```tsx
+configureYearnDeposit({ chains, walletChains })   // once, before render
+
+<YearnWalletProvider>            // @yearn/components — wallet identity
+  <YearnVaultProvider>           // @yearn/deposit — vault data, balances, tokens
+    <Yearn.Deposit chainId={1} address={'0x…'} />
+  </YearnVaultProvider>
+</YearnWalletProvider>
+```
+
+`Yearn.Deposit` resolves the vault and the connected account's position itself. `Yearn.Widget` is
+the prop-driven shell for hosts that already hold that data — yearn.fi's detail page fetches it for
+the page header, so it passes it down rather than fetching twice.
+
+`configureYearnDeposit` is a module-level singleton rather than a context because the widget's
+supporting code reads chain configuration at module scope. Every field has a working default; a host
+with no forked networks and no analytics only needs to name its chains.
 
 ### Package conventions
 

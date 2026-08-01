@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import type { ReactNode } from 'react'
+import type { ReactElement, ReactNode } from 'react'
+import { DemoProviders } from './providers'
 import './demo.css'
 
 export const metadata: Metadata = {
@@ -7,10 +8,12 @@ export const metadata: Metadata = {
   description: 'Demo and development workspace for the shared Yearn deposit widget.'
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }): ReactElement {
   return (
-    <html lang={'en'}>
-      <body>{children}</body>
+    <html lang={'en'} data-theme={'light'}>
+      <body>
+        <DemoProviders>{children as ReactElement}</DemoProviders>
+      </body>
     </html>
   )
 }
