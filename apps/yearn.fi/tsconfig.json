@@ -1,0 +1,43 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDirs": ["."],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@shared/*": ["src/components/shared/*"],
+      "@pages/*": ["src/components/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "/src/*": ["src/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "_app",
+    "worktrees",
+    "vitest.config.mts",
+    "src/server/**/*.test.ts",
+    "docs/temp/yvusd-gpt-pro-bundle"
+  ],
+  "include": [
+    "**/*.css",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.d.tsx",
+    "app",
+    "next-env.d.ts",
+    "public",
+    "postcss.config.js",
+    "tailwind.config.js",
+    "next.config.ts",
+    "worker/index.js",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ]
+}

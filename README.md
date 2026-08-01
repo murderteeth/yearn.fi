@@ -1,6 +1,17 @@
 # yearn.fi
 
-![](./public/og.png)
+![](./apps/yearn.fi/public/og.png)
+
+### Repository layout
+
+This is a bun-workspace monorepo.
+
+```
+apps/yearn.fi     the deployed Next.js app
+```
+
+All commands below run from the repo root unless noted; root `package.json` scripts delegate to the
+workspaces.
 
 ### Initial Setup
 
@@ -23,10 +34,10 @@
     git remote add upstream https://github.com/yearn/yearn.fi.git
     ```
 
-- Optional: Create a `.env` file in the repo root, copy `.env.example`, and replace values with your own keys. Client-readable values must use the `NEXT_PUBLIC_` prefix; server-only secrets must stay unprefixed.
+- Optional: Create a `.env` file in `apps/yearn.fi`, copy `.env.example`, and replace values with your own keys. Client-readable values must use the `NEXT_PUBLIC_` prefix; server-only secrets must stay unprefixed.
 
     ``` bash
-    cp .env.example .env
+    cp apps/yearn.fi/.env.example apps/yearn.fi/.env
     ```
 
 - Optional: Install Husky for pre-commit scripts.

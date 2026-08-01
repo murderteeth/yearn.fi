@@ -74,9 +74,9 @@
       "!**/generated",
       "!**/wagmi.ts",
       "!**/wagmi.d.ts",
-      "!next-env.d.ts",
+      "!**/next-env.d.ts",
       "!**/bun.lock",
-      "!style.css",
+      "!**/style.css",
       "!**/yearn.fi-worktree-*",
       "!**/apps/lib/style.css"
     ]

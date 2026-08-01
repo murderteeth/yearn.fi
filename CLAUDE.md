@@ -1,18 +1,34 @@
-# yearn.fi
+# yearn.fi monorepo
 
-Yearn Finance vaults interface — Next.js 16 App Router + React 19 + TypeScript, TanStack Query, Tailwind CSS 4, Wagmi/Viem.
+Bun-workspace monorepo. Yearn Finance vaults interface — Next.js 16 App Router + React 19 + TypeScript, TanStack Query, Tailwind CSS 4, Wagmi/Viem.
+
+## Workspaces
+
+| Path | Package | Role |
+| --- | --- | --- |
+| `apps/yearn.fi` | `yearnfi` | The deployed app |
+
+Workspace globs are `apps/*` and `packages/*`. Dependencies hoist to the repo root — there is no
+`apps/yearn.fi/node_modules`, so any path that reaches into `node_modules` must go up two levels.
 
 ## Commands
 
+Run from the repo root; root scripts delegate to workspaces via `bun run --filter`.
+
 ```bash
-bun install                              # Install dependencies
+bun install                              # Install all workspace dependencies
 bun run dev                              # Next dev server on 127.0.0.1:3000
 bun run preview                          # Next production server on 127.0.0.1:3000 after a build
 bun run build                            # Next production build
-bun run test                             # Full Vitest suite
-bunx vitest run src/path/to/test.ts      # Single test file
-bun run lint:fix                         # Biome format and fix
-bun run tslint                           # TypeScript type check only
+bun run test                             # Vitest across every workspace
+bun run lint:fix                         # Biome format and fix (whole repo)
+bun run tslint                           # TypeScript type check across every workspace
+```
+
+Single test file, from inside the workspace:
+
+```bash
+cd apps/yearn.fi && bunx vitest run src/path/to/test.ts
 ```
 
 ## Verification
@@ -62,17 +78,20 @@ When writing a new `useEffect`, add a brief comment explaining why an alternativ
 
 **Tech stack:** Next.js 16 App Router, React 19, Tailwind CSS 4, TanStack Query, Wagmi/Viem/RainbowKit
 
-**Path aliases** (defined in tsconfig.json and next.config.ts):
+**Path aliases** (defined in `apps/yearn.fi/tsconfig.json`, resolved relative to that workspace):
 - `@/*` → `src/*`
 - `@shared/*` → `src/components/shared/*`
 - `@pages/*` → `src/components/pages/*`
 - `@components/*` → `src/components/*`
 
-**Key directories:**
+**Key directories** (all relative to `apps/yearn.fi/`):
 - `app/` — Next App Router pages, route handlers, metadata, redirects, and root layout
 - `src/components/shared/` — shared library (contexts, hooks, utils, types, contracts)
 - `src/components/pages/` — route pages (landing, portfolio, vaults)
 - `src/server/` — focused API endpoint implementations and shared server-side helpers used by `app/api/**/route.ts`
+
+**Root-level config:** `package.json` (workspaces + delegating scripts), `tsconfig.base.json` (shared
+compiler options, extended by each workspace), `biome.jsonc`, `.lintstagedrc.json`, `.husky/`, `.github/`.
 
 **Key patterns:**
 - Context provider chain defined in `App.tsx` — read that file for the full order
@@ -81,7 +100,12 @@ When writing a new `useEffect`, add a brief comment explaining why an alternativ
 - `/api/*` is served by explicit Next route handlers under `app/api/**/route.ts`; there is no catch-all API dispatcher
 - Vault data flows through `useYearn` context → filtered/sorted via hooks in `@shared/hooks/`
 
+## Deployment
+
+The Vercel project's **Root Directory must be `apps/yearn.fi`**. Vercel detects the bun workspace root
+and installs from the repo root; `apps/yearn.fi/vercel.json` holds the install and build commands.
+
 ## Multi-Chain
 
-Supported chains configured in `src/components/shared/utils/constants.tsx`:
+Supported chains configured in `apps/yearn.fi/src/components/shared/utils/constants.tsx`:
 Ethereum (1), Optimism (10), Polygon (137), Fantom (250), Base (8453), Arbitrum (42161), Sonic (146), Katana (747474)
