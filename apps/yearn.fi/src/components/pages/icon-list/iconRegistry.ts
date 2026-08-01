@@ -78,7 +78,7 @@ import * as IconWalletModule from '@yearn/components/icons/IconWallet'
 import * as IconsModule from '@yearn/deposit/widget/shared/Icons'
 
 export const ICON_MODULES: Record<string, Record<string, unknown>> = {
-  '/src/components/pages/vaults/components/widget/shared/Icons.tsx': IconsModule,
+  '@yearn/deposit/widget/shared/Icons': IconsModule,
   '/src/components/shared/icons/IconAddToMetamask.tsx': IconAddToMetamaskModule,
   '/src/components/shared/icons/IconAlertCritical.tsx': IconAlertCriticalModule,
   '/src/components/shared/icons/IconAlertError.tsx': IconAlertErrorModule,
