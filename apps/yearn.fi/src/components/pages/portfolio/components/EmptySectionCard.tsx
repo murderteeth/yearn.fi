@@ -1,5 +1,5 @@
-import { Button } from '@shared/components/Button'
 import { EmptyState } from '@shared/components/EmptyState'
+import { Button } from '@yearn/components/components/Button'
 import Link from 'next/link'
 import type { ReactElement } from 'react'
 

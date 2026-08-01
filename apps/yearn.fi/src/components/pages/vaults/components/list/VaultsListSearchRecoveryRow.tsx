@@ -1,5 +1,5 @@
 import type { TVaultsBlockingFilterAction } from '@pages/vaults/hooks/useVaultsPageModel'
-import { Button } from '@shared/components/Button'
+import { Button } from '@yearn/components/components/Button'
 import type { ReactElement } from 'react'
 
 type TVaultsListSearchRecoveryRowProps = {

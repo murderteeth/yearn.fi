@@ -1,5 +1,5 @@
-import { useAsyncTrigger } from '@shared/hooks/useAsyncTrigger'
-import type { TNotification, TNotificationStatus, TNotificationsContext } from '@shared/types/notifications'
+import { useAsyncTrigger } from '@yearn/components/hooks/useAsyncTrigger'
+import type { TNotification, TNotificationStatus, TNotificationsContext } from '@yearn/components/types/notifications'
 import type React from 'react'
 import { createContext, startTransition, useCallback, useContext, useMemo, useState } from 'react'
 import { useIndexedDBStore } from 'use-indexeddb'

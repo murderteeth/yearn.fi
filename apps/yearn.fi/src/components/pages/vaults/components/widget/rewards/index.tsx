@@ -1,17 +1,18 @@
 import { usePlausible } from '@hooks/usePlausible'
 import { useMerkleRewards } from '@pages/vaults/hooks/rewards/useMerkleRewards'
 import { type TRewardToken, useStakingRewards } from '@pages/vaults/hooks/rewards/useStakingRewards'
-import { Button } from '@shared/components/Button'
-import { SwitchChainPrompt } from '@shared/components/SwitchChainPrompt'
 import { useWeb3 } from '@shared/contexts/useWeb3'
 import { useChainId, useSwitchChain } from '@shared/hooks/useAppWagmi'
-import { IconCross } from '@shared/icons/IconCross'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
+import { Button } from '@yearn/components/components/Button'
+import { SwitchChainPrompt } from '@yearn/components/components/SwitchChainPrompt'
+import { IconCross } from '@yearn/components/icons/IconCross'
 import { toAddress } from '@yearn/util/utils/address'
 import { cl } from '@yearn/util/utils/cl'
 import { formatUSDWithThreshold } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 import { TransactionOverlay, type TransactionStep } from '../shared/TransactionOverlay'
 import { MerkleRewardRow } from './MerkleRewardRow'
 import { StakingRewardRow } from './StakingRewardRow'
@@ -244,6 +245,7 @@ export function WidgetRewards(props: TWidgetRewardsProps): ReactElement | null {
                 ))}
                 {!isOnCorrectChain && (
                   <SwitchChainPrompt
+                    chainName={SUPPORTED_NETWORKS.find((n) => n.id === chainId)?.name}
                     chainId={chainId}
                     onSwitchChain={() => switchChainAsync({ chainId })}
                     isSwitching={isSwitchingChain}

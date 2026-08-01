@@ -1,6 +1,6 @@
 import { PUBLIC_VAULT_DATA_CACHE_TIME } from '@shared/data/publicQueryCache'
 import { buildVaultSnapshotEndpoint } from '@shared/data/publicQueryEndpoints'
-import { useFetch } from '@shared/hooks/useFetch'
+import { useFetch } from '@yearn/components/hooks/useFetch'
 import type { TKongVaultSnapshot } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
 import { kongVaultSnapshotSchema } from '@yearn/vaults/schemas/kongVaultSnapshotSchema'
 import { useMemo } from 'react'

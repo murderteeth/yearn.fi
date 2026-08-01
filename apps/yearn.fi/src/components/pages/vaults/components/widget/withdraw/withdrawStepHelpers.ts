@@ -1,4 +1,4 @@
-import type { TCreateNotificationParams } from '@shared/types/notifications'
+import type { TCreateNotificationParams } from '@yearn/components/types/notifications'
 import type { TransactionStep } from '../shared/TransactionOverlay'
 import type { WithdrawRouteType } from './types'
 

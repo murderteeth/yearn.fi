@@ -1,6 +1,6 @@
+import type { TSolver } from '@yearn/components/schemas/yDaemonTokenListBalances'
 import type { TAddress } from '@yearn/util/types/address'
 import type { ReactElement } from 'react'
-import type { TSolver } from '../utils/schemas/yDaemonTokenListBalances'
 
 export type TDropdownOption = {
   label: string

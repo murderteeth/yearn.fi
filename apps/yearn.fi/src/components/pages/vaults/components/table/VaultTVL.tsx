@@ -1,5 +1,5 @@
 import { RenderAmount } from '@shared/components/RenderAmount'
-import { Tooltip } from '@shared/components/Tooltip'
+import { Tooltip } from '@yearn/components/components/Tooltip'
 import { cl } from '@yearn/util/utils/cl'
 import { formatTvlDisplay, toNormalizedBN } from '@yearn/util/utils/format'
 import { getVaultToken, getVaultTVL, type TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'

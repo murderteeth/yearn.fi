@@ -3,7 +3,6 @@
 import { cl } from '@yearn/util/utils/cl'
 import type { ImgHTMLAttributes, ReactElement } from 'react'
 import { useState } from 'react'
-import { env } from '@/env'
 
 type TTokenLogoV2Props = Omit<ImgHTMLAttributes<HTMLImageElement>, 'alt' | 'onError' | 'src'> & {
   src?: string
@@ -127,7 +126,7 @@ function TokenLogoV2Inner(props: TTokenLogoV2InnerProps): ReactElement {
         >
           {/* biome-ignore lint/performance/noImgElement: chain badge shares the token logo fallback primitive. */}
           <img
-            src={`${env.NEXT_PUBLIC_BASE_YEARN_ASSETS_URI}/chains/${chainId}/logo.svg`}
+            src={`${process.env.NEXT_PUBLIC_BASE_YEARN_ASSETS_URI}/chains/${chainId}/logo.svg`}
             alt="Network"
             width={chainIconSize - 4}
             height={chainIconSize - 4}

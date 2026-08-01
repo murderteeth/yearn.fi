@@ -5,7 +5,7 @@ import { useYBoldZapperWithdraw } from '@pages/vaults/hooks/actions/useYBoldZapp
 import { useYvUsdLockedZapWithdraw } from '@pages/vaults/hooks/actions/useYvUsdLockedZapWithdraw'
 import type { EnsoRoutingStrategy } from '@pages/vaults/hooks/solvers/useSolverEnso'
 import type { UseWidgetWithdrawFlowReturn } from '@pages/vaults/types'
-import { toBasisPoints } from '@shared/utils/slippage'
+import { toBasisPoints } from '@yearn/components/utils/slippage'
 import { toAddress } from '@yearn/util/utils/address'
 import { YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import { useMemo } from 'react'

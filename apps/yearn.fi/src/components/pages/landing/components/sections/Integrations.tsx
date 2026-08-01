@@ -1,7 +1,7 @@
 import { SectionHeader } from '@shared/components/SectionHeader'
+import Image from '@yearn/components/components/Image'
 import Link from 'next/link'
 import type { FC } from 'react'
-import Image from '/src/components/Image'
 
 type TIntegration = {
   name: string

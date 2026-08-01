@@ -1,4 +1,4 @@
-import { requiresAllowanceResetBeforeApproval } from '@shared/utils/approve'
+import { requiresAllowanceResetBeforeApproval } from '@yearn/vaults/utils/approve'
 import type { Address } from 'viem'
 
 type TShouldBlockDepositApprovalForAllowanceReset = {

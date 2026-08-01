@@ -1,6 +1,6 @@
-import { IconLock } from '@shared/icons/IconLock'
-import { IconLockOpen } from '@shared/icons/IconLockOpen'
-import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { IconLock } from '@yearn/components/icons/IconLock'
+import { IconLockOpen } from '@yearn/components/icons/IconLockOpen'
+import { SELECTOR_BAR_STYLES } from '@yearn/components/utils/selectorStyles'
 import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 

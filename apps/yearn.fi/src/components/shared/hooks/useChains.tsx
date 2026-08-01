@@ -1,11 +1,11 @@
 import { useCustomCompareMemo, useDeepCompareMemo } from '@react-hookz/web'
 import type { TMultiSelectOptionProps } from '@shared/components/MultiSelectDropdown'
+import Image from '@yearn/components/components/Image'
 import type { Chain } from 'viem'
 import type { Connector } from 'wagmi'
 import { useConnect } from 'wagmi'
 import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 import { env } from '@/env'
-import Image from '/src/components/Image'
 
 export function useChainOptions(chains: number[] | null): TMultiSelectOptionProps[] {
   const { connectors } = useConnect()

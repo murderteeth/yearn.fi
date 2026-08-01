@@ -1,6 +1,6 @@
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { fetchWithSchema } from '@shared/hooks/useFetch'
 import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+import { fetchWithSchema } from '@yearn/components/hooks/useFetch'
 import { useMemo } from 'react'
 import {
   portfolioActivityFacetsResponseSchema,

@@ -1,6 +1,6 @@
 import { CompareVaultCard } from '@pages/vaults/components/compare/CompareVaultCard'
 import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
-import { IconChevron } from '@shared/icons/IconChevron'
+import { IconChevron } from '@yearn/components/icons/IconChevron'
 import { cl } from '@yearn/util/utils/cl'
 import type { TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'
 import { motion, type PanInfo, useAnimation } from 'framer-motion'

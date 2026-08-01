@@ -1,6 +1,10 @@
 import { getRedeemPreviewCall } from '@pages/vaults/hooks/actions/stakingAdapter'
 import { type EnsoRouteResponse, normalizeEnsoRouteResponse } from '@pages/vaults/hooks/solvers/ensoRoute'
-import { calculateRemainingEnsoSlippagePercentage, clampZapSlippage, toBasisPoints } from '@shared/utils/slippage'
+import {
+  calculateRemainingEnsoSlippagePercentage,
+  clampZapSlippage,
+  toBasisPoints
+} from '@yearn/components/utils/slippage'
 import { useCallback, useState } from 'react'
 import { type Address, formatUnits, isAddressEqual } from 'viem'
 import { useConfig } from 'wagmi'

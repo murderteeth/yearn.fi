@@ -1,6 +1,6 @@
 import { useVaultUserHistory } from '@pages/vaults/hooks/useVaultUserHistory'
 import { type TYvUsdSeriesPoint, useYvUsdCharts } from '@pages/vaults/hooks/useYvUsdCharts'
-import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { SELECTOR_BAR_STYLES } from '@yearn/components/utils/selectorStyles'
 import { cl } from '@yearn/util/utils/cl'
 import { YVUSD_CHAIN_ID, YVUSD_LOCKED_ADDRESS, YVUSD_UNLOCKED_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import type { ReactElement } from 'react'

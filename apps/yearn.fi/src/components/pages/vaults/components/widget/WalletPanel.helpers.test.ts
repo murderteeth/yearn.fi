@@ -1,4 +1,4 @@
-import type { TNotification } from '@shared/types/notifications'
+import type { TNotification } from '@yearn/components/types/notifications'
 import { describe, expect, it } from 'vitest'
 import { getAwaitingExecutionEntries, getNewlyCompletedAwaitingExecutionEntries } from './WalletPanel.helpers'
 

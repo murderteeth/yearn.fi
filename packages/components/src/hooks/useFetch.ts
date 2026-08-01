@@ -1,7 +1,7 @@
 import type { QueryKey, UseQueryOptions, UseQueryResult } from '@tanstack/react-query'
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
+import { fetchWithSchema, getFetchQueryKey } from '@yearn/components/utils/fetchQuery'
 import type { z } from 'zod'
-import { fetchWithSchema, getFetchQueryKey } from '../utils/fetchQuery'
 
 type TUseZodProps<T> = {
   endpoint: string | null
@@ -81,5 +81,5 @@ export function useFetch<T>({ endpoint, schema, config }: TUseZodProps<T>): UseQ
   return result
 }
 
-export type { TFetchQueryKey } from '../utils/fetchQuery'
+export type { TFetchQueryKey } from '@yearn/components/utils/fetchQuery'
 export { fetchWithSchema, getFetchQueryKey }

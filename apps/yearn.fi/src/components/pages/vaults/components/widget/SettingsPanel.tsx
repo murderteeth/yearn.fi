@@ -1,11 +1,11 @@
 import { useYearn } from '@shared/contexts/useYearn'
-import { IconCross } from '@shared/icons/IconCross'
+import { IconCross } from '@yearn/components/icons/IconCross'
 import {
   clampZapSlippage,
   getZapSlippageSaveState,
   ZAP_SLIPPAGE_HARD_CAP,
   ZAP_SLIPPAGE_RISK_ACKNOWLEDGEMENT_TEXT
-} from '@shared/utils/slippage'
+} from '@yearn/components/utils/slippage'
 import { cl } from '@yearn/util/utils/cl'
 import { type FC, useCallback, useEffect, useId, useState } from 'react'
 

@@ -1,4 +1,4 @@
-import { yToast } from '@shared/components/yToast'
+import { yToast } from '@yearn/components/components/yToast'
 import type { TAddress } from '@yearn/util/types/address'
 import type { TSortDirection } from '@yearn/util/types/mixed'
 import { toNormalizedBN } from '@yearn/util/utils/format'

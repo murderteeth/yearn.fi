@@ -1,7 +1,7 @@
 import { useDebouncedCallback } from '@react-hookz/web'
-import { IconCross } from '@shared/icons/IconCross'
 import { IconEnter } from '@shared/icons/IconEnter'
 import { IconSearch } from '@shared/icons/IconSearch'
+import { IconCross } from '@yearn/components/icons/IconCross'
 import { cl } from '@yearn/util/utils/cl'
 import { type ChangeEvent, type ReactElement, type ReactNode, useEffect, useState } from 'react'
 

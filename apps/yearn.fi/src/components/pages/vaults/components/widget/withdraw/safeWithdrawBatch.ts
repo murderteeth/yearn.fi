@@ -1,6 +1,6 @@
-import { getApproveAbi } from '@shared/utils/approve'
 import { yBoldZapperAbi } from '@yearn/vaults/abi/yBoldZapper.abi'
 import { yvUsdLockedZapAbi } from '@yearn/vaults/abi/yvUsdLockedZap.abi'
+import { getApproveAbi } from '@yearn/vaults/utils/approve'
 import { YBOLD_ZAPPER_ADDRESS } from '@yearn/vaults/utils/yBold'
 import { YVUSD_LOCKED_ZAP_ADDRESS } from '@yearn/vaults/utils/yvUsd'
 import type { Address, Hex } from 'viem'

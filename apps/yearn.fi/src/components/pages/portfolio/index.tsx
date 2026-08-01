@@ -40,9 +40,7 @@ import { resolveNextSingleChainSelection } from '@pages/vaults/utils/chainSelect
 import { Breadcrumbs } from '@shared/components/Breadcrumbs'
 import { METRIC_VALUE_CLASS, MetricHeader, type TMetricBlock } from '@shared/components/MetricsCard'
 import { SearchBar } from '@shared/components/SearchBar'
-import { SwitchChainPrompt } from '@shared/components/SwitchChainPrompt'
 import { TokenLogo } from '@shared/components/TokenLogo'
-import { Tooltip } from '@shared/components/Tooltip'
 import { YearnLogoSpinner } from '@shared/components/YearnLogoSpinner'
 import { useNotifications } from '@shared/contexts/useNotifications'
 import { useWalletActions } from '@shared/contexts/useWallet'
@@ -53,14 +51,9 @@ import { useChainId, useSwitchChain } from '@shared/hooks/useAppWagmi'
 import { useChainOptions } from '@shared/hooks/useChains'
 import { getVaultKey } from '@shared/hooks/useVaultFilterUtils'
 import { IconCalendarDays } from '@shared/icons/IconCalendarDays'
-import { IconCheck } from '@shared/icons/IconCheck'
-import { IconChevron } from '@shared/icons/IconChevron'
-import { IconCopy } from '@shared/icons/IconCopy'
-import { IconCross } from '@shared/icons/IconCross'
 import { IconDeposit } from '@shared/icons/IconDeposit'
 import { IconGitCompare } from '@shared/icons/IconGitCompare'
 import { IconHandCoins } from '@shared/icons/IconHandCoins'
-import { IconLinkOut } from '@shared/icons/IconLinkOut'
 import { IconSearch } from '@shared/icons/IconSearch'
 import { IconSpinner } from '@shared/icons/IconSpinner'
 import { IconStake } from '@shared/icons/IconStake'
@@ -70,6 +63,14 @@ import { LogoYearn } from '@shared/icons/LogoYearn'
 import { copyToClipboard } from '@shared/utils/helpers'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
 import { getNetwork } from '@shared/utils/wagmi/utils'
+import Image from '@yearn/components/components/Image'
+import { SwitchChainPrompt } from '@yearn/components/components/SwitchChainPrompt'
+import { Tooltip } from '@yearn/components/components/Tooltip'
+import { IconCheck } from '@yearn/components/icons/IconCheck'
+import { IconChevron } from '@yearn/components/icons/IconChevron'
+import { IconCopy } from '@yearn/components/icons/IconCopy'
+import { IconCross } from '@yearn/components/icons/IconCross'
+import { IconLinkOut } from '@yearn/components/icons/IconLinkOut'
 import type { TSortDirection } from '@yearn/util/types/mixed'
 import { isZeroAddress, toAddress, truncateHex } from '@yearn/util/utils/address'
 import { cl } from '@yearn/util/utils/cl'
@@ -89,7 +90,6 @@ import type { CSSProperties, ReactElement } from 'react'
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { SUPPORTED_NETWORKS } from '@/config/supportedChains'
 import { env } from '@/env'
-import Image from '/src/components/Image'
 import {
   doesActivityEntryMatchSearch,
   doesLocalActivityMatchFilters,
@@ -2764,6 +2764,7 @@ function PortfolioClaimRewardsSection({ isActive, openLoginModal }: TPortfolioCl
             ))}
             {needsSwitchChain(chainData) && (
               <SwitchChainPrompt
+                chainName={SUPPORTED_NETWORKS.find((n) => n.id === chainData.chainId)?.name}
                 chainId={chainData.chainId}
                 onSwitchChain={() => switchChainAsync({ chainId: chainData.chainId })}
                 isSwitching={isSwitchingChain}

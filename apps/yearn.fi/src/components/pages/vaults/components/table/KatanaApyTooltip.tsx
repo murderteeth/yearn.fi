@@ -1,5 +1,5 @@
-import { ImageWithFallback } from '@shared/components/ImageWithFallback'
-import { Tooltip } from '@shared/components/Tooltip'
+import { ImageWithFallback } from '@yearn/components/components/ImageWithFallback'
+import { Tooltip } from '@yearn/components/components/Tooltip'
 import { cl } from '@yearn/util/utils/cl'
 import { formatApyDisplay } from '@yearn/util/utils/format'
 import { getVaultChainID, getVaultToken, type TKongVaultInput } from '@yearn/vaults/domain/kongVaultSelectors'

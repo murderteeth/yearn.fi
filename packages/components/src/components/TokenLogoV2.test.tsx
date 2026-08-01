@@ -1,6 +1,6 @@
+import { TokenLogoV2 } from '@yearn/components/components/TokenLogoV2'
 import { renderToStaticMarkup } from 'react-dom/server'
 import { describe, expect, it } from 'vitest'
-import { TokenLogoV2 } from './TokenLogoV2'
 
 describe('TokenLogoV2', () => {
   it('renders the image source in SSR output without a loading initials fallback', () => {

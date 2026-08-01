@@ -1,4 +1,4 @@
-import { Tooltip } from '@shared/components/Tooltip'
+import { Tooltip } from '@yearn/components/components/Tooltip'
 import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement, ReactNode } from 'react'
 

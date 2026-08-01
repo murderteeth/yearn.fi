@@ -1,6 +1,6 @@
+import Image from '@yearn/components/components/Image'
 import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
-import Image from '/src/components/Image'
 
 type TYearnLogoSpinnerProps = {
   className?: string

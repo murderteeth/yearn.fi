@@ -1,5 +1,4 @@
 import { useLocalStorageValue } from '@react-hookz/web'
-import { toast } from '@shared/components/yToast'
 import { useWeb3 } from '@shared/contexts/useWeb3'
 import { useYearn } from '@shared/contexts/useYearn'
 import { useTokenList } from '@shared/contexts/WithTokenList'
@@ -25,6 +24,7 @@ import {
   upsertTenderlySnapshotRecord
 } from '@shared/utils/tenderlyPanel'
 import { useQueryClient } from '@tanstack/react-query'
+import { toast } from '@yearn/components/components/yToast'
 import {
   createContext,
   type ReactElement,

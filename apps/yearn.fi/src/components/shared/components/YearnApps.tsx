@@ -1,9 +1,9 @@
 import { IconDiscord } from '@shared/icons/IconDiscord'
 import { LogoGimme } from '@shared/icons/LogoGimme'
 import { LogoYearn } from '@shared/icons/LogoYearn'
+import Image from '@yearn/components/components/Image'
 import type { ReactElement } from 'react'
 import { env } from '@/env'
-import Image from '/src/components/Image'
 
 const BASE_YEARN_ASSET_URI = env?.NEXT_PUBLIC_BASE_YEARN_ASSETS_URI ?? ''
 

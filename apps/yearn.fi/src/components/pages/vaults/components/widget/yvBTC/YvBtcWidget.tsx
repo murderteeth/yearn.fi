@@ -1,7 +1,7 @@
 import { useVaultUserData } from '@pages/vaults/hooks/useVaultUserData'
 import { useYvBtcVaults } from '@pages/vaults/hooks/useYvBtcVaults'
 import { WidgetActionType as ActionType } from '@pages/vaults/types'
-import { Button } from '@shared/components/Button'
+import { Button } from '@yearn/components/components/Button'
 import { cl } from '@yearn/util/utils/cl'
 import type { TYvUsdVariant } from '@yearn/vaults/utils/yvUsd'
 import type { ReactElement, ReactNode } from 'react'

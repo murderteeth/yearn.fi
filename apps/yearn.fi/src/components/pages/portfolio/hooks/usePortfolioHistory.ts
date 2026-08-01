@@ -1,6 +1,6 @@
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useFetch } from '@shared/hooks/useFetch'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
+import { useFetch } from '@yearn/components/hooks/useFetch'
 import { useMemo } from 'react'
 import type {
   TPortfolioHistoryChartData,

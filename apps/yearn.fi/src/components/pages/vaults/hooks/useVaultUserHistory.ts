@@ -1,6 +1,6 @@
 import type { TVaultUserHistoryChartData } from '@pages/vaults/types/charts'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useFetch } from '@shared/hooks/useFetch'
+import { useFetch } from '@yearn/components/hooks/useFetch'
 import { useMemo } from 'react'
 import { z } from 'zod'
 

@@ -1,5 +1,5 @@
 import { Renderable } from '@shared/components/Renderable'
-import { Tooltip } from '@shared/components/Tooltip'
+import { Tooltip } from '@yearn/components/components/Tooltip'
 import { cl } from '@yearn/util/utils/cl'
 import type { MouseEvent, ReactElement, ReactNode } from 'react'
 

@@ -1,9 +1,9 @@
 import type { UseWidgetDepositFlowReturn } from '@pages/vaults/types'
 import { type AppUseSimulateContractReturnType, useReadContract, useSimulateContract } from '@shared/hooks/useAppWagmi'
-import { getApproveAbi } from '@shared/utils/approve'
 import { toAddress } from '@yearn/util/utils/address'
 import { erc4626Abi } from '@yearn/vaults/abi/4626.abi'
 import { vaultAbi } from '@yearn/vaults/abi/vaultV2.abi'
+import { getApproveAbi } from '@yearn/vaults/utils/approve'
 import type { Address } from 'viem'
 import { useTokenAllowance } from '../useTokenAllowance'
 

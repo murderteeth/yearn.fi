@@ -1,4 +1,4 @@
-import type { TNotification } from '@shared/types/notifications'
+import type { TNotification } from '@yearn/components/types/notifications'
 import { toAddress, truncateHex } from '@yearn/util/utils/address'
 import { getVaultName, type TKongVault } from '@yearn/vaults/domain/kongVaultSelectors'
 import { YBOLD_STAKING_ADDRESS, YBOLD_VAULT_ADDRESS } from '@yearn/vaults/domain/normalizeVault'

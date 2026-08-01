@@ -1,4 +1,4 @@
-import type { TNotification } from '@shared/types/notifications'
+import type { TNotification } from '@yearn/components/types/notifications'
 
 export function isNotificationForAddress(notification: TNotification, address?: string): boolean {
   return Boolean(address) && notification.address.toLowerCase() === address?.toLowerCase()

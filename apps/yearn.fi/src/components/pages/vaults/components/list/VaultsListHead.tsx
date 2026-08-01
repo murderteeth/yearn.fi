@@ -1,4 +1,4 @@
-import { IconChevron } from '@shared/icons/IconChevron'
+import { IconChevron } from '@yearn/components/icons/IconChevron'
 import type { TSortDirection } from '@yearn/util/types/mixed'
 import { cl } from '@yearn/util/utils/cl'
 

@@ -1,4 +1,4 @@
-import { Tooltip } from '@shared/components/Tooltip'
+import { Tooltip } from '@yearn/components/components/Tooltip'
 import { formatAmount, formatApyDisplay } from '@yearn/util/utils/format'
 
 import type { FC, ReactElement } from 'react'

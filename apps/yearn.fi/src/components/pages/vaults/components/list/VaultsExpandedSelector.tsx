@@ -1,4 +1,4 @@
-import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { SELECTOR_BAR_STYLES } from '@yearn/components/utils/selectorStyles'
 import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 

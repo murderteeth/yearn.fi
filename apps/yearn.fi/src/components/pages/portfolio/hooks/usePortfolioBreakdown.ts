@@ -1,5 +1,5 @@
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { useFetch } from '@shared/hooks/useFetch'
+import { useFetch } from '@yearn/components/hooks/useFetch'
 import { useMemo } from 'react'
 import { portfolioBreakdownResponseSchema, type TPortfolioBreakdownResponse } from '../types/api'
 

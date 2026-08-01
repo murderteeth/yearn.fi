@@ -1,7 +1,7 @@
+import Image from '@yearn/components/components/Image'
 import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
 import { createElement } from 'react'
-import Image from '/src/components/Image'
 import {
   BROKEN_ASSET_NOTES,
   DUPLICATE_GROUPS,

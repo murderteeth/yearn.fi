@@ -2,11 +2,11 @@ import { usePlausible } from '@hooks/usePlausible'
 import { SectionHeader } from '@shared/components/SectionHeader'
 import { useYearn } from '@shared/contexts/useYearn'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
+import Image from '@yearn/components/components/Image'
 import { formatPercent } from '@yearn/util/utils/format'
 import { getVaultAPR, getVaultChainID } from '@yearn/vaults/domain/kongVaultSelectors'
 import type { FC } from 'react'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import Image from '/src/components/Image'
 
 type TRow = {
   icon: string

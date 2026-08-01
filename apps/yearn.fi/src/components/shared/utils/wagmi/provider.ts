@@ -1,5 +1,6 @@
-import type { TCTA } from '@shared/components/yToast'
-import { toast } from '@shared/components/yToast'
+import type { TCTA } from '@yearn/components/components/yToast'
+import { toast } from '@yearn/components/components/yToast'
+import { assert, assertAddress } from '@yearn/components/utils/assert'
 import type { TAddress } from '@yearn/util/types/address'
 import { toAddress } from '@yearn/util/utils/address'
 import { toBigInt } from '@yearn/util/utils/format'
@@ -14,7 +15,6 @@ import {
   writeContract
 } from 'wagmi/actions'
 import { resolveExecutionChainId } from '@/config/tenderly'
-import { assert, assertAddress } from '../assert'
 import { retrieveConfig } from './config'
 import type { TTxResponse } from './transaction'
 import { defaultTxStatus } from './transaction'

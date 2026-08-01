@@ -1,4 +1,3 @@
-import { describe, expect, it } from 'vitest'
 import {
   calculateRemainingEnsoSlippagePercentage,
   clampZapSlippage,
@@ -8,7 +7,8 @@ import {
   toBasisPoints,
   ZAP_SLIPPAGE_HARD_CAP,
   ZAP_SLIPPAGE_RISK_ACKNOWLEDGEMENT_TEXT
-} from './slippage'
+} from '@yearn/components/utils/slippage'
+import { describe, expect, it } from 'vitest'
 
 describe('slippage utils', () => {
   it('clamps user slippage to the supported range', () => {

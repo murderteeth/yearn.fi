@@ -2,7 +2,7 @@ import { Combobox, ComboboxButton, ComboboxInput, ComboboxOption, ComboboxOption
 import { useClickOutside, useThrottledState } from '@react-hookz/web'
 import { Renderable } from '@shared/components/Renderable'
 import { useWeb3 } from '@shared/contexts/useWeb3'
-import { IconChevron } from '@shared/icons/IconChevron'
+import { IconChevron } from '@yearn/components/icons/IconChevron'
 import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement, RefObject } from 'react'
 import { useCallback, useMemo, useRef, useState } from 'react'

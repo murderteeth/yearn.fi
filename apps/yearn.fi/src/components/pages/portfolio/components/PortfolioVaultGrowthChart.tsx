@@ -15,14 +15,14 @@ import {
   getChartWeeklyTicks,
   getTimeframeLimit
 } from '@pages/vaults/utils/charts'
-import { IconChevron } from '@shared/icons/IconChevron'
 import {
   rankPortfolioVaultGrowthChartSeries,
   type TPortfolioVaultGrowthChartMode,
   type TPortfolioVaultGrowthChartSortDirection,
   type TPortfolioVaultGrowthRankableSeries
 } from '@shared/utils/portfolioVaultGrowth'
-import { SELECTOR_BAR_STYLES } from '@shared/utils/selectorStyles'
+import { IconChevron } from '@yearn/components/icons/IconChevron'
+import { SELECTOR_BAR_STYLES } from '@yearn/components/utils/selectorStyles'
 import { cl } from '@yearn/util/utils/cl'
 import { formatUSD } from '@yearn/util/utils/format'
 import type { ReactElement } from 'react'

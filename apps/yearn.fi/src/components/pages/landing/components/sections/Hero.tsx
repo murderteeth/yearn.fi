@@ -1,16 +1,16 @@
 import { usePlausible } from '@hooks/usePlausible'
-import { Button } from '@shared/components/Button'
 import { SectionHeader } from '@shared/components/SectionHeader'
 import { TvlStat } from '@shared/components/TvlStat'
 import { YEARN_TVL_ENDPOINT } from '@shared/data/publicQueryEndpoints'
-import { useFetch } from '@shared/hooks/useFetch'
 import { PLAUSIBLE_EVENTS } from '@shared/utils/plausible'
+import { Button } from '@yearn/components/components/Button'
+import Image from '@yearn/components/components/Image'
+import { useFetch } from '@yearn/components/hooks/useFetch'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import type { ReactElement } from 'react'
 import { useEffect } from 'react'
 import * as z from 'zod'
-import Image from '/src/components/Image'
 
 function AnimatedLogos(): ReactElement {
   return (

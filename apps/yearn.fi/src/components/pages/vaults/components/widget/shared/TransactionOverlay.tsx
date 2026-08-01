@@ -1,4 +1,3 @@
-import { Button } from '@shared/components/Button'
 import { useNotificationsActions } from '@shared/contexts/useNotificationsActions'
 import {
   type AppUseSimulateContractReturnType,
@@ -7,11 +6,12 @@ import {
   useWaitForTransactionReceipt
 } from '@shared/hooks/useAppWagmi'
 import { useSafeTransactionDetails } from '@shared/hooks/useSafeTransactionDetails'
-import type { TCreateNotificationParams } from '@shared/types/notifications'
 import { retrieveConfig } from '@shared/utils/wagmi/config'
 import { getNetwork } from '@shared/utils/wagmi/utils'
 import { isSafeConnectorId } from '@shared/utils/walletConnectors'
 import { getPublicClient } from '@wagmi/core'
+import { Button } from '@yearn/components/components/Button'
+import type { TCreateNotificationParams } from '@yearn/components/types/notifications'
 import { cl } from '@yearn/util/utils/cl'
 import { type FC, useCallback, useEffect, useId, useRef, useState } from 'react'
 import { useReward } from 'react-rewards'

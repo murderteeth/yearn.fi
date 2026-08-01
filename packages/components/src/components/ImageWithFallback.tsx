@@ -1,7 +1,7 @@
+import type { ImageProps } from '@yearn/components/components/Image'
+import Image from '@yearn/components/components/Image'
 import { cl } from '@yearn/util/utils/cl'
 import type { ReactElement } from 'react'
-import type { ImageProps } from '/src/components/Image'
-import Image from '/src/components/Image'
 
 function ImageWithFallback(
   props: Omit<ImageProps, 'onError' | 'onLoadStart' | 'onLoadComplete'> & { altSrc?: string }

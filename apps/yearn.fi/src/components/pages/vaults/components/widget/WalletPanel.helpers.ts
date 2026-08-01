@@ -1,4 +1,4 @@
-import type { TNotification } from '@shared/types/notifications'
+import type { TNotification } from '@yearn/components/types/notifications'
 
 function getNotificationTransitionKey(entry: TNotification): string | undefined {
   if (entry.id !== undefined) {

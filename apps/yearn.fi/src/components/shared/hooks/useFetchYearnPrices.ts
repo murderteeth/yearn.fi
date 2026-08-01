@@ -8,8 +8,8 @@ import {
   type TYearnPriceToken
 } from '@shared/utils/yearnPrices'
 import { keepPreviousData, useQueries } from '@tanstack/react-query'
+import { fetchWithSchema, getFetchQueryKey } from '@yearn/components/hooks/useFetch'
 import { yearnPricesSpotResponseSchema } from '../utils/schemas/yearnPricesSpotSchema'
-import { fetchWithSchema, getFetchQueryKey } from './useFetch'
 
 const SPOT_BATCH_SIZE = 50
 const SPOT_CACHE_DURATION = 120 * 1000

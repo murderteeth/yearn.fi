@@ -1,6 +1,6 @@
-import { Tooltip } from '@shared/components/Tooltip'
-import { IconInfo } from '@shared/icons/IconInfo'
-import { ZAP_SLIPPAGE_HARD_CAP } from '@shared/utils/slippage'
+import { Tooltip } from '@yearn/components/components/Tooltip'
+import { IconInfo } from '@yearn/components/icons/IconInfo'
+import { ZAP_SLIPPAGE_HARD_CAP } from '@yearn/components/utils/slippage'
 import type { ReactElement } from 'react'
 
 type TPriceImpactWarningProps = {

@@ -1,4 +1,5 @@
 import { retrieveConfig } from '@shared/utils/wagmi/config'
+import { decodeAsBigInt, decodeAsNumber, decodeAsString } from '@yearn/components/utils/decoder'
 import type { TAddress } from '@yearn/util/types/address'
 import type { TChainTokens, TDefaultStatus, TDict, TNDict, TToken } from '@yearn/util/types/mixed'
 import { isZeroAddress, toAddress } from '@yearn/util/utils/address'
@@ -11,7 +12,6 @@ import { erc20Abi, type MulticallParameters } from 'viem'
 import type { Connector } from 'wagmi'
 import { multicall } from 'wagmi/actions'
 import { resolveExecutionChainId } from '@/config/tenderly'
-import { decodeAsBigInt, decodeAsNumber, decodeAsString } from '../utils/decoder'
 import { getNetwork } from '../utils/wagmi/utils'
 
 /*******************************************************************************

@@ -1,4 +1,4 @@
-import type { TNotificationStatus } from '@shared/types/notifications'
+import type { TNotificationStatus } from '@yearn/components/types/notifications'
 
 export function shouldPollNotificationStatus(params: {
   id?: number

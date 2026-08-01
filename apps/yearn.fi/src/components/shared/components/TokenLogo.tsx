@@ -1,1 +1,1 @@
-export { TokenLogoV2 as TokenLogo } from './TokenLogoV2'
+export { TokenLogoV2 as TokenLogo } from '@yearn/components/components/TokenLogoV2'
