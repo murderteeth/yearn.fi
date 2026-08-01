@@ -24,6 +24,13 @@ pnpm-debug.log*
 
 .env
 .next
+
+# Next regenerates this on every dev/build, rewriting its routes import between
+# .next/dev/types and .next/types — so it churns on every mode switch. Verified
+# that type checking passes without it, even on a clean tree with no build
+# output: this app uses its own <img> shim, so nothing depends on
+# next/image-types.
+next-env.d.ts
 .vercel
 .tsconfig.tsbuildinfo
 _app
