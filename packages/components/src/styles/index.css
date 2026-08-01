@@ -2,13 +2,22 @@
  * The Yearn design system entry point.
  *
  * Consumers import this once (`@import '@yearn/components/styles.css'`) and get
- * Tailwind plus every Yearn design token. The `@source` directives below tell
- * Tailwind to scan package source for utility classes, so the utilities used
- * inside `@yearn/components` and `@yearn/deposit` are generated in the
- * consuming app's stylesheet even though that source lives outside its root.
+ * Tailwind plus every Yearn design token, base rule, and shared component
+ * class. The imports below are inlined in order, so this file defines the
+ * cascade — keep it matching the order these blocks had in the original
+ * `apps/yearn.fi/style.css`.
+ *
+ * The `@source` directives tell Tailwind to scan package source for utility
+ * classes, so utilities used inside `@yearn/components` and `@yearn/deposit`
+ * are generated in the consuming app's stylesheet even though that source
+ * lives outside its root.
  */
 
 @import "tailwindcss";
+@import "./themes.css";
+@import "./tokens.css";
+@import "./base.css";
+@import "./primitives.css";
 
 @source "../../src";
 @source "../../../deposit/src";
